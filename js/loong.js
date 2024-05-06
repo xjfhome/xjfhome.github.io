@@ -3,8 +3,8 @@ var infoList = [
    {
     title: "扫码领支付宝大红包！",
     content: "邀请好友领红包，领现金大红包！",
-    link: "http://llog.eu.org/zhifubaopay.jpg \"target=\"_self\"",
-    img: "http://llog.eu.org/zhifubaopay.jpg",
+    link: "http://qny.cyjz.work/zhifubpay.jpg \"target=\"_self\"",
+    img: "http://qny.cyjz.work/zhifubpay.jpg",
   },
   // {
   //   title: "ChatGPT加强版4.0，已上线！！（安卓+电脑）",
