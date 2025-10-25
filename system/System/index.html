@@ -1,0 +1,434 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>系统 | 捌月</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><div class="darkmode-toggle">🌓</div><script>var prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+var toggle = document.querySelector('.darkmode-toggle');
+var html = document.querySelector('html');
+
+html.dataset.dark = localStorage.dark || prefersDarkMode.matches;
+
+toggle.addEventListener('click', () => {
+localStorage.dark = !(html.dataset.dark == 'true');
+html.dataset.dark = localStorage.dark;
+});</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">系统</h1><a id="logo" href="/.">捌月</a><p class="description"></p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/"><i class="fa fa-book"> 记事</i></a><a class="current" href="/system/"><i class="fa fa-television"> 系统</i></a><a target="_blank" rel="noopener" href="https://j.bnjy.eu.org/"><i class="fa fa-graduation-cap"> 教育</i></a><a target="_blank" rel="noopener" href="https://l.bnjy.eu.org/"><i class="fa fa-fighter-jet"> 旅游</i></a><a href="/tool/"><i class="fa fa-gavel"> 工具</i></a><a href="/web/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">系统</h1><div class="post-content"><h2 id="重要"><a href="#重要" class="headerlink" title="重要"></a><strong>重要</strong></h2><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="strong">**说明**</span></span><br><span class="line"><span class="bullet">- </span>该项目为个人非盈利兴趣项目，Windows 操作系统版权归属于 Microsoft，该项目与 Microsoft 无关。</span><br><span class="line"><span class="bullet">- </span>该项目的目的为更好的推广 Windows 生态，并且使 Windows 系统安装更便捷，并且使其更方便使用。</span><br><span class="line"><span class="bullet">- </span>该第三方社区系统内不提供任何非法的激活渠道！请确保获得正规的正版系统授权后才进行安装或使用该第三方社区系统！</span><br><span class="line"><span class="bullet">- </span>该第三方社区操作系统仅提供给朋友或熟人使用，出现任何问题请自行处理！一切与我无关！</span><br><span class="line"><span class="bullet">- </span>不欢迎也不允许任何个人、商家、淘宝店、团队使用该项目进行盈利！</span><br><span class="line"><span class="bullet">- </span>未授权任何个人、商家、淘宝店出售携带该系统镜像的启动U盘！如遇到该商家请投诉并立即退款或给予差评！</span><br><span class="line"><span class="bullet">- </span>该项目如被发现滥用于商业化，将会随时停更！且用且珍惜！</span><br></pre></td></tr></table></figure>
+<h2 id="一、封装系统专用"><a href="#一、封装系统专用" class="headerlink" title="一、封装系统专用"></a><strong>一、封装系统专用</strong></h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>System</th>
+<th>Update time</th>
+<th>Download</th>
+<th>Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定制母盘</td>
+<td>PE-ventoy-1.0.96-windows</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="https://tc-cdn.flowus.cn/oss/8fffafc1-7e9e-4231-adcc-2ce4f73ebd65/PE-ventoy-1.0.96-windows.zip?filename=PE-ventoy-1.0.96-windows.zip&amp;time=1737095400&amp;token=3904487557e5c1575469a2015e6d63622d0038c216ea2e68fca2558d2869bb44&amp;role=free">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>WePE_32_V2.1</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="https://tc-cdn.flowus.cn/oss/7e5775e0-6b6b-4ed3-a8ba-0a5db1700b28/WePE_32_V2.1.iso?filename=WePE_32_V2.1.iso&amp;time=1737095400&amp;token=f8fab9effa3631205ae35f2ec46ddcebd6e4335bd79cb9c55713f4dccb80ada9&amp;role=free">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>WePE_64_V2.1</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="https://tc-cdn.flowus.cn/oss/93ad4f5d-9397-4ba8-a54e-f3266011b931/WePE_64_V2.1.iso?filename=WePE_64_V2.1.iso&amp;time=1737095400&amp;token=28472deab2f6c3e0e4c87db322fe1bd25a9610d5e9f8a294c64b72d623675bae&amp;role=free">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>SkyfreeXP_LT_C_V7_Final</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/d/%E5%88%86%E4%BA%AB/%E8%BF%85%E9%9B%B7/%E6%88%91%E7%9A%84%E8%B5%84%E6%BA%90/S6-%E7%B3%BB%E7%BB%9F/S6-%E5%B0%81%E8%A3%85%E7%B3%BB%E7%BB%9F/WindowsXP/%E8%87%AA%E7%94%B1%E5%A4%A9%E7%A9%BA%E6%AF%8D%E7%9B%98SkyfreeXP_LT_C_V7_Final.iso">Download</a></td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/%E5%B8%B8%E7%94%A8/%E4%B8%8B%E8%BD%BD-%E5%A4%A9%E7%BF%BC%E5%AE%B6%E5%BA%AD%E4%BA%91/S6-%E7%B3%BB%E7%BB%9F/S6-%E7%B3%BB%E7%BB%9F%E6%AF%8D%E7%9B%98/WindowsXP/WINXP%E4%B8%93%E4%B8%9A%E7%89%88SP3%E8%87%AA%E7%94%B1%E5%A4%A9%E7%A9%BAV7%E6%9C%80%E7%BB%88%E7%89%88">Download</a></td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>NwsWin7x86 （最精简的系统）</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/d/%E5%88%86%E4%BA%AB/%E8%BF%85%E9%9B%B7/%E6%88%91%E7%9A%84%E8%B5%84%E6%BA%90/S6-%E7%B3%BB%E7%BB%9F/S6-%E7%B3%BB%E7%BB%9F%E6%AF%8D%E7%9B%98/Windows7/NwsWin7x86%20%EF%BC%88%E6%9C%80%E7%B2%BE%E7%AE%80%E7%9A%84%E7%B3%BB%E7%BB%9F%EF%BC%89.7z">Download</a></td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/d/%E5%B8%B8%E7%94%A8/%E4%B8%8B%E8%BD%BD-%E5%A4%A9%E7%BF%BC%E5%AE%B6%E5%BA%AD%E4%BA%91/S6-%E7%B3%BB%E7%BB%9F/S6-%E7%B3%BB%E7%BB%9F%E6%AF%8D%E7%9B%98/Win7/NwsWin7x86.7z">Download</a></td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>cn_windows_7_ultimate_with_sp1_x86_wim_u_677486</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/d/%E5%B8%B8%E7%94%A8/%E4%B8%8B%E8%BD%BD-%E5%A4%A9%E7%BF%BC%E5%AE%B6%E5%BA%AD%E4%BA%91/S6-%E7%B3%BB%E7%BB%9F/S6-%E7%B3%BB%E7%BB%9F%E6%AF%8D%E7%9B%98/Win7/32%E4%BD%8D/WIN7%E6%97%97%E8%88%B0%E7%89%8832%E4%BD%8DSP1%E7%89%88%E5%AE%9A%E5%88%B6%E6%AF%8D%E7%9B%98%EF%BC%882011-05-12%E7%89%88%E6%9C%AC%EF%BC%89/cn_windows_7_ultimate_with_sp1_x86_wim_u_677486.zip">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>cn_windows_7_ultimate_with_sp1_x64_wim_u_677408</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/d/%E5%B8%B8%E7%94%A8/%E4%B8%8B%E8%BD%BD-%E5%A4%A9%E7%BF%BC%E5%AE%B6%E5%BA%AD%E4%BA%91/S6-%E7%B3%BB%E7%BB%9F/S6-%E7%B3%BB%E7%BB%9F%E6%AF%8D%E7%9B%98/Win7/64%E4%BD%8D/WIN7%E6%97%97%E8%88%B0%E7%89%8864%E4%BD%8DSP1%E7%89%88%E5%AE%9A%E5%88%B6%E6%AF%8D%E7%9B%98%EF%BC%882011-05-12%E7%89%88%E6%9C%AC%EF%BC%89/cn_windows_7_ultimate_with_sp1_x64_wim_u_677408.zip">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>Windows_8.1_pro_vl_with_update_x64_dvd_6050873</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/%E5%B8%B8%E7%94%A8/%E4%B8%8B%E8%BD%BD-%E5%A4%A9%E7%BF%BC%E5%AE%B6%E5%BA%AD%E4%BA%91/S6-%E7%B3%BB%E7%BB%9F/S6-%E7%B3%BB%E7%BB%9F%E6%AF%8D%E7%9B%98/win8.1/Windows_8.1_pro_vl_with_update_x64_dvd_6050873_%E8%BD%BB%E5%BA%A6%E7%B2%BE%E7%AE%80">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>Win10_LTSC_x64_1130</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/d/%E5%88%86%E4%BA%AB/%E8%BF%85%E9%9B%B7/%E6%88%91%E7%9A%84%E8%B5%84%E6%BA%90/S6-%E7%B3%BB%E7%BB%9F/S6-%E7%B3%BB%E7%BB%9F%E6%AF%8D%E7%9B%98/Windows10/Win10_LTSC_x64_1130.WIM">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td>Win10_LTSC_x86_0722</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="http://192.168.0.108:5244/d/%E5%88%86%E4%BA%AB/%E8%BF%85%E9%9B%B7/%E6%88%91%E7%9A%84%E8%B5%84%E6%BA%90/S6-%E7%B3%BB%E7%BB%9F/S6-%E7%B3%BB%E7%BB%9F%E6%AF%8D%E7%9B%98/Windows10/Win10_LTSC_x86_0722.WIM">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>定制母盘</td>
+<td></td>
+<td>20150116</td>
+<td>Download</td>
+<td>Download</td>
+</tr>
+<tr>
+<td>自用系统</td>
+<td>Nwswindows_server_2003-01</td>
+<td>20150116</td>
+<td><a target="_blank" rel="noopener" href="https://tc-cdn.flowus.cn/oss/0032fa9e-37e0-4eec-8f13-6541d2a24d6e/Nwswindows_server_2003-01.zip?filename=Nwswindows_server_2003-01.zip&amp;time=1737095400&amp;token=b36abf0c2701bc78ce37596188fb2962b7ea14988756188556a2200f7bced6aa&amp;role=free">Download</a></td>
+<td>Download</td>
+</tr>
+<tr>
+<td>自用系统</td>
+<td></td>
+<td>20150116</td>
+<td>Download</td>
+<td>Download</td>
+</tr>
+<tr>
+<td>自用系统</td>
+<td></td>
+<td>20150116</td>
+<td>Download</td>
+<td>Download</td>
+</tr>
+<tr>
+<td>自用系统</td>
+<td></td>
+<td>20150116</td>
+<td>Download</td>
+<td>Download</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="二、系统激活"><a href="#二、系统激活" class="headerlink" title="二、系统激活"></a>二、系统激活</h2><h3 id="2-1windows系统激活"><a href="#2-1windows系统激活" class="headerlink" title="2.1windows系统激活"></a>2.1windows系统激活</h3><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1、CMD命令终端下以管理员身份输入命令：</span><br><span class="line">wmic path softwareLicensingService get OA3xOriginalProductKey</span><br><span class="line">如果你通过上方的命令运行后没有看到密钥，那是因为你用的是OEM数字许可证密钥，这种情况请使用下面的第2种方法来获取密钥。</span><br><span class="line">2、注册表下：计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform。找到 BackupProductKeyDefault，在其后面就能找到你的激活密钥</span><br><span class="line">3、Windows 10 <span class="string">/11</span>  KMS激活方式</span><br><span class="line">注意：以管理员身份运行CMD，然后依次输入下面的命令即可</span><br><span class="line">slmgr <span class="string">/ipk</span> 这里填写你的OEM密钥</span><br><span class="line">slmgr <span class="string">/skms</span> kms.loli.best</span><br><span class="line">slmgr <span class="string">/ato</span></span><br><span class="line">slmgr <span class="string">/xpr</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-2windows系统密匙"><a href="#2-2windows系统密匙" class="headerlink" title="2.2windows系统密匙"></a>2.2<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/windows-server/get-started/kms-client-activation-keys?tabs=server2022%2Cwindows1110ltsc%2Cversion1803%2Cwindows81">windows系统密匙</a></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>系统</th>
+<th>密匙</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows Server 2008 Datacenter</td>
+<td>7M67G-PC374-GR742-YH8V4-TCBY3</td>
+</tr>
+<tr>
+<td>不带 Hyper-V 的 Windows Server 2008 数据中心版</td>
+<td>22XQ2-VRXRG-P8D42-K34TD-G3QQC</td>
+</tr>
+<tr>
+<td>不带 Hyper-V 的 Windows Server 2008 企业版</td>
+<td>39BXF-X8Q23-P2WWT-38T2F-G3FPG</td>
+</tr>
+<tr>
+<td>不带 Hyper-V 的 Windows Server 2008 标准版</td>
+<td>W7VD6-7JFBR-RX26B-YKQ3Y-6FFFJ</td>
+</tr>
+<tr>
+<td>Windows Web Server 2008</td>
+<td>WYR28-R7TFJ-3X2YQ-YCY4H-M249D</td>
+</tr>
+<tr>
+<td>Windows Vista 商用版 N</td>
+<td>HMBQG-8H2RH-C77VX-27R82-VMQBT</td>
+</tr>
+<tr>
+<td>Windows Vista 商用版</td>
+<td>YFKBB-PQJJV-G996G-VWGXY-2V3X8</td>
+</tr>
+<tr>
+<td>Windows Vista 企业版 N</td>
+<td>VTC42-BM838-43QHV-84HX6-XJXKV</td>
+</tr>
+<tr>
+<td>Windows Vista 企业版</td>
+<td>VKK3X-68KWM-X2YGT-QR4M6-4BWMV</td>
+</tr>
+<tr>
+<td>Windows Server Standard 1803</td>
+<td>PTXN8-JFHJM-4WC78-MPCBR-9W4KR</td>
+</tr>
+<tr>
+<td>Windows Server Standard 1709</td>
+<td>DPCNP-XQFKJ-BJF7R-FRC8D-GF6G4</td>
+</tr>
+<tr>
+<td>Windows Server Datacenter 1803</td>
+<td>2HXDN-KRXHB-GPYC7-YCKFJ-7FVDG</td>
+</tr>
+<tr>
+<td>Windows Server Datacenter 1709</td>
+<td>6Y6KB-N82V8-D8CQV-23MJW-BWTG6</td>
+</tr>
+<tr>
+<td>Windows Server 2012 特定国家/地区版 2012</td>
+<td>4K36P-JN4VD-GDC6V-KDT89-DYFKP</td>
+</tr>
+<tr>
+<td>Windows Server 2012 单语言版 2012</td>
+<td>2WN2H-YGCQR-KFX6K-CD6TF-84YXQ</td>
+</tr>
+<tr>
+<td>Windows Server 2012 Standard 2012</td>
+<td>XC9B7-NBPP2-83J2H-RHMBY-92BT4</td>
+</tr>
+<tr>
+<td>Windows Server 2012 R2 Standard 2012R2</td>
+<td>D2N9P-3P6X9-2R39C-7RTCD-MDVJX</td>
+</tr>
+<tr>
+<td>Windows Server 2012 R2 Essentials 2012R2</td>
+<td>KNC87-3J2TX-XB4WP-VCPJV-M4FWM</td>
+</tr>
+<tr>
+<td>Windows Server 2012 R2 Datacenter 2012R2</td>
+<td>W3GGN-FT8W3-Y4M27-J84CP-Q3VJ9</td>
+</tr>
+<tr>
+<td>Windows Server 2012 N 2012</td>
+<td>8N2M2-HWPGY-7PGT9-HGDD8-GVGGY</td>
+</tr>
+<tr>
+<td>Windows Server 2012 MultiPoint 高级版 2012</td>
+<td>XNH6W-2V9GX-RGJ4K-Y8X6F-QGJ2G</td>
+</tr>
+<tr>
+<td>Windows Server 2012 MultiPoint 标准版 2012</td>
+<td>HM7DN-YVMH3-46JC3-XYTG7-CYQJJ</td>
+</tr>
+<tr>
+<td>Windows Server 2012 Essentials 2012</td>
+<td>HTDQM-NBMMG-KGYDT-2DTKT-J2MPV</td>
+</tr>
+<tr>
+<td>Windows Server 2012 Datacenter 2012</td>
+<td>48HP8-DN98B-MYWDG-T2DCC-8W83P</td>
+</tr>
+<tr>
+<td>Windows Server 2012 2012</td>
+<td>BN3D2-R7TKB-3YPBD-8DRP2-27GG4</td>
+</tr>
+<tr>
+<td>Windows Server 2008 企业版</td>
+<td>YQGMW-MPWTJ-34KDK-48M3W-X4Q6V</td>
+</tr>
+<tr>
+<td>Windows Server 2008 标准版</td>
+<td>TM24T-X9RMF-VWXK6-X8JC9-BFGM2</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 企业版 2008</td>
+<td>489J6-VHDMP-X63PK-3K798-CPX3Y</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 标准版 2008</td>
+<td>YC6KT-GKW9T-YTKYR-T4X34-R7VHC</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 Web 版 2008</td>
+<td>6TPJF-RBVHG-WBW2R-86QPH-6RTM4</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 HPC 版 2008</td>
+<td>TT8MH-CG224-D3D7Q-498W2-9QCTX</td>
+</tr>
+<tr>
+<td>Windows Server 2008 R2 Datacenter 2008</td>
+<td>74YFP-3QFB3-KQT8W-PMXWJ-7M648</td>
+</tr>
+<tr>
+<td>Windows Server 2008 HPC</td>
+<td>RCTX3-KWVHP-BR6TB-RB6DM-6X7HP</td>
+</tr>
+<tr>
+<td>Windows IoT 企业版 LTSC 2024/2021</td>
+<td>KBN8V-HFGQ4-MGXVD-347P6-PDQGT</td>
+</tr>
+<tr>
+<td>Windows 8.1 专业版 N</td>
+<td>HMCNV-VVBFX-7HMBH-CTY9B-B4FXY</td>
+</tr>
+<tr>
+<td>Windows 8.1 专业版</td>
+<td>GCRJD-8NW9H-F2CDX-CCM8D-9D6T9</td>
+</tr>
+<tr>
+<td>Windows 8.1 企业版 N</td>
+<td>TT4HM-HN7YT-62K67-RGRQJ-JFFXW</td>
+</tr>
+<tr>
+<td>Windows 8.1 企业版</td>
+<td>MHF9N-XY6XB-WVXMC-BTDCT-MKKG7</td>
+</tr>
+<tr>
+<td>Windows 8 专业版 N</td>
+<td>XCVCF-2NXM9-723PB-MHCB7-2RYQQ</td>
+</tr>
+<tr>
+<td>Windows 8 专业版</td>
+<td>NG4HW-VH26C-733KW-K6F98-J8CK4</td>
+</tr>
+<tr>
+<td>Windows 8 企业版 N</td>
+<td>JMNMF-RHW7P-DMY6X-RF3DR-X2BQT</td>
+</tr>
+<tr>
+<td>Windows 8 企业版</td>
+<td>32JNW-9KQ84-P47T8-D8GGY-CWCK7</td>
+</tr>
+<tr>
+<td>Windows 7 专业版 N</td>
+<td>MRPKT-YTG23-K7D7T-X2JMM-QY7MG</td>
+</tr>
+<tr>
+<td>Windows 7 专业版 E</td>
+<td>W82YF-2Q76Y-63HXB-FGJG9-GF7QX</td>
+</tr>
+<tr>
+<td>Windows 7 专业版</td>
+<td>FJ82H-XT6CR-J8D7P-XQJJ2-GPDD4</td>
+</tr>
+<tr>
+<td>Windows 7 企业版 N</td>
+<td>YDRBP-3D83W-TY26F-D46B2-XCKRJ</td>
+</tr>
+<tr>
+<td>Windows 7 企业版 E</td>
+<td>C29WB-22CC8-VJ326-GHFJW-H9DH4</td>
+</tr>
+<tr>
+<td>Windows 7 企业版</td>
+<td>33PXH-7Y6KF-2VJC9-XBBR8-HVTHH</td>
+</tr>
+<tr>
+<td>Windows 11 企业版 N LTSC 2024/Windows 10 企业版 N LTSC 2021/2019</td>
+<td>92NFX-8DJQP-P6BBQ-THF9C-7CG2H</td>
+</tr>
+<tr>
+<td>Windows 11 企业版 LTSC 2024/Windows 10 企业版 LTSC 2021/2019</td>
+<td>M7XTQ-FN8P6-TTKYV-9D4CC-J462D</td>
+</tr>
+<tr>
+<td>Windows 10/11 专业教育版 N</td>
+<td>YVWGF-BXNMC-HTQYQ-CPQ99-66QFC</td>
+</tr>
+<tr>
+<td>Windows 10/11 专业教育版</td>
+<td>6TP4R-GNPTD-KYYHQ-7B7DP-J447Y</td>
+</tr>
+<tr>
+<td>Windows 10/11 专业工作站版 N</td>
+<td>9FNHH-K3HBT-3W4TD-6383H-6XYWF</td>
+</tr>
+<tr>
+<td>Windows 10/11 专业工作站版</td>
+<td>NRG8B-VKK3Q-CXVCJ-9G2XF-6Q84J</td>
+</tr>
+<tr>
+<td>Windows 10/11 专业版 N</td>
+<td>MH37W-N47XK-V7XM9-C7227-GCQG9</td>
+</tr>
+<tr>
+<td>Windows 10/11 专业版</td>
+<td>W269N-WFGWX-YVC9B-4J6C9-T83GX</td>
+</tr>
+<tr>
+<td>Windows 10/11 企业版 N</td>
+<td>DPH2V-TTNVB-4X9Q3-TJR4H-KHJW4</td>
+</tr>
+<tr>
+<td>Windows 10/11 企业版 G N</td>
+<td>44RPN-FTY23-9VTTB-MP9BX-T84FV</td>
+</tr>
+<tr>
+<td>Windows 10/11 企业版 G</td>
+<td>YYVX9-NTFWV-6MDM3-9PT4T-4M68B</td>
+</tr>
+<tr>
+<td>Windows 10/11 企业版</td>
+<td>NPPR9-FWDCX-D2C8J-H872K-2YT43</td>
+</tr>
+<tr>
+<td>Windows 10/11 教育版 N</td>
+<td>2WH4N-8QGBV-H22JP-CT43Q-MDWWJ</td>
+</tr>
+<tr>
+<td>Windows 10/11 教育版</td>
+<td>NW6C2-QMPVW-D7KKK-3GKT6-VCFB2</td>
+</tr>
+<tr>
+<td>Windows 10 企业版 N LTSB 2016</td>
+<td>QFFDN-GRT3P-VKWWX-X7T3R-8B639</td>
+</tr>
+<tr>
+<td>Windows 10 企业版 N LTSB 2015</td>
+<td>2F77B-TNFGY-69QQF-B8YKP-D69TJ</td>
+</tr>
+<tr>
+<td>Windows 10 企业版 LTSB 2016</td>
+<td>DCPHK-NFMTC-H88MJ-PFHPY-QJ4BJ</td>
+</tr>
+<tr>
+<td>Windows 10 企业版 LTSB 2015</td>
+<td>WNMTR-4C88C-JK8YV-HQ7T2-76DF9</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>2.3windows<a target="_blank" rel="noopener" href="https://flowus.cn/gfgs/share/67603c4d-b6e2-4d1c-b3e6-84b9f5ed33f6?code=5E0TDW">参考系统驱动</a></p>
+</div></div><div class="nofancybox" id="vcomment"></div><script src="https://unpkg.com/valine/dist/Valine.min.js"></script><script>var notify = 'false' == 'true' ? true : false;
+var verify = 'false' == 'true' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'6YJscbvqXJK7VrKYNhElZKr7-MdYXbMMI',
+  appKey:'zLLLAr1WaeicJQyhF896Mmcu',
+  serverURLs:'',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})
+</script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/img/avatar.png"/></a><p>To be a better man.</p><a class="info-icon" href="https://twitter.com/" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="bjhwjy@126.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0/">教程学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/">生活记事</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E5%A5%BD%E6%96%87/">经典好文</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/RustDesk/" style="font-size: 15px;">RustDesk</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/%E7%BB%8F%E5%85%B8%E5%A5%BD%E6%96%87/" style="font-size: 15px;">经典好文</a> <a href="/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 15px;">邮件</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/posts/89b64fc8.html">RustDesk 开源远程桌面软件系统，自建服务器部署 (审计)、发布和使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/72977dc0.html">HumanSystemOptimization-main</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/ab519416.html">比免费更好</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/f589171e.html">使用 Railway 和 Supabase 零成本搭建 n8n 自动化平台</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/97e9ea5a.html">国内开源镜像站点汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/8.html">效率工作：高效开会</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/c9ff3035.html">当一位清华本硕博放弃 “北京中产”，去往非洲</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/1f87a3cf.html">我们这一代人的困惑</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/8cccddd6.html">极简生活</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/89700c7d.html">讲演：如何通过记录生活感想，获得自由？</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2025 <a href="/." rel="nofollow">捌月.</a> Powered by<a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Hexo.</a><a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Theme</a> by<a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Jam.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><link rel="stylesheet" type="text/css" href="/css/search.css?v=1.0.0"><script type="text/javascript" src="/js/search.js?v=1.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+  search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="/css/external.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

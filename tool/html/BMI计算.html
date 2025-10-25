@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI & BMR计算器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-shadow {
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            }
+            .input-focus {
+                @apply focus:ring-2 focus:ring-primary/50 focus:border-primary;
+            }
+            .animate-float {
+                animation: float 3s ease-in-out infinite;
+            }
+            .animate-pulse-slow {
+                animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen font-inter text-dark flex justify-center items-center p-4">
+    <!-- 整体容器，用于缩放 -->
+    <div class="scale-70 transform origin-top">
+        <div class="container mx-auto px-4 py-8 max-w-6xl">
+            <!-- 页面标题 -->
+            <header class="text-center mb-12">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4">
+                    BMI & BMR 计算器
+                </h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    了解你的身体质量指数(BMI)和基础代谢率(BMR)，为健康生活提供科学依据
+                </p>
+            </header>
+
+            <main class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- 计算器卡片 -->
+                <div class="bg-white rounded-2xl p-8 card-shadow transition-all duration-300 hover:shadow-xl">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-calculator text-primary mr-3"></i>
+                        健康计算器
+                    </h2>
+
+                    <form id="health-form" class="space-y-6">
+                        <!-- 性别选择 -->
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="gender-option relative cursor-pointer p-4 border-2 rounded-xl transition-all duration-300 border-gray-200 hover:border-primary/50">
+                                <input type="radio" name="gender" value="male" class="sr-only peer" checked>
+                                <div class="flex items-center relative z-10">
+                                    <i class="fa-solid fa-mars text-xl mr-3 text-primary"></i>
+                                    <span>男性</span>
+                                </div>
+                                <div class="absolute inset-0 bg-primary/5 opacity-0 peer-checked:opacity-100 rounded-xl transition-opacity duration-300"></div>
+                                <div class="absolute right-3 top-3 opacity-0 peer-checked:opacity-100 transition-opacity duration-300">
+                                    <i class="fa-solid fa-check-circle text-primary"></i>
+                                </div>
+                            </label>
+                            
+                            <label class="gender-option relative cursor-pointer p-4 border-2 rounded-xl transition-all duration-300 border-gray-200 hover:border-primary/50">
+                                <input type="radio" name="gender" value="female" class="sr-only peer">
+                                <div class="flex items-center relative z-10">
+                                    <i class="fa-solid fa-venus text-xl mr-3 text-accent"></i>
+                                    <span>女性</span>
+                                </div>
+                                <div class="absolute inset-0 bg-accent/5 opacity-0 peer-checked:opacity-100 rounded-xl transition-opacity duration-300"></div>
+                                <div class="absolute right-3 top-3 opacity-0 peer-checked:opacity-100 transition-opacity duration-300">
+                                    <i class="fa-solid fa-check-circle text-accent"></i>
+                                </div>
+                            </label>
+                        </div>
+
+                        <!-- 身高输入 -->
+                        <div class="space-y-2">
+                            <label for="height" class="block text-sm font-medium text-gray-700">身高 (厘米)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                    <i class="fa-solid fa-ruler-vertical"></i>
+                                </span>
+                                <input type="number" id="height" name="height" min="50" max="250" 
+                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm input-focus transition-all duration-300"
+                                    placeholder="请输入你的身高" value="170" required>
+                            </div>
+                        </div>
+
+                        <!-- 体重输入 -->
+                        <div class="space-y-2">
+                            <label for="weight" class="block text-sm font-medium text-gray-700">体重 (公斤)</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                    <i class="fa-solid fa-balance-scale"></i>
+                                </span>
+                                <input type="number" id="weight" name="weight" min="20" max="300" 
+                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm input-focus transition-all duration-300"
+                                    placeholder="请输入你的体重" value="70" required>
+                            </div>
+                        </div>
+
+                        <!-- 年龄输入 -->
+                        <div class="space-y-2">
+                            <label for="age" class="block text-sm font-medium text-gray-700">年龄</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                    <i class="fa-solid fa-calendar"></i>
+                                </span>
+                                <input type="number" id="age" name="age" min="10" max="120" 
+                                    class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm input-focus transition-all duration-300"
+                                    placeholder="请输入你的年龄" value="30" required>
+                            </div>
+                        </div>
+
+                        <!-- 活动水平选择 -->
+                        <div class="space-y-2">
+                            <label for="activity" class="block text-sm font-medium text-gray-700">活动水平</label>
+                            <div class="relative">
+                                <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-500">
+                                    <i class="fa-solid fa-bicycle"></i>
+                                </span>
+                                <select id="activity" name="activity" 
+                                    class="w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg shadow-sm input-focus transition-all duration-300 appearance-none bg-white">
+                                    <option value="1.2">久坐不动（很少运动）</option>
+                                    <option value="1.375">轻度运动（每周1-3天）</option>
+                                    <option value="1.55">中度运动（每周3-5天）</option>
+                                    <option value="1.725">重度运动（每周6-7天）</option>
+                                    <option value="1.9">非常重度运动（每天高强度训练）</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 计算按钮 -->
+                        <button type="submit" id="calculate-btn" 
+                            class="w-full py-4 bg-gradient-to-r from-primary to-accent text-white rounded-xl font-medium text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+                            <i class="fa-solid fa-calculator mr-2"></i>
+                            计算健康指标
+                        </button>
+                    </form>
+                </div>
+
+                <!-- 结果展示卡片 -->
+                <div class="bg-white rounded-2xl p-8 card-shadow transition-all duration-300 hover:shadow-xl">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center">
+                        <i class="fa-solid fa-chart-line text-secondary mr-3"></i>
+                        健康指标结果
+                    </h2>
+
+                    <div id="result-container" class="space-y-8 opacity-0 transition-opacity duration-500">
+                        <!-- BMI结果 -->
+                        <div class="bmi-result bg-blue-50 rounded-xl p-6 border border-blue-100">
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <i class="fa-solid fa-balance-scale text-primary mr-2"></i>
+                                身体质量指数 (BMI)
+                            </h3>
+                            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                                <div class="bmi-value text-4xl font-bold text-primary mb-2 md:mb-0">
+                                    <span id="bmi-value">24.2</span>
+                                    <span class="text-lg font-normal ml-2">kg/m²</span>
+                                </div>
+                                <div class="bmi-category flex-1">
+                                    <span class="text-sm text-gray-600">健康状况:</span>
+                                    <span id="bmi-category" class="block text-xl font-medium text-orange-500">超重</span>
+                                </div>
+                            </div>
+                            <div class="bmi-range mt-4">
+                                <div class="h-3 bg-gray-200 rounded-full overflow-hidden">
+                                    <div id="bmi-indicator" class="h-full bg-gradient-to-r from-blue-500 via-green-500 via-yellow-500 to-red-500" style="width: 60%"></div>
+                                    <div class="h-full bg-gray-400/30" style="width: 40%; margin-left: 60%"></div>
+                                </div>
+                                <div class="flex justify-between mt-1 text-xs text-gray-500">
+                                    <span>偏瘦</span>
+                                    <span>正常</span>
+                                    <span>超重</span>
+                                    <span>肥胖</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BMR结果 -->
+                        <div class="bmr-result bg-green-50 rounded-xl p-6 border border-green-100">
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <i class="fa-solid fa-fire text-secondary mr-2"></i>
+                                基础代谢率 (BMR)
+                            </h3>
+                            <div class="flex flex-col md:flex-row md:items-center gap-4">
+                                <div class="bmr-value text-4xl font-bold text-secondary mb-2 md:mb-0">
+                                    <span id="bmr-value">1,680</span>
+                                    <span class="text-lg font-normal ml-2">千卡/天</span>
+                                </div>
+                                <div class="bmr-explanation flex-1">
+                                    <p class="text-sm text-gray-600">
+                                        你每天静止状态下消耗的热量
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 每日卡路里需求 -->
+                        <div class="tdee-result bg-purple-50 rounded-xl p-6 border border-purple-100">
+                            <h3 class="text-xl font-semibold mb-4 flex items-center">
+                                <i class="fa-solid fa-utensils text-accent mr-2"></i>
+                                每日卡路里需求
+                            </h3>
+                            <div class="tdee-value text-4xl font-bold text-accent mb-3">
+                                <span id="tdee-value">2,304</span>
+                                <span class="text-lg font-normal ml-2">千卡/天</span>
+                            </div>
+                            <p class="text-sm text-gray-600">
+                                根据你的活动水平，这是你每天需要摄入的卡路里量来维持当前体重
+                            </p>
+                        </div>
+
+                        <!-- 建议 -->
+                        <div class="recommendation bg-yellow-50 rounded-xl p-6 border border-yellow-100">
+                            <h3 class="text-xl font-semibold mb-3 flex items-center">
+                                <i class="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>
+                                健康建议
+                            </h3>
+                            <p id="recommendation-text" class="text-gray-700 leading-relaxed">
+                                根据你的BMI结果，你目前处于超重状态。建议增加有氧运动，如快走、游泳或骑自行车，并减少高热量食物的摄入。保持均衡饮食和规律运动，有助于你达到健康体重范围。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 初始状态 -->
+                    <div id="initial-message" class="text-center py-12">
+                        <div class="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center animate-float">
+                            <i class="fa-solid fa-heartbeat text-4xl text-primary/70"></i>
+                        </div>
+                        <h3 class="text-xl font-medium text-gray-700 mb-2">填写左侧表单计算健康指标</h3>
+                        <p class="text-gray-500 max-w-md mx-auto">
+                            BMI和BMR是评估身体健康状况的重要指标，帮助你了解身体状况并制定合理的健康计划
+                        </p>
+                    </div>
+
+                    <!-- 加载状态 -->
+                    <div id="loading-indicator" class="text-center py-12 hidden">
+                        <div class="w-16 h-16 mx-auto mb-6 border-4 border-primary/30 border-t-primary rounded-full animate-spin"></div>
+                        <h3 class="text-xl font-medium text-gray-700">正在计算...</h3>
+                    </div>
+                </div>
+            </main>
+
+            <!-- BMI参考信息 -->
+            <section class="mt-12 bg-white rounded-2xl p-8 card-shadow">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fa-solid fa-info-circle text-primary mr-3"></i>
+                    BMI参考范围
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">BMI范围</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">健康状况</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">说明</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-blue-600">低于18.5</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-blue-600">偏瘦</td>
+                                <td class="px-6 py-4 text-sm text-gray-700">体重低于正常范围，可能需要增加营养摄入</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-green-600">18.5 - 23.9</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-green-600">正常</td>
+                                <td class="px-6 py-4 text-sm text-gray-700">体重适中，保持当前饮食和运动习惯</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-orange-600">24 - 27.9</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-orange-600">超重</td>
+                                <td class="px-6 py-4 text-sm text-gray-700">体重稍高，建议增加运动和控制饮食</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors duration-200">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-red-600">28及以上</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-red-600">肥胖</td>
+                                <td class="px-6 py-4 text-sm text-gray-700">体重超标，建议咨询医生制定健康计划</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 页脚 -->
+            <footer class="mt-12 text-center text-gray-500 text-sm">
+                <p>© 剑锋的 BMI & BMR 计算器 | 本工具仅供参考，不能替代专业医疗建议</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('health-form');
+            const resultContainer = document.getElementById('result-container');
+            const initialMessage = document.getElementById('initial-message');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const calculateBtn = document.getElementById('calculate-btn');
+            
+            // 初始隐藏结果区域
+            resultContainer.classList.add('opacity-0');
+            
+            // 确保表单提交按钮可以点击
+            calculateBtn.addEventListener('click', function(e) {
+                // 阻止事件冒泡到父元素
+                e.stopPropagation();
+            });
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // 显示加载状态
+                initialMessage.classList.add('hidden');
+                resultContainer.classList.add('hidden');
+                loadingIndicator.classList.remove('hidden');
+                
+                // 模拟计算延迟，增强用户体验
+                setTimeout(() => {
+                    calculateResults();
+                    
+                    // 隐藏加载状态，显示结果
+                    loadingIndicator.classList.add('hidden');
+                    resultContainer.classList.remove('hidden');
+                    
+                    // 添加淡入动画
+                    setTimeout(() => {
+                        resultContainer.classList.remove('opacity-0');
+                    }, 10);
+                }, 800);
+            });
+            
+            function calculateResults() {
+                // 获取表单值
+                const gender = document.querySelector('input[name="gender"]:checked').value;
+                const height = parseFloat(document.getElementById('height').value);
+                const weight = parseFloat(document.getElementById('weight').value);
+                const age = parseFloat(document.getElementById('age').value);
+                const activity = parseFloat(document.getElementById('activity').value);
+                
+                // 计算BMI
+                const bmi = weight / ((height / 100) * (height / 100));
+                const bmiRounded = Math.round(bmi * 10) / 10;
+                
+                // 确定BMI类别和颜色
+                let bmiCategory, bmiColor, bmiPosition;
+                if (bmi < 18.5) {
+                    bmiCategory = "偏瘦";
+                    bmiColor = "text-blue-500";
+                    bmiPosition = 20; // 在进度条上的位置
+                } else if (bmi < 24) {
+                    bmiCategory = "正常";
+                    bmiColor = "text-green-500";
+                    bmiPosition = 45;
+                } else if (bmi < 28) {
+                    bmiCategory = "超重";
+                    bmiColor = "text-orange-500";
+                    bmiPosition = 60;
+                } else {
+                    bmiCategory = "肥胖";
+                    bmiColor = "text-red-500";
+                    bmiPosition = 80;
+                }
+                
+                // 计算BMR (Harris-Benedict方程)
+                let bmr;
+                if (gender === 'male') {
+                    bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+                } else {
+                    bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+                }
+                const bmrRounded = Math.round(bmr);
+                
+                // 计算TDEE (总每日能量消耗)
+                const tdee = Math.round(bmr * activity);
+                
+                // 生成建议
+                let recommendation;
+                if (bmi < 18.5) {
+                    recommendation = "根据你的BMI结果，你目前体重偏轻。建议增加高热量、高蛋白质的食物摄入，如肉类、鱼类、蛋类和坚果，同时结合适当的力量训练来增加肌肉量。";
+                } else if (bmi < 24) {
+                    recommendation = "根据你的BMI结果，你目前体重正常。继续保持均衡的饮食和规律的运动，这对你的健康非常有益。建议每周进行至少150分钟的中等强度有氧运动和两次力量训练。";
+                } else if (bmi < 28) {
+                    recommendation = "根据你的BMI结果，你目前处于超重状态。建议增加有氧运动，如快走、游泳或骑自行车，并减少高热量食物的摄入。保持均衡饮食和规律运动，有助于你达到健康体重范围。";
+                } else {
+                    recommendation = "根据你的BMI结果，你目前处于肥胖状态。建议咨询医生或营养师，制定个性化的饮食和运动计划。逐渐增加身体活动量，并控制饮食中的热量摄入，这对你的健康非常重要。";
+                }
+                
+                // 更新UI
+                document.getElementById('bmi-value').textContent = bmiRounded;
+                document.getElementById('bmi-category').textContent = bmiCategory;
+                document.getElementById('bmi-category').className = `block text-xl font-medium ${bmiColor}`;
+                document.getElementById('bmi-indicator').style.width = `${bmiPosition}%`;
+                
+                document.getElementById('bmr-value').textContent = bmrRounded.toLocaleString();
+                document.getElementById('tdee-value').textContent = tdee.toLocaleString();
+                document.getElementById('recommendation-text').textContent = recommendation;
+                
+                // 添加数值动画效果
+                animateValue(document.getElementById('bmi-value'), 0, bmiRounded, 800);
+                animateValue(document.getElementById('bmr-value'), 0, bmrRounded, 800);
+                animateValue(document.getElementById('tdee-value'), 0, tdee, 800);
+            }
+            
+            // 数值动画函数
+            function animateValue(element, start, end, duration) {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const value = Math.floor(progress * (end - start) + start);
+                    
+                    if (element.id === 'bmi-value') {
+                        element.textContent = (Math.round(value * 10) / 10).toFixed(1);
+                    } else {
+                        element.textContent = value.toLocaleString();
+                    }
+                    
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            }
+            
+            // 为所有输入添加焦点效果
+            const inputs = document.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('scale-[1.01]');
+                    input.parentElement.classList.add('transition-transform');
+                    input.parentElement.classList.add('duration-300');
+                });
+                
+                input.addEventListener('blur', () => {
+                    input.parentElement.classList.remove('scale-[1.01]');
+                });
+            });
+            
+            // 为按钮添加点击波纹效果
+            calculateBtn.addEventListener('click', function(e) {
+                const x = e.clientX - e.target.getBoundingClientRect().left;
+                const y = e.clientY - e.target.getBoundingClientRect().top;
+                
+                const ripple = document.createElement('span');
+                ripple.style.width = ripple.style.height = Math.max(e.target.offsetWidth, e.target.offsetHeight) + 'px';
+                ripple.style.left = x - (ripple.offsetWidth / 2) + 'px';
+                ripple.style.top = y - (ripple.offsetHeight / 2) + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+            
+            // 添加波纹效果的CSS
+            const style = document.createElement('style');
+            style.textContent = `
+                .ripple {
+                    position: absolute;
+                    border-radius: 50%;
+                    background-color: rgba(255, 255, 255, 0.3);
+                    transform: scale(0);
+                    animation: ripple 0.6s linear;
+                    pointer-events: none;
+                }
+                
+                @keyframes ripple {
+                    to {
+                        transform: scale(4);
+                        opacity: 0;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
