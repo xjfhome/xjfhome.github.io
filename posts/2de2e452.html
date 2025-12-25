@@ -1,0 +1,1029 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>GitHub开源合集 | 捌月</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><div class="darkmode-toggle">🌓</div><script>var prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+var toggle = document.querySelector('.darkmode-toggle');
+var html = document.querySelector('html');
+
+html.dataset.dark = localStorage.dark || prefersDarkMode.matches;
+
+toggle.addEventListener('click', () => {
+localStorage.dark = !(html.dataset.dark == 'true');
+html.dataset.dark = localStorage.dark;
+});</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">GitHub开源合集</h1><a id="logo" href="/.">捌月</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/"><i class="fa fa-book"> 记事</i></a><a href="/system/"><i class="fa fa-television"> 系统</i></a><a target="_blank" rel="noopener" href="https://j.ynly.eu.org/"><i class="fa fa-graduation-cap"> 教育</i></a><a target="_blank" rel="noopener" href="https://l.ynly.eu.org/"><i class="fa fa-fighter-jet"> 旅游</i></a><a href="/tool/"><i class="fa fa-gavel"> 工具</i></a><a href="/web/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">GitHub开源合集</h1><div class="post-meta">2023-03-20<span> | </span><span class="category"><a href="/categories/%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0/">教程学习</a></span><script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> 阅读</span></span><span class="post-time"><span class="post-meta-item-text"> | </span><span class="post-meta-item-icon"><i class="fa fa-keyboard-o"></i><span class="post-count"> 11.5k</span><span class="post-meta-item-text"> 字</span></span></span><span class="post-time"> | <span class="post-meta-item-icon"><i class="fa fa-clock-o"></i><span class="post-count"> 52</span><span class="post-meta-item-text"> 分钟</span></span></span></div><a class="disqus-comment-count" href="/posts/2de2e452.html#vcomment"><span class="valine-comment-count" data-xid="/posts/2de2e452.html"></span><span> 条评论</span></a><div class="clear"><div class="toc-article" id="toc"><div class="toc-title">文章目录</div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GitHub%E5%BC%80%E6%BA%90%E5%90%88%E9%9B%86"><span class="toc-number">1.</span> <span class="toc-text">GitHub开源合集</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Table-of-Contents"><span class="toc-number">1.1.</span> <span class="toc-text">Table of Contents</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#miscellaneous"><span class="toc-number">1.2.</span> <span class="toc-text">miscellaneous</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C"><span class="toc-number">1.3.</span> <span class="toc-text">C\</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript"><span class="toc-number">1.4.</span> <span class="toc-text">JavaScript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Python"><span class="toc-number">1.5.</span> <span class="toc-text">Python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TypeScript"><span class="toc-number">1.6.</span> <span class="toc-text">TypeScript</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP"><span class="toc-number">1.7.</span> <span class="toc-text">PHP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Go"><span class="toc-number">1.8.</span> <span class="toc-text">Go</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS"><span class="toc-number">1.9.</span> <span class="toc-text">CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rust"><span class="toc-number">1.10.</span> <span class="toc-text">Rust</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue"><span class="toc-number">1.11.</span> <span class="toc-text">Vue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kotlin"><span class="toc-number">1.12.</span> <span class="toc-text">Kotlin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PowerShell"><span class="toc-number">1.13.</span> <span class="toc-text">PowerShell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Jupyter-Notebook"><span class="toc-number">1.14.</span> <span class="toc-text">Jupyter Notebook</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Shell"><span class="toc-number">1.15.</span> <span class="toc-text">Shell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-1"><span class="toc-number">1.16.</span> <span class="toc-text">C++</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swift"><span class="toc-number">1.17.</span> <span class="toc-text">Swift</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML"><span class="toc-number">1.18.</span> <span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dockerfile"><span class="toc-number">1.19.</span> <span class="toc-text">Dockerfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ruby"><span class="toc-number">1.20.</span> <span class="toc-text">Ruby</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Clojure"><span class="toc-number">1.21.</span> <span class="toc-text">Clojure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java"><span class="toc-number">1.22.</span> <span class="toc-text">Java</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dart"><span class="toc-number">1.23.</span> <span class="toc-text">Dart</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Nunjucks"><span class="toc-number">1.24.</span> <span class="toc-text">Nunjucks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-2"><span class="toc-number">1.25.</span> <span class="toc-text">C</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SCSS"><span class="toc-number">1.26.</span> <span class="toc-text">SCSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AutoHotkey"><span class="toc-number">1.27.</span> <span class="toc-text">AutoHotkey</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rascal"><span class="toc-number">1.28.</span> <span class="toc-text">Rascal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Svelte"><span class="toc-number">1.29.</span> <span class="toc-text">Svelte</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DIGITAL-Command-Language"><span class="toc-number">1.30.</span> <span class="toc-text">DIGITAL Command Language</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Metal"><span class="toc-number">1.31.</span> <span class="toc-text">Metal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Less"><span class="toc-number">1.32.</span> <span class="toc-text">Less</span></a></li></ol></li></ol></div></div><div class="post-content"><h1 id="GitHub开源合集"><a href="#GitHub开源合集" class="headerlink" title="GitHub开源合集"></a>GitHub开源合集</h1><h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><hr>
+<ul>
+<li><a href="#github开源合集">GitHub开源合集</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#miscellaneous">miscellaneous</a></li>
+<li><a href="#c">C#</a></li>
+<li><a href="#javascript">JavaScript</a></li>
+<li><a href="#python">Python</a></li>
+<li><a href="#typescript">TypeScript</a></li>
+<li><a href="#php">PHP</a></li>
+<li><a href="#go">Go</a></li>
+<li><a href="#css">CSS</a></li>
+<li><a href="#rust">Rust</a></li>
+<li><a href="#vue">Vue</a></li>
+<li><a href="#kotlin">Kotlin</a></li>
+<li><a href="#powershell">PowerShell</a></li>
+<li><a href="#jupyter-notebook">Jupyter Notebook</a></li>
+<li><a href="#shell">Shell</a></li>
+<li><a href="#c-1">C++</a></li>
+<li><a href="#swift">Swift</a></li>
+<li><a href="#html">HTML</a></li>
+<li><a href="#dockerfile">Dockerfile</a></li>
+<li><a href="#ruby">Ruby</a></li>
+<li><a href="#clojure">Clojure</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#dart">Dart</a></li>
+<li><a href="#nunjucks">Nunjucks</a></li>
+<li><a href="#c-2">C</a></li>
+<li><a href="#scss">SCSS</a></li>
+<li><a href="#autohotkey">AutoHotkey</a></li>
+<li><a href="#rascal">Rascal</a></li>
+<li><a href="#svelte">Svelte</a></li>
+<li><a href="#digital-command-language">DIGITAL Command Language</a></li>
+<li><a href="#metal">Metal</a></li>
+<li><a href="#less">Less</a></li>
+</ul>
+<hr>
+<h2 id="miscellaneous"><a href="#miscellaneous" class="headerlink" title="miscellaneous"></a>miscellaneous</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jqueryscript/ChatGPT">jqueryscript/ChatGPT</a> - Curated list of awesome libraries, extensions, tools, apps for ChatGPT.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/linyuxuanlin/Wiki_MkDocs">linyuxuanlin/Wiki_MkDocs</a> - 基于 MkDocs &amp; Material theme 的个人知识库</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Correia-jpv/fucking-awesome-stock-resources">Correia-jpv/fucking-awesome-stock-resources</a> - 🌇 A collection of links for free stock photography, video and Illustration websites. With repository stars⭐ and forks🍴</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/pkwenda/notion-site-doc">pkwenda/notion-site-doc</a> - This is a document generated entirely based on notion-site</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/hsnadrs/forked--awesome-actions">hsnadrs/forked—awesome-actions</a> -</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/WashingMachine94/Youtube-Downloader">WashingMachine94/Youtube-Downloader</a> - A free software to download Youtube videos or audio files. Ensures highest video and audio quality.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/matchai/awesome-pinned-gists">matchai/awesome-pinned-gists</a> - 📌✨ A collection of awesome dynamic pinned gists for GitHub</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MicroCBer/BetterCEF">MicroCBer/BetterCEF</a> - 通用 CEF 注入器</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/shanghaobo/NeteaseCloudMusicDayActions">shanghaobo/NeteaseCloudMusicDayActions</a> - 网易云音乐日推自动创建新歌单，使用github的actions，定时自动同步，无需服务器。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/athivvat/awesome-devtools">athivvat/awesome-devtools</a> - 😎 Awesome lists about developer tools.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/neuralshare/neuralshare">neuralshare/neuralshare</a> - NeuralShare aims to make any AI model accessible for free from any device, regardless of its hardware resources</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Tptr-lateworker/RealESR_Tools">Tptr-lateworker/RealESR_Tools</a> - AI图片放大工具, 支持自动遍历文件夹, 支持批量处理.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dxtop/dxtop.github.io">dxtop/dxtop.github.io</a> - VIPTV - 对标聚合海量电视， 直播，影视，短片，音乐，小说，壁纸等资源</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xiaye13579/BBLL">xiaye13579/BBLL</a> - 一个第三方哔哩哔哩TV和Pad客户端，A third-party bilibili client for TV &amp; Pad。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jahnli/awesome-flutter-plugins">jahnli/awesome-flutter-plugins</a> - 🔥🔥 收集好用的Flutter插件以便更效率的开发</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/HXHGTS/DeactivationIDM">HXHGTS/DeactivationIDM</a> - IDM激活/反激活规则</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/SocialSisterYi/bilibili-API-collect">SocialSisterYi/bilibili-API-collect</a> - 哔哩哔哩-API收集整理【不断更新中….】</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wsdjeg/hello-vim">wsdjeg/hello-vim</a> - Vim 中文资源整理</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/phith0n/Mind-Map">phith0n/Mind-Map</a> - 各种安全相关思维导图整理收集</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Cyril0563/lanjing_live">Cyril0563/lanjing_live</a> - 🐋蓝鲸直播源-长期维护的电视直播源接口、TVBox、Pluto Player、猫影视TV、IPTV、BIUBIU TV、IPTV源、直播源、源享家、蓝鲸直播源、等影视及m3u8播放器通用接口都可观看</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Bssn520/VideosShareByAliyun">Bssn520/VideosShareByAliyun</a> - 🤪动漫、电视剧、电影、纪录片分享by阿里云盘🫡</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/simevidas/web-dev-feeds">simevidas/web-dev-feeds</a> - A collection of over 1000 RSS feeds for web developers, updated monthly</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/eastlakeside/awesome-productivity-cn">eastlakeside/awesome-productivity-cn</a> - 绝妙的个人生产力（Awesome Productivity - Chinese version）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/akira-cn/moyu">akira-cn/moyu</a> - Github 摸鱼大全！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/XTsat/rapid-upload-userscript-doc">XTsat/rapid-upload-userscript-doc</a> - 秒传链接提取脚本 - 文档&amp;教程</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/pashangshangpo/AI-Create-Video">pashangshangpo/AI-Create-Video</a> - AI批量文本一键生成短视频工具，傻瓜式图文生成视频软件，智能配图、智能配音、视频字幕。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/whatis-geb/operation">whatis-geb/operation</a> - 和运营相关的内容</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MarkMindCkm/obsidian-markmind">MarkMindCkm/obsidian-markmind</a> - A mind map, outline and pdf annotate tool for obsidian,It support mobile and desktop</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/juancarlospaco/awesome-streaming-tools">juancarlospaco/awesome-streaming-tools</a> - Awesome Streaming Tools</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wekingchen/Rclone-Actions">wekingchen/Rclone-Actions</a> - 使用Actions每天自动调用Rclone同步云盘</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Wpenga/webdav-teambition">Wpenga/webdav-teambition</a> - teambition网盘的webdav协议开源实现</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/erbanku/awesome">erbanku/awesome</a> - 🌟 My Awesome Repositories List. Automatically updates by GitHub Actions on UTC 00:00 &amp; 16:00</p>
+</li>
+</ul>
+<h2 id="C"><a href="#C" class="headerlink" title="C\"></a>C\</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/gaojinjin/ChatOpenAI">gaojinjin/ChatOpenAI</a> - Unity 与ChatGPT  Open AI 的结合</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jenius-apps/ambie">jenius-apps/ambie</a> - An app that uses white noise, nature sounds, and focus features to boost your productivity.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/torum/BlogWrite">torum/BlogWrite</a> - FeedDesk (feed reader) and BlogDesk (blogging client).</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MeirinRuan/MyPSD2UI">MeirinRuan/MyPSD2UI</a> - 解析psd文件，生成ui配置</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Godwhite001/lanzouyunjiexi">Godwhite001/lanzouyunjiexi</a> - 解析蓝奏云外链-支持带密码解析直链、文件夹</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/HyPlayer/HyPlayer">HyPlayer/HyPlayer</a> - 仅供学习交流使用 | 第三方网易云音乐播放器 | A Netease Cloud Music Player</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LemonCodeTeam/Lemon-App">LemonCodeTeam/Lemon-App</a> - 一只在线QQ音乐播放器(PC端)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ichenpipi/unity-pipi-toolbox">ichenpipi/unity-pipi-toolbox</a> - 皮皮的 Unity 工具箱，提升日常工作效率，才能多摸鱼！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/TGSAN/CMWTAT_Digital_Edition">TGSAN/CMWTAT_Digital_Edition</a> - CloudMoe Windows 10/11 Activation Toolkit get digital license, the best open source Win 10/11 activator in GitHub. GitHub 上最棒的开源 Win10/Win11 数字权利（数字许可证）激活工具！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xpnas/inotify">xpnas/inotify</a> - 一个简易消息通知系统，支持企业微信、电报机器人、邮件推送、内置BARK推送、钉钉群机器人、飞书群机器人，类似Server酱，支持私有Docker部署</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/OdysseusYuan/LKY_OfficeTools">OdysseusYuan/LKY_OfficeTools</a> - 一键自动化 下载、安装、激活 Office 的利器。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/moonheart/Clasharp">moonheart/Clasharp</a> - A clash GUI written in C#</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Cnicehs/SharpBot">Cnicehs/SharpBot</a> - 一个基于百度网盘开放接口的转存机器人</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jim60105/YoutubeLiveChatToDiscord">jim60105/YoutubeLiveChatToDiscord</a> - 將Youtube聊天室串流至Discord Webhook (.NET 6 Worker Service in Docker)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/o7q/MediaDownloader">o7q/MediaDownloader</a> - A GUI based tool that uses yt-dlp and FFmpeg to quickly download video and audio from virtually any website.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/iccfish/ShimoExporter">iccfish/ShimoExporter</a> - 一键将个人石墨文档里的所有文档全部导出到本地</p>
+</li>
+</ul>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/bestony/ChatGPT-Feishu">bestony/ChatGPT-Feishu</a> - 给飞书准备的 ChatGPT 机器人</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/eidam/cf-workers-status-page">eidam/cf-workers-status-page</a> - Monitor your websites, showcase status including daily history, and get Slack/Telegram/Discord notification whenever your website status changes. Using Cloudflare Workers, CRON Triggers, and KV storage.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ticks-tan/NavWebSite">ticks-tan/NavWebSite</a> - 一个简单的导航网站，使用 Json 做数据源。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tabhub/rss-feeds">tabhub/rss-feeds</a> - RSS feeds created/collected by TabHub.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/buildspace/buildspace-projects">buildspace/buildspace-projects</a> - The home of our open-source projects.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/itorr/anime-grid">itorr/anime-grid</a> - 🤖「动画生涯个人喜好表生成器」</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ChuksJoshuaa/OpenAI-Project">ChuksJoshuaa/OpenAI-Project</a> - With an elegant user interface that resembles the ChatGPT app, communication with advanced GPT3 model API, and most importantly, the ability to ask the AI for help regarding JavaScript, React, or any other programming language, giving it code and translating it to another programming language, and much more</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Aicirou/goindex-theme-acrou">Aicirou/goindex-theme-acrou</a> - Google-Drive-Directory-Index | Combining the power of Cloudflare Workers and Google Drive API will allow you to index your Google Drive files on the browser.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/noobmaster432/khabrAI">noobmaster432/khabrAI</a> - An Artificial Intelligence React News Application that utilizes Alan AI for speech recognition, pulling data from News API and Material-UI for the user interface. The application enables users to control every aspect of the app using just their voice.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Samridhi-98/github-actions-visualizer">Samridhi-98/github-actions-visualizer</a> - A web application capable of monitoring and visualizing GitHub actions metrics across the organization by using GitHub API.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ganeshrvel/openmtp">ganeshrvel/openmtp</a> - OpenMTP  - Advanced Android File Transfer Application for macOS</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Vaayne/NotionAI">Vaayne/NotionAI</a> - Unofficial NotionAI API</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/hugoalh/trigger-pipedream-workflow-ghaction">hugoalh/trigger-pipedream-workflow-ghaction</a> - A GitHub Action to trigger Pipedream workflow via SDK or webhook.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Alamantus/FeatherWiki">Alamantus/FeatherWiki</a> - A lightweight quine for simple, self-contained wikis [MIRROR]</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lizhounet/wx-intimate-pro">lizhounet/wx-intimate-pro</a> - 贴心小助手客户端,微信机器人, 群管理、头像处理、智能机器人对话、好友互动、定时任务，情侣每日说等功能的配置</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ArsFy/tg_channel_to_flarum">ArsFy/tg_channel_to_flarum</a> - 把你的 TG Channel 訊息推送到 Flarum</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lgh06/web-page-monitor">lgh06/web-page-monitor</a> - Web Site Page Changes Monitor. 网站网页页面更新变更监控提醒。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/uduakabaci/Paisley">uduakabaci/Paisley</a> -</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Binaryify/NeteaseCloudMusicApi">Binaryify/NeteaseCloudMusicApi</a> - 网易云音乐 Node.js API service</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/gozaoo/BlurLyric">gozaoo/BlurLyric</a> - 高颜值，高性能的网易云音乐第三方音乐播放器</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/GitHub-ZC/wp_MusicApi">GitHub-ZC/wp_MusicApi</a> - QQ音乐、酷我音乐、咪咕音乐、酷狗音乐，支持各大排行榜，会员音乐、搜索，QQ音乐逆向，QQ登录，QQ扫码登陆等等的 一款Node.js的音乐接口</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LastStranger/unblock_music">LastStranger/unblock_music</a> - 网易云音乐unblock Mac版本,零配置, 开箱即用,随关随停</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mmdjiji/hexo-books">mmdjiji/hexo-books</a> - 为 Hexo 添加阅读页面，数据来自豆瓣读书</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ZLENGANG/fuckCSDN">ZLENGANG/fuckCSDN</a> - CSDN自动显示博客全文，去掉广告，重置布局，添加背景图片</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/DeltaFlyerW/DF_DanmakuExtension">DeltaFlyerW/DF_DanmakuExtension</a> - 在B站网页端视频及番剧中添加来自动画疯,NicoNico,Twitch,Youtube的弹幕及评论</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/satopian/poti-kaini-zh-TW">satopian/poti-kaini-zh-TW</a> - 繪圖留言板PHPscript POTI-board EVO 繁體中文版本 PHP7.2-PHP8.2 <a target="_blank" rel="noopener" href="https://paintbbs.sakura.ne.jp/poti/">https://paintbbs.sakura.ne.jp/poti/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/georapbox/rss-feed-reader">georapbox/rss-feed-reader</a> - A simple RSS Feed Reader based on web technologies (HTML, CSS, JavaScript)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/solo1d/MAC_OS_System">solo1d/MAC_OS_System</a> - MAC系统使用笔记</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/daodaolee/portal-widgets-extension">daodaolee/portal-widgets-extension</a> - 一个极简风格的谷歌扩展标签页</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Louiszhai/tool">Louiszhai/tool</a> - 开发效率提升：Mac生产力工具链推荐</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/EmptyDreams/hexo-swpp">EmptyDreams/hexo-swpp</a> - 为 Hexo 博客自动构建 ServiceWorker！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/oCoke/uptime-action">oCoke/uptime-action</a> - 使用 GitHub Action 检测网站 SSL 证书与可访问性。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/JimHans/live2d-kanban-desktop">JimHans/live2d-kanban-desktop</a> - 基于Electron制作的桌面看板娘，支持日程提醒、小窗模式、文字对话、网页搜索、本地moc模型加载与独立设置界面等  | An AI Based live2d Kanban for Desktop Users Using Electron</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Apocalypsor/Formatted-RSS-to-Telegram">Apocalypsor/Formatted-RSS-to-Telegram</a> - Highly customizable RSS to Telegram</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/kazuki-sf/YouTube_Summary_with_ChatGPT">kazuki-sf/YouTube_Summary_with_ChatGPT</a> - YouTube Summary with ChatGPT is a simple Chrome Extension (manifest v3) that allows you to get both YouTube video transcripts and summary of the video with OpenAI’s ChatGPT AI technology.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/feeddd/feeds">feeddd/feeds</a> - 免费的公众号 RSS，支持扩展任意 APP</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/CallBoson/ChatGPT-node">CallBoson/ChatGPT-node</a> - 微信公众号接入chatGpt</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dengxiwang/funtabs">dengxiwang/funtabs</a> - funtabs｜趣标签页，给你不一样的浏览器起始页，清新、简约、不简单！高度的可自定义操作，让您设置属于您专属的独特导航页面，是一款小众但又极其好用的导航网站！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lucaschn/fcgame">lucaschn/fcgame</a> - FC游戏在线玩，FC在线模拟器，NES在线模拟器，魂斗罗，超级玛丽，忍者龙剑传。可在手机电脑上在线玩FC游戏的网站，近乎完美的还原任天堂FC/NES原版ROM游戏的视频和声音。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jamesmortensen/archiver-for-google-keep">jamesmortensen/archiver-for-google-keep</a> - Scrapes notes and checklists from Google Keep™ and writes them out as JSON and markdown archive/backup files. This tool is not affiliated or endorsed by Google™. Google Keep™ is a trademark of Google.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/eryajf/eryajf.github.io">eryajf/eryajf.github.io</a> - 📝 大千世界，何其茫茫。谨此笔记，记录过往。凭君阅览，小站洛荒。如能收益，莫大奢望</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Bleu404/PotplayerPanVideo">Bleu404/PotplayerPanVideo</a> - 利用第三方webdav网盘，实现在potplayer播放百度、迅雷、阿里云盘视频。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/yylive/YYEVA">yylive/YYEVA</a> - YYEVA（YY Effect Video Animate）是YYLive推出的一个开源的支持可插入动态元素的MP4动效播放器解决方案，包含设计资源输出的AE插件，客户端渲染引擎，在线预览工具。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MRHRTZ/Tiktok-Scraper-Without-Watermark">MRHRTZ/Tiktok-Scraper-Without-Watermark</a> - Download Video From Tiktok Without Watermark, With Watermark and Audio Only.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/4ian/GDevelop">4ian/GDevelop</a> - :video_game: Open-source, cross-platform game engine designed to be used by everyone.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/baumannzone/baumannzone">baumannzone/baumannzone</a> - 🤩 My custom README repo. It gets automatically updated with videos from Youtube and photos from Instagram.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/panghujiajia/todayhub-web">panghujiajia/todayhub-web</a> - react+tailwindcss实现的今日热榜</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/zltl/sguala">zltl/sguala</a> - Linux system monitor without agent, and a ssh client.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/llnancy/netease-music-box">llnancy/netease-music-box</a> - 🎧 将你最近一周的网易云音乐的听歌记录更新到 Gist。本仓库新增了写入 Markdown 文件功能，可写入 GitHub 个人主页仓库。原仓库地址为 <a target="_blank" rel="noopener" href="https://github.com/Leecason/netease-music-box">https://github.com/Leecason/netease-music-box</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xoobom/wpspaster">xoobom/wpspaster</a> - 🚀 图文一键粘贴软件，支持从Word、WPS图文复制后一键粘贴到Tinymce、CKEditor、UEditor、KindEditor等富文本编辑器。支持Chrome、360、Edge、Firefox等现代浏览器。适用Window、Mac</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/fengshangsheng/nice-psdToHTML">fengshangsheng/nice-psdToHTML</a> - .psd设计稿自动转react、vue、html + .png图片</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ESHexoN/ESHexoN">ESHexoN/ESHexoN</a> - 简洁、强大的 Hexo 在线编辑器 | A Powerful Manager For Hexo</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/neil-pan-s/text-video">neil-pan-s/text-video</a> - 文字视频 - 抖音热门文字旋转效果 自动分割文本 随机文字大小、颜色、旋转方向</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lylelove/blread">lylelove/blread</a> - 🍵以哔哩哔哩专栏为后端进行Github Action自动部署的Hexo博客</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/alyssaxuu/omni">alyssaxuu/omni</a> - The all-in-one tool to supercharge your productivity ⌨️</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/rcy1314/GeekBot">rcy1314/GeekBot</a> - 企业微信机器人主动推送获取信息脚本 | 每日自动推送天气、毒鸡汤、ONE图文、v2ex帖子 &amp; more..</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/imsyy/Snavigation">imsyy/Snavigation</a> - 【尚未完成】Snavigation 一个简约的起始页 | 支持自定义搜索引擎，自定义快捷方式，自定义壁纸以及数据备份</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/JimSunJing/ReviewHelper">JimSunJing/ReviewHelper</a> - A Github Action regulary query Notion Database &amp; send review reminder(email).</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ycf1998/greeting-mail">ycf1998/greeting-mail</a> - 一个定时给你发问候邮件的网站。目前支持的问候服务有天气预报、舔狗日记、彩虹屁、网易云、朋友圈文案等</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/luizov/luizov-website">luizov/luizov-website</a> - My personal website, built using Next.js/React/Notion API/Tailwind CSS.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xiulizhao/gettable">xiulizhao/gettable</a> - 获取word表格json数据元素，上传Word表格获取json数据</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/imageslr/mweb-themes">imageslr/mweb-themes</a> - 30+ 款 Markdown 预览主题，Typo.css、Vue、Bear、飞书云文档等风格，适用于 MWeb、Typora。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/opakholis/bookshelf">opakholis/bookshelf</a> - my personal bookshelf to improve reading experience. built with Notion as databases!</p>
+</li>
+</ul>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/yangchuansheng/DocsGPT">yangchuansheng/DocsGPT</a> - 基于 GPT 的聊天机器人，用于文档搜索和协助</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Liner03/tiktok_monitor">Liner03/tiktok_monitor</a> - 24h监控抖音主页情况变化并进行推送</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Mayavi333/Tsunade-auto-filter">Mayavi333/Tsunade-auto-filter</a> - I am a auto filter bot with group manage functions.  star 🌟my repo🙏</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LAION-AI/Open-Assistant">LAION-AI/Open-Assistant</a> - OpenAssistant is a chat-based assistant that understands tasks, can interact with third-party systems, and retrieve information dynamically to do so.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/chidiwilliams/buzz">chidiwilliams/buzz</a> - Buzz transcribes and translates audio offline on your personal computer. Powered by OpenAI’s Whisper.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/delta1037/notion-export-client">delta1037/notion-export-client</a> - Notion备份客户端工具，将指定Notion page单向转换为本地markdown文件 | Notion backup client, backup some page to markdown files self-struct</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/arc53/DocsGPT">arc53/DocsGPT</a> - GPT-powered chat for documentation search &amp; assistance.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dario-github/notion_auto_backup">dario-github/notion_auto_backup</a> - Notion Regular Auto Backup to Google Drive</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mggger/chatgpt-bot-dingding">mggger/chatgpt-bot-dingding</a> - Dingding bot with chatgpt</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jiggy-ai/hn_summary">jiggy-ai/hn_summary</a> - Summarizes top stories from Hacker News using a large language model and post them to a Telegram channel.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/sachin0raon/Mirror2Gdrive">sachin0raon/Mirror2Gdrive</a> - Hello there, 👽 I am a Telegram Bot that can mirror files to your Google Drive.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wzpan/wukong-robot">wzpan/wukong-robot</a> - 🤖 wukong-robot 是一个简单、灵活、优雅的中文语音对话机器人/智能音箱项目，还可能是首个支持脑机交互的开源智能音箱项目。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/babysor/MockingBird">babysor/MockingBird</a> - 🚀AI拟声: 5秒内克隆您的声音并生成任意语音内容 Clone a voice in 5 seconds to generate arbitrary speech in real-time</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Python3WebSpider/ProxyPool">Python3WebSpider/ProxyPool</a> - An Efficient ProxyPool with Getter, Tester and Server</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/bulutthecat/TalkGPT">bulutthecat/TalkGPT</a> - An advanced AI voice assistant built off of ChatGPT, carries support for opening web pages, executing commands, and even running python scripts through your voice!</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/nthack/Shadowrocket-ADBlock-Rules-Easy">nthack/Shadowrocket-ADBlock-Rules-Easy</a> - 【每天更新】根据gfwlist及AdBlock生成的小火箭规则列表，支持自定义，保持每天更新；Shadowrocket Rules, using GFWList and ADblock List. Update every day, keep fresh and new.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Magisk-Modules-Alt-Repo/json">Magisk-Modules-Alt-Repo/json</a> - Magisk Manager JSON file generation for the repository list</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/caliwyr/free-proxy-list">caliwyr/free-proxy-list</a> - 🔓 daily updated proxy list Python And NodeJS</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/skyplane-project/skyplane">skyplane-project/skyplane</a> - 🔥 Blazing fast bulk data transfers between any cloud 🔥</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/madushadhanushka/github-readme">madushadhanushka/github-readme</a> - Collection of GitHub readme widgets</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/rcy1314/Rss-Translation">rcy1314/Rss-Translation</a> - RSS翻译转换订阅</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/okatu-loli/github_to_feishu">okatu-loli/github_to_feishu</a> - 通过webhook将GitHub仓库的变动推送到飞书平台</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Tippye/DuPanSync">Tippye/DuPanSync</a> - ☁️百度网盘群文件同步工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/PanDaoxi/enjoy-static-website-generator">PanDaoxi/enjoy-static-website-generator</a> - 静态下载站生成器</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/vas3k/infomate.club">vas3k/infomate.club</a> - RSS feed aggregator with collections and NLP article summarization</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xiangsanliu/Rules">xiangsanliu/Rules</a> - 🛫️ 🎵 Shadowrocket Rules: block ads, proxy, netease music unblock.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/talengu/rss-translate">talengu/rss-translate</a> - rss translate any to any</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/521xueweihan/GitHub520">521xueweihan/GitHub520</a> - :kissing_heart: 让你“爱”上 GitHub，解决访问时图裂、加载慢的问题。（无需安装）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wangsrGit119/cartoon-media">wangsrGit119/cartoon-media</a> - image or video to cartoon| 图片视频卡通化</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/NangInShell/VSET">NangInShell/VSET</a> - 基于Vapoursynth的图形化视频批量压制处理工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/HYK-X/PowerBox">HYK-X/PowerBox</a> - 一个效率工具  基于Flet，实现番茄钟；todo；倒数日；webdav同步等基础功能</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/yzbtdiy/alist_batch_add">yzbtdiy/alist_batch_add</a> - Alist批量添加阿里云盘链接</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/hunshcn/gh-proxy">hunshcn/gh-proxy</a> - github release、archive以及项目文件的加速项目</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/BlinkDL/AI-Writer">BlinkDL/AI-Writer</a> - AI 写小说，生成玄幻和言情网文等等。中文预训练生成模型。采用我的 RWKV 模型，类似 GPT-2 。AI写作。RWKV for Chinese novel generation.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ngc660sec/NGCBot">ngc660sec/NGCBot</a> - 一个基于✨HOOK机制的微信机器人，支持🌱安全新闻定时推送【FreeBuf，先知，安全客，奇安信攻防社区】，👯后缀名查询，⚡备案查询，⚡手机号归属地查询，⚡WHOIS信息查询，🎉星座查询，⚡天气查询，🌱摸鱼日历⚡微步威胁情报查询， 🐛美女视频，⚡美女图片，👯帮助菜单。📫 支持积分功能，😄自定义程度丰富，小白也可轻松上手！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/DeEpinGh0st/JetbrainsServerFinder">DeEpinGh0st/JetbrainsServerFinder</a> - 一个利用Shodan搜索引擎查询Jetbrains系列产品激活服务器的网页端工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/biancangming/wtv">biancangming/wtv</a> - 解决电脑、手机看电视直播的苦恼，收集各种直播源，电视直播网站</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/TheLovinator1/discord-twitter-webhooks">TheLovinator1/discord-twitter-webhooks</a> - 🤖Stream tweets to Discord</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/x7peeps/Rss2Dingtalk-LTS">x7peeps/Rss2Dingtalk-LTS</a> - A Service for feed Rss to Dingtalk Webhook</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Elxss/Epic-Free-Games-Alert">Elxss/Epic-Free-Games-Alert</a> - Epic Games Free Games Script that send a Webhook when a new Free Games is Available</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lyy289065406/steam-discount">lyy289065406/steam-discount</a> - steam 特惠游戏榜单（自动刷新）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/9bie/rsspusher">9bie/rsspusher</a> - 推送rss到telegram和web</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Anjok07/ultimatevocalremovergui">Anjok07/ultimatevocalremovergui</a> -  GUI for a Vocal Remover that uses Deep Neural Networks.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jheddings/notes2notion">jheddings/notes2notion</a> - Import content from Apple Notes into Notion.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jiabh/auto-unlock-music">jiabh/auto-unlock-music</a> - 自动解锁各音乐平台下载的加密音乐</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/EssayKillerBrain/WriteGPT">EssayKillerBrain/WriteGPT</a> - 基于开源GPT2.0的初代创作型人工智能 | 可扩展、可进化</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/AndersonBY/AIGuiChu">AndersonBY/AIGuiChu</a> - 用AI帮忙制作鬼畜类视频</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/studycell/Simple_faceswap">studycell/Simple_faceswap</a> - 本项目用于对一段连续视频进行AI智能识别，并将指定人脸进行替换。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/TakWolf/ark-pixel-font">TakWolf/ark-pixel-font</a> - Open source Pan-CJK pixel font / 开源的泛中日韩像素字体</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/SokunHeng/DownEdit">SokunHeng/DownEdit</a> - Video editor and video downloader in one application. Bulk video downloader for Tiktok and Douyin no watermark, more to be updated.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/acheong08/ChatGPT">acheong08/ChatGPT</a> - Reverse engineered ChatGPT API</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/bupticybee/ChineseAiDungeonChatGPT">bupticybee/ChineseAiDungeonChatGPT</a> - 中文版的ai地牢，直接使用的openai的ChatGPT api作为讲故事的模型。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/icue/DoubanImageWall">icue/DoubanImageWall</a> - 生成豆瓣电影海报墙/音乐专辑封面墙/图书封面墙。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/frankwuzp/coursera-host">frankwuzp/coursera-host</a> - 🚀 Auto-Hosts for Coursera website &amp; video. 自动获取 host 的 IP 源，加速访问 Coursera 网站，在墙内也能愉快学习！（每天更新）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jina-ai/now">jina-ai/now</a> - 🧞 No-code tool for creating a neural search solution in minutes</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/marqo-ai/marqo">marqo-ai/marqo</a> - Tensor search for humans.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xenova/chat-downloader">xenova/chat-downloader</a> - A simple tool used to retrieve chat messages from livestreams, videos, clips and past broadcasts. No authentication needed!</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LuoXishuang0712/openpose_motion_rebuild">LuoXishuang0712/openpose_motion_rebuild</a> - build a 3d pose from two 2d motion photos</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Johnserf-Seed/TikTokDownload">Johnserf-Seed/TikTokDownload</a> - 抖音去水印批量下载用户主页作品、喜欢、图文、音频</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/kaminolee/RsshubList">kaminolee/RsshubList</a> -</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/auqhjjqdo/LiveRecorder">auqhjjqdo/LiveRecorder</a> - 基于Streamlink的直播全自动录播工具，已支持Bilibili、YouTube、Twitch、TwitCasting</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/btc-99/autotune_remix">btc-99/autotune_remix</a> - 一键生成鬼畜音 mad 视频</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/rcy1314/notification-action">rcy1314/notification-action</a> - 企业微信定期发送固定通知</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/guangzhengli/wecom-notification-action">guangzhengli/wecom-notification-action</a> - 企业微信机器人消息发送，支持内容自定义，配置模版</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/guangzhengli/notification-action-template">guangzhengli/notification-action-template</a> - A github action template for notification action.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/RWoxiN/AsoulNotificationPush">RWoxiN/AsoulNotificationPush</a> - A-SOUL 动态、直播状态获取，并推送到企业微信中。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tbsmcd/notion2hugo">tbsmcd/notion2hugo</a> - A document written in Notion that is converted to hugo. However, it is currently dedicated to the author’s personal use.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/gaoyunzhi/channel_push">gaoyunzhi/channel_push</a> - Telegram channel/group recommendation bot</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/HorseSword/tagdox">HorseSword/tagdox</a> - Tagdox（标签文库）是 python + tkinter + pyinstaller 开发实现的文件标签化管理工具。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/TerraceCN/TGRSS">TerraceCN/TGRSS</a> - Push RSS Feed through Telegram</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/cancundeyingzi/Compressed-packet-camouflage">cancundeyingzi/Compressed-packet-camouflage</a> - 将压缩包伪装成其他文件,绕过无法上传/分享的限制</p>
+</li>
+</ul>
+<h2 id="TypeScript"><a href="#TypeScript" class="headerlink" title="TypeScript"></a>TypeScript</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/bytemate/chatapi-single">bytemate/chatapi-single</a> - Simple and powerful ChatGPT-API-Server</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Thecosy/chatgpt-helper">Thecosy/chatgpt-helper</a> -</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/automatisch/automatisch">automatisch/automatisch</a> - The open source Zapier alternative. Build workflow automation without spending time and money.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/DukeLuo/wai">DukeLuo/wai</a> - 一款可以预防颈椎病的新标签页扩展</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/shahednasser/cross-post-notion">shahednasser/cross-post-notion</a> - Integration to cross post articles from Notion across platforms</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mymusise/vscode-writer-assistant">mymusise/vscode-writer-assistant</a> - 基于生成模型的vscode中文AI写作助手插件</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/timkmecl/codegpt">timkmecl/codegpt</a> - A VSCode extension that allows you to use GPT3 inside the IDE</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wardvisual/engine-warvil">wardvisual/engine-warvil</a> - A comprehensive language tool that can answer questions, generate code, titles, and grammatically correct text, as well as paraphrase, summarize, translate, explain programming code, evaluate mathematical expressions, and create study notes.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/forrestchang/readpilot">forrestchang/readpilot</a> - Read Pilot analyzes online articles and generate Q\&amp;A cards for you. Powered by OpenAI &amp; Next.js.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/gitbrent/dream-journal-app">gitbrent/dream-journal-app</a> - Dream Journal that uses Google Drive</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/spencerwooo/substats">spencerwooo/substats</a> - ( ｀д′) how many followers do i have? how many!</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Cside/chrome-notion-search">Cside/chrome-notion-search</a> - Search Notion pages on the popup</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/JonathanWbn/notion-tools">JonathanWbn/notion-tools</a> - A set of tools to automate things around Notion.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LokerL/tts-vue">LokerL/tts-vue</a> - 🎤 微软语音合成工具，使用 Electron + Vue + ElementPlus + Vite 构建。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/funnyzak/tts-now">funnyzak/tts-now</a> - 跨平台基于云平台(阿里云、讯飞等)语音合成 API 的文字转语音助手。支持单文本快速合成和批量合成。支持windows、macOS、Linux。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/and-action/and-action">and-action/and-action</a> - Monitoring your GitHub Actions Workflows in your web browser.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/GalvinGao/NeteaseRecommendationSync">GalvinGao/NeteaseRecommendationSync</a> - 同步网易云音乐每日推荐与私人雷达至 Spotify；反向同步 Spotify 喜欢的音乐至网易云音乐（用于持续优化网易云音乐推荐质量）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/otelo2/Obsidian-AI">otelo2/Obsidian-AI</a> - Free GPT powered assistant for Obsidian “inspired by” Notion AI</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ahonn/logseq-plugin-weread-importer">ahonn/logseq-plugin-weread-importer</a> - 📖 一个用于将微信读书笔记导入到 Logseq 的插件 / A plugin for import WeRead notes into Logseq</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/zhengbangbo/chat-simplifier">zhengbangbo/chat-simplifier</a> - Simplify your chat content in seconds (by OpenAI)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/4gray/iptvnator">4gray/iptvnator</a> - :tv: Cross-platform IPTV player application with multiple features, such as support of m3u and m3u8 playlists, favorites, TV guide, TV archive/catchup and more.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/AbduazizZiyodov/docker-dashboard">AbduazizZiyodov/docker-dashboard</a> - 🐳 Simple lightweight GUI application for working with Docker</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Kyusung4698/overwolf-poe-convas">Kyusung4698/overwolf-poe-convas</a> - A scheduled cron task which fetches posts from a convas.io board and sends updates to a Discord webhook.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/SuCicada/su-action-webhook">SuCicada/su-action-webhook</a> - Posts github action notification to an unit endpoint with your own custom template. SSR</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/northwang-lucky/chatbot-webhook-client">northwang-lucky/chatbot-webhook-client</a> - Webhook calls of custom BOT that support DingTalk, Lark and WeCom.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/GetMural/Mural">GetMural/Mural</a> - Mural is a tool for visual storytelling. It’s a program that helps you sequence your visual story, and then generates everything needed for that story to be displayed on most modern web browsers and served from any web server.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/flowershow/flowershow">flowershow/flowershow</a> - Publish your digital garden, docs or any markdown based site easily, quickly and elegantly</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/BeiyanYunyi/HexoSharp">BeiyanYunyi/HexoSharp</a> - 可独立部署也可托管在 Cloudflare 上的现代化静态博客管理器，功能：文章管理、图片管理、反代图床、访客统计、匿名评论、博主说说</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/linfaxin/MBBS">linfaxin/MBBS</a> - 🔥轻量级全功能论坛、移动/PC双端适配、无依赖一键启动、技术栈 express + sqlite + react（MBBS论坛托管服务开源版）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Privoce/vocechat-web">Privoce/vocechat-web</a> - VoceChat Web App</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Avinier/E-minor">Avinier/E-minor</a> - An NFT Marketplace for Music Lovers</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/snuffyDev/Beatbump">snuffyDev/Beatbump</a> - Alternative YouTube Music frontend built with Svelte/SvelteKit 🎧</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wangrongding/wallpaper-box">wangrongding/wallpaper-box</a> - 🏞️ 一个桌面壁纸客户端，可以设置静态 / 动态壁纸，集成了 RunCat 的功能。(A desktop wallpaper client to set static / dynamic wallpapers, integrated with RunCat’s features.)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/YunYouJun/valaxy">YunYouJun/valaxy</a> - 🌌 Next Generation Static Blog Framework (Beta) 下一代静态博客框架（支持页面/配置热重载）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/maotoumao/MusicFree">maotoumao/MusicFree</a> - 插件化、定制化、无广告的免费音乐播放器</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Lu7fer/Dplayer4Halo">Lu7fer/Dplayer4Halo</a> - 为Halo博客文章添加视频插件</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xushengfeng/xlinkote">xushengfeng/xlinkote</a> - 无限画布 白板笔记 知识管理</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/screendriver/ifttt-action">screendriver/ifttt-action</a> - ⚡️ GitHub action that triggers an IFTTT webhooks event</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/shidenggui/bloghub">shidenggui/bloghub</a> - 一群自由而有趣的灵魂，终将在此相遇 | 独立个人博客推荐导航</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/CrazyDiablo/boluo-todo">CrazyDiablo/boluo-todo</a> - 像素风格的todo</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/harryzcy/nodop">harryzcy/nodop</a> - Notion Database Operator</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/alibaba/lowcode-engine">alibaba/lowcode-engine</a> - An enterprise-class low-code technology stack with scale-out design / 一套面向扩展设计的企业级低代码技术体系</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Kaiyiwing/qwerty-learner">Kaiyiwing/qwerty-learner</a> - 为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件 / Words learning and English muscle memory training software designed for keyboard workers</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/sillsdev/docu-notion">sillsdev/docu-notion</a> - Download Notion pages as markdown and image files, preserving hierarchy and enabling workflow properties. Works with Docusaurus.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/brandon-schabel/remix-notion-blog">brandon-schabel/remix-notion-blog</a> - Lightweight Remix Blog powered by Notion API.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ryannono/Notion-Todoist-Integration">ryannono/Notion-Todoist-Integration</a> - A Node JS web-service/integration that automates and syncs a notion database and its pages with the todoist  app and its tasks</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/shiyiya/oplayer">shiyiya/oplayer</a> - :zap: Another HTM5 video player.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/SettingDust/obsidian-web-clipper">SettingDust/obsidian-web-clipper</a> - Clip web page content to Obsidian as Markdown</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/camellia-app/unsplash-bridge">camellia-app/unsplash-bridge</a> - Cloudflare Worker that provides API for picking random photo from Unsplash collection.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lmcsu/qq-neural-anime-tg">lmcsu/qq-neural-anime-tg</a> - A Telegram bot that converts your photos to 2D anime art via the new AI made by QQ</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/osmoscraft/osmosfeed">osmoscraft/osmosfeed</a> - Turn GitHub into an RSS reader</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/WhiteMinds/LiveAutoRecord">WhiteMinds/LiveAutoRecord</a> - 基于 Electron 的多平台直播自动录制软件</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/qianjiachun/douyu-monitor">qianjiachun/douyu-monitor</a> - 网页端跨平台斗鱼弹幕助手</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/damoeb/rss-proxy">damoeb/rss-proxy</a> - RSS-proxy allows you to do create an RSS or ATOM feed of almost any website, just by analyzing just the static HTML structure.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MannyCooper/anzifan.com">MannyCooper/anzifan.com</a> - Personal blog powered by Notion official API + Next.JS + WindiCSS!</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/upleveled/notion-backup">upleveled/notion-backup</a> - Export Notion pages and subpages to a GitHub repo on a schedule (eg. to be used as a scheduled backup)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/suemor233/search-start-page">suemor233/search-start-page</a> - 🔍  一个简单的搜索起始页</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Tualin14/OneSS">Tualin14/OneSS</a> -</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/fky2015/nexon">fky2015/nexon</a> - Nexon is a Notion-powered blog template built with the Next.js and Vercel. It’s a modified version of <a target="_blank" rel="noopener" href="https://github.com/transitive-bullshit/nextjs-notion-starter-kit">https://github.com/transitive-bullshit/nextjs-notion-starter-kit</a> with a special focus on the better blogging experience.</p>
+</li>
+</ul>
+<h2 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/GraphQLAPI/graphql-api-for-wp">GraphQLAPI/graphql-api-for-wp</a> - [READ ONLY] GraphQL API for WordPress</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wxilejun/Yiso">wxilejun/Yiso</a> - Yiso搜索引擎开源</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Goomento/PageBuilder">Goomento/PageBuilder</a> - Goomento - The Free Magento Page Builder Extension, that allows you to create unique Magento websites using advanced animations, custom CSS, responsive designs, and more, by performing simple actions such as drag and drop.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/PGYER/codefever">PGYER/codefever</a> - CodeFever 是完全免费开源的 Git 代码托管服务，支持一行命令安装到自己服务器！CodeFever Community Edition (A Self-hosted Git Services)!</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/zhuchunshu/SForum">zhuchunshu/SForum</a> - SForum是一个php开发的论坛程序,Multifunctional Forum Program，(原super-forum)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ethanzhao2001/Mailer-Typecho">ethanzhao2001/Mailer-Typecho</a> - Typecho上极简的邮件推送插件</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/guanguans/notify">guanguans/notify</a> - 推送通知 sdk(Bark、Chanify、钉钉群机器人、Discord、邮件、飞书群机器人、Gitter、Google Chat、iGot、Logger、Mattermost、Microsoft Teams、Now Push、Ntfy、PushBack、Push、PushDeer、Pushover、PushPlus、QQ 频道机器人、Rocket Chat、Server 酱、Showdoc Push、Slack、Telegram、Webhook、企业微信群机器人、息知、一封传话、Zulip)。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/zhufenghua1998/bp3">zhufenghua1998/bp3</a> - bp3是一款使用php开发的百度网盘接口程序，百度网盘目录搜索引擎，文件展示搜索目录树，在线目录搜索索引，百度网盘文件下载（含直链）等。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/HurryBy/lanzou-directlink">HurryBy/lanzou-directlink</a> - 蓝奏云直链，蓝奏云解析，蓝奏云解析API，蓝奏云带密码解析，蓝奏云文件夹分享解析</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wpbkj/moyu_php">wpbkj/moyu_php</a> - 摸鱼办是一个具有娱乐调侃性质的虚拟机构。摸鱼办提醒则提醒各位摸鱼人各个假期何时到来，为摸鱼人种下希望（狗头）。项目整体由PHP构建。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/yeuxuan/ccproxy_kami">yeuxuan/ccproxy_kami</a> - ccproxy卡密管理系统 生成卡密 激活 用户在线管理 socket 通讯</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/teakong/liuyan-weixin">teakong/liuyan-weixin</a> - 将网站或者博客留言推送到微信</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/aoaostar/toolbox">aoaostar/toolbox</a> - 🚀傲星工具箱，一个在线工具箱</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/pplulee/appleid_auto">pplulee/appleid_auto</a> - 基于密保问题，自动解锁Apple ID，自动关闭双重认证，提供前端账号展示，支持多账号</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/luolongfei/freenom">luolongfei/freenom</a> - Freenom 域名自动续期。Freenom domain name renews automatically.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/pmhw/telegram-bot">pmhw/telegram-bot</a> - Tg机器人，自动回复自定义消息回复，私聊回复以及群聊回复，可以进行二次开发，希望你做出更优质的东西，记得@我</p>
+</li>
+</ul>
+<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Jeadie/notion-rss">Jeadie/notion-rss</a> - Get RSS feeds in notion.so</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/daichirata/gcsproxy">daichirata/gcsproxy</a> - Reverse proxy for Google Cloud Storage</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ginuerzh/gost">ginuerzh/gost</a> - GO Simple Tunnel - a simple tunnel written in golang</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/autobrr/autobrr">autobrr/autobrr</a> - Automation for downloads.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/aalu1418/rss">aalu1418/rss</a> - Simple script + GHA to aggregate RSS feeds</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/paescuj/universe">paescuj/universe</a> - My god, it’s full of stars</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lrqtech/smya-go">lrqtech/smya-go</a> - 神秘鸭使你的语音助手可用来控制PC、笔记本、树莓派或其他物联网设备</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/houko/wechatgpt">houko/wechatgpt</a> - wechatgpt golang版 chatgpt机器人(可docker部署)，目前支持wechat，telegram</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/grokify/ringcentral-permahooks">grokify/ringcentral-permahooks</a> - Webhook proxy to turn RingCentral webhooks into permanent webhooks for use with services like Zapier Instant Triggers.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tarampampam/webhook-tester">tarampampam/webhook-tester</a> - 🔭 The powerful tool to test webhooks and not only</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xlzy520/typora-plugin-bilibili">xlzy520/typora-plugin-bilibili</a> - Typora粘贴图片自动上传到Bilibili图床，也可以自定义修改成任意其他图床接口。使用教程：<a target="_blank" rel="noopener" href="https://b23.tv/urxCc3">https://b23.tv/urxCc3</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/CatchZeng/feishu">CatchZeng/feishu</a> - feishu 是飞书机器人的 go 实现。支持 Docker、Jenkinsfile、命令行模式，module 模式；支持加签安全设置、链式语法创建消息；支持文本（text）、富文本（post）、图片（image）、群名片（share_chat）、消息卡片（interactive）消息类型。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jerryshell/my-flomo-server">jerryshell/my-flomo-server</a> - 可以自托管的想法记录及回顾服务，开源、免费、简单、专注于核心功能</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/chengkenlee/wenews">chengkenlee/wenews</a> - 微语简报推送到微信群</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lenye/pmsg">lenye/pmsg</a> - 发送消息的小工具：企业微信群机器人消息，钉钉自定义机器人消息，飞书自定义机器人消息，Slack bot，微信消息，微信客服消息，企业微信消息，企业微信客服消息</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/songquanpeng/message-pusher">songquanpeng/message-pusher</a> - 搭建专属于你的消息推送服务，支持多种消息推送方式，支持 Markdown，仅单可执行文件，开箱即用</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/kenellorando/cadence">kenellorando/cadence</a> - All-in-one web radio software suite. Provides music search, request, artwork, UI, and real-time stream information.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/yqchilde/wxbot">yqchilde/wxbot</a> - ☝🏻 一个好玩的个人微信机器人项目，插件式功能，查天气，ChatGPT聊天，设置定时任务，公众号监控转发…</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/qydysky/bili_danmu">qydysky/bili_danmu</a> - bili直播、弹幕录制回放工具 go1.19+</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/aldinokemal/go-whatsapp-web-multidevice">aldinokemal/go-whatsapp-web-multidevice</a> - API for Whatsapp Web MultiDevice Version, Support UI &amp; Webhook</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/echosoar/news">echosoar/news</a> - 全网新闻热点每小时自动聚合排序，基于SimHash算法聚合相似内容</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/irth/tg2fedi">irth/tg2fedi</a> - A bot to repost messages from a Telegram channel to a Mastodon account.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LinuxSuRen/yaml-readme">LinuxSuRen/yaml-readme</a> - A helper to generate the READE file automatically from YAML-based metadata files.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/os7blue/dobby">os7blue/dobby</a> - 钉钉，飞书，企业微信，email，以及公众号消息推送服务</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/aixinge/aixinge">aixinge/aixinge</a> - The backend code of AiXinGe</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Sunbalcony/note">Sunbalcony/note</a> - note是一款优美，轻便的文档共享工具，支持一键分享，多人协作在线编辑，好用到上天，网页打代码不是梦！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MiaoMint/g8ink">MiaoMint/g8ink</a> - 一个短链接生成程序</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/shenweiyan/WebStack-Hugo">shenweiyan/WebStack-Hugo</a> - WebStack 网址导航 Hugo 主题，无需服务器，支持导航一键配置的纯静态网址导航网站。</p>
+</li>
+</ul>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/guaguaguaxia/weekly_report">guaguaguaxia/weekly_report</a> -</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ycjcl868/readme-gpt">ycjcl868/readme-gpt</a> - Generate your Github Readme with OpenAI and Vercel Edge Functions.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/sunyctf/css-effects">sunyctf/css-effects</a> - ⭐ 前端css特效，持续更新。喜欢的话就Star一下吧！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dragonjie233/Message">dragonjie233/Message</a> - 留言条 · 就留下一句你想说的话吧</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Pings1031/nimingly">Pings1031/nimingly</a> - 一个免费的匿名留言程序，可做匿名留言树洞，对接公众号做 匿名留言送信邮局</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/bradtraversy/nodejs-openai-image">bradtraversy/nodejs-openai-image</a> - Web app that uses Node.js and OpenAI to generate images</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xiangjianan/lks">xiangjianan/lks</a> -</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ZxBing0066/pixel-converter">ZxBing0066/pixel-converter</a> - 图片转像素风，可生成 box-shadow 像素风图片</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/emperinter/auto-generate-navigation">emperinter/auto-generate-navigation</a> - A plugin which  can generate a navigation  catalogue on your WordPress post!</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mizoreyo/hexo-theme-insnow">mizoreyo/hexo-theme-insnow</a> - insnow, a simple hexo theme.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/zkeq/news">zkeq/news</a> - 前后端均基于 vercel 的轻量级每日早报项目，支持一键部署，支持部署至服务器。后端由 FastAPI + BeautifulSoup 实现。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Tokinx/Wing">Tokinx/Wing</a> - Simple, smooth, data-driven, responsive WordPress theme</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mgilangjanuar/teledrive">mgilangjanuar/teledrive</a> - The Google Drive/OneDrive/etc alternative using Telegram API</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/qumuchegi/notion-docsify">qumuchegi/notion-docsify</a> - a tool builds doc from notion pages, backup your notion data</p>
+</li>
+</ul>
+<h2 id="Rust"><a href="#Rust" class="headerlink" title="Rust"></a>Rust</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/qdrant/qdrant">qdrant/qdrant</a> - Qdrant - Vector Search Engine and Database for the next generation of AI applications. Also available in the cloud <a target="_blank" rel="noopener" href="https://qdrant.to/cloud">https://qdrant.to/cloud</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MicroCBer/BetterCEF-Installer">MicroCBer/BetterCEF-Installer</a> - 一键安装 BetterCEF</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/morphy2k/rss-forwarder">morphy2k/rss-forwarder</a> - Checks RSS feeds for new entries and forwards them</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mbround18/redirect">mbround18/redirect</a> - Simple redirection tool! Ready to use, docker capable, Kubernetes friendly, any Linux based env ready!</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tw93/Pake">tw93/Pake</a> - 🤱🏻 Turn any webpage into a desktop app with Rust.  🤱🏻 很简单的用 Rust 打包网页生成很小的桌面 App</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/limitcool/bilistream">limitcool/bilistream</a> - B站直播转播工具,,一键转播Twitch,Youtube(支持youtube预告类型直播自动转播)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/YangchenYe323/Danmuji">YangchenYe323/Danmuji</a> - :hamster: 用Rust + React编写的Bilibili弹幕姬，感谢礼物，自动回复，定时任务弹幕助手</p>
+</li>
+</ul>
+<h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lxchinesszz/dev-springlearn2">lxchinesszz/dev-springlearn2</a> - 极客导航2.0</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/HanaYabuki/otto-hzys">HanaYabuki/otto-hzys</a> - 电棍otto语音活字印刷生成</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ybw0014/guizhan-builds">ybw0014/guizhan-builds</a> - 由 Github Actions + Vue2 + Nuxt.js + Github Pages 驱动的构建页面, 支持 Maven, Gradle 项目构建</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/4350pChris/slack-vuesualizer">4350pChris/slack-vuesualizer</a> - Display your Slack export and search through messages!</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/citrtoj/dirty-meter">citrtoj/dirty-meter</a> - Vue app that calculates the dirtiness of (mostly) any song’s lyrics</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/debug16/LuoYiMusic">debug16/LuoYiMusic</a> - 基于 vue3 + vite + pinia + vue-router4 实现的一个简约美观的音乐播放平台，使用 pake 打包桌面端，只有1M+，欢迎大家体验和star</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/imsyy/SPlayer">imsyy/SPlayer</a> - 🎉 一个简约的在线音乐播放器，项目尚未完成，不保证可用性</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/a7650/h5-editor">a7650/h5-editor</a> - 📕h5可视化编辑器，支持添加图片/文本/形状等，拥有图层/参考线/标尺/自动吸附对齐等功能</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xp-bear/note_wall">xp-bear/note_wall</a> - 留言墙功能可以让用户在网站上发表留言，以便其他用户可以看到并回复。它可以帮助网站的用户更好地交流，提高网站的互动性，增加用户体验。使用技术栈: vue3+express+mysql,觉得还可以的话,可以给一个star~</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/one-among-us/tg-blog">one-among-us/tg-blog</a> - Display offline telegram channel data like a blog</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/FTLIKON/EachStar">FTLIKON/EachStar</a> - 🌟在线互助Star社区🌟，基于 Github API 和 Element Plus 开发，致力于帮助开源项目积累初始影响力！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/canwdev/page-craft-vite">canwdev/page-craft-vite</a> - Web page rapid generation tool inspired by Minecraft | 网页快速设计生成工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/fyl080801/vjdesign">fyl080801/vjdesign</a> - Vue 界面可视化设计器，支持任何 html 标签以及项目中引用的组件，可实现仅通过配置文件就能增加支持的组件和组件属性</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Thecosy/IceCMS">Thecosy/IceCMS</a> - 🌈冰激凌内容管理系统🍦,实现MacWK资源站，社区图片视频圈子CMS，支持网页端移动端小程序🌟适合做 资讯商城，社区论坛，聊天交友 社区，博客，圈子，论坛，图片，视频，社交。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/chrisj74/vue-rss-blog">chrisj74/vue-rss-blog</a> - An embeddable to pull an RSS feed into your website</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Edward-Brock/Booop-Navigation-Next">Edward-Brock/Booop-Navigation-Next</a> - ✨ 网站导航练习项目</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/UniScratch/gitscratch-frontend">UniScratch/gitscratch-frontend</a> - GitScratch 社区前端</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/fayazara/feedful">fayazara/feedful</a> - A fast, jamstack, opinionated rss reader for tech news.</p>
+</li>
+</ul>
+<h2 id="Kotlin"><a href="#Kotlin" class="headerlink" title="Kotlin"></a>Kotlin</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Ashinch/ReadYou">Ashinch/ReadYou</a> - An Android RSS reader presented in Material You style.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/mumu12641/Lark">mumu12641/Lark</a> - Your NetEase Cloud music</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/pppscn/SmsForwarder">pppscn/SmsForwarder</a> - 短信转发器——监控Android手机短信、来电、APP通知，并根据指定规则转发到其他手机：钉钉群自定义机器人、钉钉企业内机器人、企业微信群机器人、飞书机器人、企业微信应用消息、邮箱、bark、webhook、Telegram机器人、Server酱、PushPlus、手机短信等。包括主动控制服务端与客户端，让你轻松远程发短信、查短信、查通话、查话簿、查电量等。（V3.0 新增）PS.这个APK主要是学习与自用，如有BUG请提ISSUE，同时欢迎大家提PR指正</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/heyanLE/EasyBangumi">heyanLE/EasyBangumi</a> - 纯纯看番，使用 Compose 开发的看番软件，支持多番剧源</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/avatsav/linkding-apps">avatsav/linkding-apps</a> - [WIP] Native apps for Linkding self-hosted bookmark service</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/gyakkun/qq-mht2html">gyakkun/qq-mht2html</a> - 转换QQ导出的MHT文件到HTML和图片文件, 支持按日期、行数自动分页, 支持多线程, 支持150G+文件</p>
+</li>
+</ul>
+<h2 id="PowerShell"><a href="#PowerShell" class="headerlink" title="PowerShell"></a>PowerShell</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/marticliment/WingetUI">marticliment/WingetUI</a> - WingetUI: a graphical user interface for Winget and Scoop</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/SummonHIM/Bestdori-Music-Downloader">SummonHIM/Bestdori-Music-Downloader</a> - A script that automatically downloads music from Bestdori and fills in the music information(Song title, Artist, Album, Composer and Front cover)</p>
+</li>
+</ul>
+<h2 id="Jupyter-Notebook"><a href="#Jupyter-Notebook" class="headerlink" title="Jupyter Notebook"></a>Jupyter Notebook</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Conchylicultor/automations">Conchylicultor/automations</a> - Automated scripts for APIs</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dmarx/video-killed-the-radio-star">dmarx/video-killed-the-radio-star</a> - Notebook and tools for end-to-end automation of music video production with generative AI</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/invoke-ai/InvokeAI">invoke-ai/InvokeAI</a> - InvokeAI is a leading creative engine for Stable Diffusion models, empowering professionals, artists, and enthusiasts to generate and create visual media using the latest AI-driven technologies. The solution offers an industry leading WebUI, supports terminal use through a CLI, and serves as the foundation for multiple commercial products.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Sahilvohra58/ai-subtitle-video-editor">Sahilvohra58/ai-subtitle-video-editor</a> - A complete microservice that takes a video from the user, generates its subtitles, asks the user to edit them and reproduces the video with those subtitles as the part of the video.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Baiyuetribe/paper2gui">Baiyuetribe/paper2gui</a> - Convert AI papers to GUI，Make it easy and convenient for everyone to use artificial intelligence technology。让每个人都简单方便的使用前沿人工智能技术</p>
+</li>
+</ul>
+<h2 id="Shell"><a href="#Shell" class="headerlink" title="Shell"></a>Shell</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lingeringsound/10007_auto">lingeringsound/10007_auto</a> - ZH: 自动更新去广告的hosts ，En: Automatically update ad hosts</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/aviaryan/awesome-no-login-web-apps">aviaryan/awesome-no-login-web-apps</a> - 🚀 Awesome (free) web apps that work without login</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/RightToPrivacy/snowflake-tor-service">RightToPrivacy/snowflake-tor-service</a> - Automated 🧅 Tor ❄️ Snowflake Proxy (any Linux device). Run install.sh and you have a new Snowflake ProxyService  (every boot)</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/lyy289065406/mstream-docker">lyy289065406/mstream-docker</a> - docker 一键部署 mstream 私人云音乐</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Jason6111/OpenWrt_Personal">Jason6111/OpenWrt_Personal</a> - Jason6111’s OpenWrt source 在线集成自动编译环境</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xs-web-lhdd/vitepress-template">xs-web-lhdd/vitepress-template</a> - vitepress模板，直接开箱即用，不用再配置导航侧边栏等内容，直接写内容即可</p>
+</li>
+</ul>
+<h2 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/newsboat/newsboat">newsboat/newsboat</a> - An RSS/Atom feed reader for text terminals</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/FrzMtrsprt/QtUnblockNeteaseMusic">FrzMtrsprt/QtUnblockNeteaseMusic</a> - A desktop client for UnblockNeteaseMusic, made with Qt.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MucheXD/CloudMusicDownloader">MucheXD/CloudMusicDownloader</a> - 网易云音乐在线下载器&amp;缓存转换器 / 本程序允许你批量下载网易云音乐上几乎所有的歌曲，你可以在程序内搜索并下载几乎所有非付费歌曲。同时，你也可以转换网易云音乐客户端生成的缓存文件 (.uc/.uc!) ，将你播放列表中的文件保存到本地。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/liangxiongsl/Netease-url-crawling">liangxiongsl/Netease-url-crawling</a> - 网易云音乐直链批量获取</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/itisyang/playerdemo">itisyang/playerdemo</a> - 一个视频播放器，开源版 potplayer ，用于总结播放器开发技术。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ilovecplusplus97/MahiroBox">ilovecplusplus97/MahiroBox</a> - 一款绪山真寻的键盘监控小软件</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xfangfang/wiliwili">xfangfang/wiliwili</a> - 专为手柄控制设计的第三方跨平台B站客户端，目前可以运行在PC全平台和Nintendo Switch上  | Yet another Bilibili client</p>
+</li>
+</ul>
+<h2 id="Swift"><a href="#Swift" class="headerlink" title="Swift"></a>Swift</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Mnpn/Taberu">Mnpn/Taberu</a> - A simple RSS feed parser for macOS which lives in the menu bar</li>
+</ul>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/phaze-the-dumb/status">phaze-the-dumb/status</a> - A status page built on github actions</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/orelmizrahii/Web-AI-Archive">orelmizrahii/Web-AI-Archive</a> - AI Archive is a GitHub project dedicated to collecting and preserving data about artificial intelligence (AI) systems. Our mission is to create a comprehensive archive of AI systems and the data they generate, providing a valuable resource for researchers and developers.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/qdlmcfresh/GuilloArchive">qdlmcfresh/GuilloArchive</a> - Archiving @GuillotineTea on Twitter</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/YangguangZhou/Cards">YangguangZhou/Cards</a> - 个人名片 Cards</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/gh0stkey/gh0stkey.github.io">gh0stkey/gh0stkey.github.io</a> - 个人博客 <a target="_blank" rel="noopener" href="https://gh0st.cn">https://gh0st.cn</a> 模版来自：<a target="_blank" rel="noopener" href="https://github.com/heiswayi/the-plain">https://github.com/heiswayi/the-plain</a> 在原基础上增加了分页、网易云音乐播放器、图片放大查看等功能（做了一些排版细节上的调整）</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dontpanic92/embedded-netease-music-player">dontpanic92/embedded-netease-music-player</a> - 网易云音乐外链播放器 - Embed a netease music player into your web page</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/xiaowansm5/Onlinemusic">xiaowansm5/Onlinemusic</a> - 在线音乐播放器</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/evan-gyy/XQFTools">evan-gyy/XQFTools</a> - XQF办公自动化小工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/moyuban/moyuban.github.io">moyuban/moyuban.github.io</a> - 摸鱼办</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/sangyuxiaowu/HackerScreenSaver">sangyuxiaowu/HackerScreenSaver</a> - .NET develops a screen saver. .NET 开发一款屏幕保护程序，Hacker Screen Saver 是一款 .NET 设计的屏幕保护程序，可以显示 HTML 页面，你可以将黑客模拟器的网页，摸鱼时需要的windows更新，或者爱心代码网页设置为你的 Windows 电脑屏保。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/cf-pages/Telegraph-Image">cf-pages/Telegraph-Image</a> - Free Image Hosting solution, Flickr/imgur alternative, make it easy for users to share their images. Using Cloudflare Pages and Telegraph.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tjy-gitnub/win12">tjy-gitnub/win12</a> - Windows 12 网页版，在线体验，纯html/css/js静态网页 点击下面的链接在线体验</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/songquanpeng/go-file">songquanpeng/go-file</a> - 基于 Go 的文件分享工具，仅单可执行文件，开箱即用，内置图床和视频播放页面. File sharing tool based on Go.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/qinlili23333/ctfileGet">qinlili23333/ctfileGet</a> - 获取城通网盘一次性直连地址</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/wxxxcxx/ms-ra-forwarder">wxxxcxx/ms-ra-forwarder</a> - 免费的在线文本转语音API</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/JingShing/Pixel-Art-Filter-Web">JingShing/Pixel-Art-Filter-Web</a> - A web version pixel art filter can render image, gif and video. <a target="_blank" rel="noopener" href="https://pixel.jingshing.com/">https://pixel.jingshing.com/</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ZutJoe/Koala_hacker_news">ZutJoe/Koala_hacker_news</a> - Koala hacker news 周报内容 每周二0点左右自动更新</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LiuYuYang01/BookMark">LiuYuYang01/BookMark</a> - BookMark 是一款轻量、简洁雅观的书签导航项目 你可以将它设置为你的浏览器主页 告别杂乱无章的浏览器书签栏。相信你会喜欢它的! 🎉</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/asksowhat/ownrss">asksowhat/ownrss</a> - 一个极简的RSS在线浏览工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/WangGuibin/weather-action">WangGuibin/weather-action</a> - Github action自动化每天早上自动推送新闻简报  配合快捷指令使用<a target="_blank" rel="noopener" href="https://www.icloud.com/shortcuts/1a05b4fcde9743fab4ef8aa7a8908f80">https://www.icloud.com/shortcuts/1a05b4fcde9743fab4ef8aa7a8908f80</a></p>
+</li>
+</ul>
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/appleboy/telegram-action">appleboy/telegram-action</a> - GitHub Action that sends a Telegram message.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/appotry/docker-hexo">appotry/docker-hexo</a> - hexo docker 一键部署环境。增加CJK中国环境适配和常用软件，hexo 插件等易用设置。开箱即用。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/reference">jaywcjlove/reference</a> - 为开发人员分享快速参考备忘清单(速查表)</p>
+</li>
+</ul>
+<h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/freeCodeCamp/devdocs">freeCodeCamp/devdocs</a> - API Documentation Browser</li>
+</ul>
+<h2 id="Clojure"><a href="#Clojure" class="headerlink" title="Clojure"></a>Clojure</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Minoro-Ltd/kleene_ai.doctor">Minoro-Ltd/kleene_ai.doctor</a> - The base for a github action that creates notion documentation based on markdown files in your repo</li>
+</ul>
+<h2 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/LoveLifeLoveCat/WechatBackupNoRoot">LoveLifeLoveCat/WechatBackupNoRoot</a> - 免ROOT微信聊天数据备份/导出工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Hello-hao/Tbed">Hello-hao/Tbed</a> - Hellohao图床 | 图像托管 | 云相册，分享/水印、存储源分发、图像管理、前后端分离。<a target="_blank" rel="noopener" href="https://tbed.hellohao.cn">https://tbed.hellohao.cn</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Cruii/bilibili-helper-hub">Cruii/bilibili-helper-hub</a> - 🚀 Bilibili每日任务托管平台</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Clay-Ferguson/quantizr">Clay-Ferguson/quantizr</a> - Quanta is an open-source Social Media (Fediverse) platform for wikis, micro-blogging, collaboration, publishing, secure messaging, file sharing, and video/audio sharing. Browser-based, and written in Java and TypeScript.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/april-projects/april-zh-hotspot-push">april-projects/april-zh-hotspot-push</a> - 知乎热点推送</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/tonydon140/star-movie">tonydon140/star-movie</a> - 星星同步播放器，一款可以同步播放视频的软件。具有一起看电影、同步播放、弹幕互动等功能。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ZhongFuCheng3y/austin">ZhongFuCheng3y/austin</a> - 消息推送平台:fire:推送下发【邮件】【短信】【微信服务号】【微信小程序】【企业微信】【钉钉】等消息类型。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/jeequan/jeepay">jeequan/jeepay</a> - Jeepay是一套适合互联网企业使用的开源支付系统，支持多渠道服务商和普通商户模式。已对接微信支付，支付宝，云闪付官方接口，支持聚合码支付。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Jarrettluo/document-sharing-site">Jarrettluo/document-sharing-site</a> - “全文档”(All Docs)，Word, Excel, PPT, PDF, Pic等文档在线预览、存储、共享的工具，并且支持全文搜索的所有的文档信息。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MUedsa/BilibiliLiveTV">MUedsa/BilibiliLiveTV</a> - Bilibili Live APP for Android TV</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/FlyRenxing/RenxingPush">FlyRenxing/RenxingPush</a> - 任性推是一个消息推送机器人，用来通知自己消息的免费服务，目前支持QQ、Telegram两个平台。通过调用API接口，实现机器人给你发送消息的功能。通俗易懂点就是有什么重要通知需要及时知道，可以让任性推第一时间给你发消息。</p>
+</li>
+</ul>
+<h2 id="Dart"><a href="#Dart" class="headerlink" title="Dart"></a>Dart</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/maheshmnj/pastelog">maheshmnj/pastelog</a> - PasteLog is a simple, fast, and powerful pastebin. It is powered by firebase in the backend. It allows you to publish your logs, and access them from anywhere and any device via a unique link.</li>
+</ul>
+<h2 id="Nunjucks"><a href="#Nunjucks" class="headerlink" title="Nunjucks"></a>Nunjucks</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Uvacoder/productnews">Uvacoder/productnews</a> -</li>
+</ul>
+<h2 id="C-2"><a href="#C-2" class="headerlink" title="C"></a>C</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/nesbox/TIC-80">nesbox/TIC-80</a> - TIC-80 is a fantasy computer for making, playing and sharing tiny games.</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/Kingtous/Fclash">Kingtous/Fclash</a> - Clash fronted client by Flutter (Linux[arm64|x86_64]/Windows/MacOS supported). 🐱 支持Linux[arm64|x86_64]/Windows/MacOS的更好的Clash客户端，支持自动设置代理，兼容RULE-SET特性。</p>
+</li>
+</ul>
+<h2 id="SCSS"><a href="#SCSS" class="headerlink" title="SCSS"></a>SCSS</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/nostalgic-css/NES.css">nostalgic-css/NES.css</a> - NES-style CSS Framework | ファミコン風CSSフレームワーク</li>
+</ul>
+<h2 id="AutoHotkey"><a href="#AutoHotkey" class="headerlink" title="AutoHotkey"></a>AutoHotkey</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/no5ix/sux">no5ix/sux</a> - An alternative to Alfred+Wox+Listary+OneQuick+CapslockPlus.一个只有2M+大小的强大效率工具</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/shizengsong/taskSwitcher">shizengsong/taskSwitcher</a> - 改进windows任务窗口操作，鼠标移动到屏幕右下角，即可启动选择任务。详见文件</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/dbgba/PCtoiOSClipboardSync">dbgba/PCtoiOSClipboardSync</a> - 电脑与iOS互相剪贴板同步 Computer and iOS clipboard sync with each other</p>
+</li>
+</ul>
+<h2 id="Rascal"><a href="#Rascal" class="headerlink" title="Rascal"></a>Rascal</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/y1yang0/hosts">y1yang0/hosts</a> - :statue_of_liberty:最新可用的google hosts文件。国内镜像：</li>
+</ul>
+<h2 id="Svelte"><a href="#Svelte" class="headerlink" title="Svelte"></a>Svelte</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/beromir/Servas">beromir/Servas</a> - A self-hosted bookmark management tool.</li>
+</ul>
+<h2 id="DIGITAL-Command-Language"><a href="#DIGITAL-Command-Language" class="headerlink" title="DIGITAL Command Language"></a>DIGITAL Command Language</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/RenaLio/Mux2sub">RenaLio/Mux2sub</a> - 自动获取订阅📋，订阅定时检查🚀，存放订阅😀</li>
+</ul>
+<h2 id="Metal"><a href="#Metal" class="headerlink" title="Metal"></a>Metal</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/yangKJ/Harbeth">yangKJ/Harbeth</a> - Metal API for GPU accelerated Image and Video and Camera filter framework. Support macOS &amp; iOS. 🎨 图像、视频、相机滤镜框架</li>
+</ul>
+<h2 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/MaLuns/hexo-theme-text">MaLuns/hexo-theme-text</a> - 一款简约、轻量的Hexo主题</p>
+</li>
+<li><p>By <a target="_blank" rel="noopener" href="https://github.com/rcy1314/some-stars">rcy1314/some-starts</a></p>
+</li>
+<li><p>使用 GitHub Pages 快速生成一个项目介绍页：<a target="_blank" rel="noopener" href="https://pages.github.com/">https://pages.github.com/</a> 网页内容来自我们在仓库中书写的 Markdown 文档</p>
+<p>浏览器插件「GitHub 加速」：提高中国开发者访问 GitHub 的速度，提升克隆 Git 仓库的速度，提升下载 release 包的下载速度。 <a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/github加速/mfnkflidjnladnkldfonnaicljppahpg/related?hl=zh-CN">https://chrome.google.com/webstore/detail/github加速/mfnkflidjnladnkldfonnaicljppahpg/related?hl=zh-CN</a></p>
+<p>GitHub 加速下载：<a target="_blank" rel="noopener" href="http://toolwa.com/github/">http://toolwa.com/github/</a> 输入 GitHub 项目链接，就能下载仓库的所有内容</p>
+<p>快速入门 GitHub：<a target="_blank" rel="noopener" href="https://xie.infoq.cn/article/8600676300c46bea520c6a896">https://xie.infoq.cn/article/8600676300c46bea520c6a896</a>  </p>
+<p>使用梯子更快地打开 GitHub：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/hmdzbFsmP1Re2bpO47insQ">https://mp.weixin.qq.com/s/hmdzbFsmP1Re2bpO47insQ</a> </p>
+<p>GitHub 个人页美化：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/kYx3Txa3mMzpmY8fAj5UkQ">https://mp.weixin.qq.com/s/kYx3Txa3mMzpmY8fAj5UkQ</a> </p>
+<p>GitHub Proxy：GitHub 文件 , Releases , archive , gist , <a target="_blank" rel="noopener" href="http://raw.githubusercontent.com/">raw.githubusercontent.com</a>文件代理加速下载服务 <a target="_blank" rel="noopener" href="https://ghproxy.com/">https://ghproxy.com/</a> 输入 GitHub 项目链接就可以下载</p>
+<p>好的 GitHub 项目</p>
+<p>Mac 上开源免费的分屏工具 Rectangle：<a target="_blank" rel="noopener" href="https://github.com/rxhanson/Rectangle">https://github.com/rxhanson/Rectangle</a>  </p>
+<p>GitHub 中文排行榜：<a target="_blank" rel="noopener" href="https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts">https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts</a> 帮你发现高分优秀的中文项目  </p>
+<p>下载B站视频的命令行工具 BBDown：<a target="_blank" rel="noopener" href="https://github.com/nilaoda/BBDown">https://github.com/nilaoda/BBDown</a>  </p>
+<p>用 Swift 语言来搭建博客 Publish：<a target="_blank" rel="noopener" href="https://github.com/fatbobman/PublishThemeForFatbobmanBlog">https://github.com/fatbobman/PublishThemeForFatbobmanBlog</a> 博客效果见：<a target="_blank" rel="noopener" href="https://www.fatbobman.com/">https://www.fatbobman.com/</a> </p>
+<p>Hexo 博客主题：</p>
+<p>Butterfly <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">https://github.com/jerryc127/hexo-theme-butterfly</a>  #Hexo</p>
+<p>Hexo 主题 hexo-theme-sagiri：<a target="_blank" rel="noopener" href="https://github.com/DIYgod/hexo-theme-sagiri">https://github.com/DIYgod/hexo-theme-sagiri</a> 由 RSSHub 的作者 @DIYgod 开发   主题很二次元，效果见：<a target="_blank" rel="noopener" href="https://diygod.me/">https://diygod.me/</a></p>
+<p>计算机算法学习、求职刷题：<a target="_blank" rel="noopener" href="https://github.com/chefyuan/algorithm-base">https://github.com/chefyuan/algorithm-base</a>  </p>
+<p>汇总各大互联网公司容易考察的高频 leetcode 题目：<a target="_blank" rel="noopener" href="https://codetop.cc/home">https://codetop.cc/home</a> 项目地址：<a target="_blank" rel="noopener" href="https://github.com/afatcoder/LeetcodeTop">https://github.com/afatcoder/LeetcodeTop</a></p>
+<p>解锁网易云音乐客户端变灰歌曲：<a target="_blank" rel="noopener" href="https://github.com/meng-chuan/Unlock-netease-cloud-music">https://github.com/meng-chuan/Unlock-netease-cloud-music</a>  </p>
+<p>类似的项目：<a target="_blank" rel="noopener" href="https://github.com/nondanee/UnblockNeteaseMusic">https://github.com/nondanee/UnblockNeteaseMusic</a> </p>
+<p>将点赞的 Twitter 动态发送到 Telegram：<a target="_blank" rel="noopener" href="https://github.com/NeverBehave/Tweet2Telegram">https://github.com/NeverBehave/Tweet2Telegram</a> 需要申请 Twitter API，使用 GitHub Actions 自动实现 具体实现的教程：<a target="_blank" rel="noopener" href="https://blog.never.pet/2021/01/08/tweet-to-telegram">https://blog.never.pet/2021/01/08/tweet-to-telegram</a> </p>
+<p>CSS 框架 Tailwindcss：<a target="_blank" rel="noopener" href="https://github.com/tailwindlabs/tailwindcss">https://github.com/tailwindlabs/tailwindcss</a>   </p>
+<p>苹果电脑版微信消息防撤回插件 <a target="_blank" rel="noopener" href="https://github.com/Sunnyyoung/WeChatTweak-macOS">https://github.com/Sunnyyoung/WeChatTweak-macOS</a>  （慎用，可能会被封号）</p>
+<p>解除海外访问优酷和土豆的限制 - #浏览器插件 Unblock-Youku：<a target="_blank" rel="noopener" href="https://github.com/uku/Unblock-Youku">https://github.com/uku/Unblock-Youku</a></p>
+<p>生成 Wifi 二维码「Wificard」：<a target="_blank" rel="noopener" href="https://github.com/bndw/wifi-card">https://github.com/bndw/wifi-card</a>  扫描二维码就能连上 Wifi 工具的网址：<a target="_blank" rel="noopener" href="https://wificard.io/">https://wificard.io/</a>  </p>
+<p>Windows 系统电脑护眼工具 Project Eye：<a target="_blank" rel="noopener" href="https://github.com/Planshit/ProjectEye">https://github.com/Planshit/ProjectEye</a> 在小众软件论坛看到的 </p>
+<p>浏览器广告屏蔽插件 uBlock Origin：<a target="_blank" rel="noopener" href="https://github.com/gorhill/uBlock">https://github.com/gorhill/uBlock</a> </p>
+<p>免费开源的安卓应用列表（安卓开源软件下载）：<a target="_blank" rel="noopener" href="https://github.com/offa/android-foss">https://github.com/offa/android-foss</a>   #Android#  </p>
+<p>OBS 多平台直播推流插件：<a target="_blank" rel="noopener" href="https://github.com/sorayuki/obs-multi-rtmp">https://github.com/sorayuki/obs-multi-rtmp</a>  </p>
+<p>Joplin：开源的笔记软件  <a target="_blank" rel="noopener" href="https://github.com/laurent22/joplin">https://github.com/laurent22/joplin</a>  官网地址：<a target="_blank" rel="noopener" href="https://joplinapp.org/">https://joplinapp.org/</a></p>
+<p>nativefier：把网页应用封装成本地的原生应用  <a target="_blank" rel="noopener" href="https://github.com/nativefier/nativefier">https://github.com/nativefier/nativefier</a>  </p>
+<p>GitHub 设计师 @Brian 开源的<a target="_blank" rel="noopener" href="https://brianlovin.com/">个人网站</a>代码：<a target="_blank" rel="noopener" href="https://github.com/brianlovin/brian-lovin-next">https://github.com/brianlovin/brian-lovin-next</a>  </p>
+<p>ITraffic-monitor-for-mac：Mac 网速监控工具  <a target="_blank" rel="noopener" href="https://github.com/foamzou/ITraffic-monitor-for-mac">https://github.com/foamzou/ITraffic-monitor-for-mac</a>  </p>
+<p>代理工具 Clash 下载：<a target="_blank" rel="noopener" href="https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.15.9">https://github.com/Fndroid/clash_for_windows_pkg/releases/tag/0.15.9</a></p>
+<p>Mac 上的菜单栏图标隐藏工具 Hidden Bar：<a target="_blank" rel="noopener" href="https://github.com/dwarvesf/hidden">https://github.com/dwarvesf/hidden</a>  开源免费，已上架 Mac App Store</p>
+<p>MusicPlayer2：音频播放器  <a target="_blank" rel="noopener" href="https://github.com/zhongyang219/MusicPlayer2/">https://github.com/zhongyang219/MusicPlayer2/</a></p>
+<p>纯纯写作桌面版：<a target="_blank" rel="noopener" href="https://github.com/PureWriter/desktop">https://github.com/PureWriter/desktop</a> 桌面版需要与安卓版配合才能使用（纯纯写作目前已从酷安下架，作者主动选择下架）</p>
+<p>免费可商用字体整理：<a target="_blank" rel="noopener" href="https://github.com/wordshub/free-font">https://github.com/wordshub/free-font</a>  </p>
+<p>100 天学会 Python：<a target="_blank" rel="noopener" href="https://github.com/jackfrued/Python-100-Days">https://github.com/jackfrued/Python-100-Days</a> </p>
+<p>GitHub 上适合新手的开源项目（Python 篇）  <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/280039778">https://zhuanlan.zhihu.com/p/280039778</a></p>
+<p>VNote：开源的笔记软件  <a target="_blank" rel="noopener" href="https://github.com/vnotex/vnote">https://github.com/vnotex/vnote</a>  </p>
+<p>Aerial：Windows 上的屏保程序，在屏保时自动播放 Apple TV 的屏保视频 <a target="_blank" rel="noopener" href="https://github.com/OrangeJedi/Aerial">https://github.com/OrangeJedi/Aerial</a>   Mac 版：<a target="_blank" rel="noopener" href="https://aerialscreensaver.github.io/">https://aerialscreensaver.github.io/</a>  </p>
+<p>浏览器翻译插件 - 划词翻译 ：<a target="_blank" rel="noopener" href="https://github.com/lmk123/crx-selection-translate">https://github.com/lmk123/crx-selection-translate</a>  </p>
+<p>B 站收藏夹视频批量下载工具 - 哔哩下载姬：<a target="_blank" rel="noopener" href="https://github.com/FlySelfLog/downkyi">https://github.com/FlySelfLog/downkyi</a> </p>
+<p>Typora 主题：<a target="_blank" rel="noopener" href="https://github.com/liangjingkanji/DrakeTyporaTheme">https://github.com/liangjingkanji/DrakeTyporaTheme</a>  </p>
+<p>蚁阅：在线的 RSS 阅读器  <a target="_blank" rel="noopener" href="https://github.com/anyant/rssant">https://github.com/anyant/rssant</a> 首个月可免费获得会员，会员到期后订阅的链接无法更新，年费 30 元</p>
+<p>前端面试手写题：<a target="_blank" rel="noopener" href="https://github.com/Mayandev/fe-interview-handwrite">https://github.com/Mayandev/fe-interview-handwrite</a> 等着哪一天想转行前端就来看<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="😭"></p>
+<p>将富文本转换为 Markdown 格式：<a target="_blank" rel="noopener" href="https://github.com/domchristie/turndown">https://github.com/domchristie/turndown</a>  </p>
+<p>GitHub 个人主页的各种玩法：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/161029860">https://zhuanlan.zhihu.com/p/161029860</a> 来自 GitHub Daily</p>
+<p>游戏</p>
+<p>在线玩 2048：<a target="_blank" rel="noopener" href="https://github.com/akfish/Q-Learning-Flappy-2048">https://github.com/akfish/Q-Learning-Flappy-2048</a></p>
+<p>疯狂管道鸟 X 2048：<a target="_blank" rel="noopener" href="https://github.com/hczhcz/Flappy-2048">https://github.com/hczhcz/Flappy-2048</a></p>
+<p>Pornhub 风格图标生成器：<a target="_blank" rel="noopener" href="https://github.com/bestony/logoly">https://github.com/bestony/logoly</a> 在线网站：<a target="_blank" rel="noopener" href="https://www.logoly.pro/#/">https://www.logoly.pro/#/</a>  项目的作者：白宦成</p>
+<p>Notion 搭建博客：</p>
+<p>nextjs-notion-starter-kit：<a target="_blank" rel="noopener" href="https://github.com/transitive-bullshit/nextjs-notion-starter-kit">https://github.com/transitive-bullshit/nextjs-notion-starter-kit</a> 本博客就是使用这个开发者提供的方法，他的博客更炫酷 <a target="_blank" rel="noopener" href="https://transitivebullsh.it/">https://transitivebullsh.it/</a></p>
+<p>Spencer Woo《Powering my blog with Notion》  <a target="_blank" rel="noopener" href="https://blog.spencerwoo.com/2021/02/nextjs-blog-notion">https://blog.spencerwoo.com/2021/02/nextjs-blog-notion</a>  </p>
+<p>Nobelium：一个使用 NextJS + Notion API 实现的，部署在 Vercel 上的静态博客系统。为 Notion 和所有创作者设计。  <a target="_blank" rel="noopener" href="https://github.com/craigary/nobelium/blob/main/README-CN.md">https://github.com/craigary/nobelium/blob/main/README-CN.md</a>  </p>
+<p>在 GitHub 个人主页添加数据统计  <a target="_blank" rel="noopener" href="https://github.com/anuraghazra/github-readme-stats">https://github.com/anuraghazra/github-readme-stats</a>  在知乎文章《<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/283447572">5分钟“白嫖”我使用Github 5 年总结的这些骚操作（小技巧）</a>》看到的</p>
+<p>将 GitHub issues 变成评论区：开源项目 <a target="_blank" rel="noopener" href="https://github.com/utterance/utterances">https://github.com/utterance/utterances</a>    <a target="_blank" rel="noopener" href="https://utteranc.es/">https://utteranc.es/</a></p>
+<p>公众号 Markdown 排版渲染工具</p>
+<p>Markdown Nice <a target="_blank" rel="noopener" href="https://github.com/mdnice/markdown-nice">https://github.com/mdnice/markdown-nice</a></p>
+<p>Wechat-format <a target="_blank" rel="noopener" href="https://github.com/lyricat/wechat-format">https://github.com/lyricat/wechat-format</a></p>
+<p>mpvue：一个使用 Vue.js 开发小程序的前端框架 <a target="_blank" rel="noopener" href="http://mpvue.com/">http://mpvue.com/</a></p>
+<p>微信小程序开发资源汇总 <a target="_blank" rel="noopener" href="https://github.com/justjavac/awesome-wechat-weapp">https://github.com/justjavac/awesome-wechat-weapp</a></p>
+<p>Particles.js <a target="_blank" rel="noopener" href="https://marcbruederlin.github.io/particles.js/">https://marcbruederlin.github.io/particles.js/</a> 网页背景棱状动画效果</p>
+<p>FreeMove：将安装在 C 盘的软件移动到别的盘 <a target="_blank" rel="noopener" href="https://github.com/imDema/FreeMove">https://github.com/imDema/FreeMove</a></p>
+<p>RSSHub：万物皆可 RSS，可以给任何奇奇怪怪的内容生成 RSS 订阅源 <a target="_blank" rel="noopener" href="https://github.com/DIYgod/RSSHub">https://github.com/DIYgod/RSSHub</a></p>
+<p>中文文案排版指北 <a target="_blank" rel="noopener" href="https://github.com/sparanoid/chinese-copywriting-guidelines">https://github.com/sparanoid/chinese-copywriting-guidelines</a></p>
+<p>下载工具 Motrix <a target="_blank" rel="noopener" href="https://github.com/agalwood/Motrix/blob/master/README-CN.md">https://github.com/agalwood/Motrix/blob/master/README-CN.md</a></p>
+<p>PandaOCR：文字识别工具 <a target="_blank" rel="noopener" href="https://github.com/miaomiaosoft/PandaOCR">https://github.com/miaomiaosoft/PandaOCR</a></p>
+<p>CleanMyWechat：PC 版微信第三方清理工具 <a target="_blank" rel="noopener" href="https://github.com/blackboxo/CleanMyWechat">https://github.com/blackboxo/CleanMyWechat</a></p>
+<p>Best App：收集&amp;推荐优秀的 Apps/硬件/技巧/周边等 <a target="_blank" rel="noopener" href="https://github.com/hzlzh/Best-App">https://github.com/hzlzh/Best-App</a></p>
+<p>Mac 生产力工具推荐 <a target="_blank" rel="noopener" href="https://github.com/Louiszhai/tool">https://github.com/Louiszhai/tool</a></p>
+<p>VS Code 知乎插件 <a target="_blank" rel="noopener" href="https://github.com/niudai/VSCode-Zhihu">https://github.com/niudai/VSCode-Zhihu</a></p>
+<p>TranslucentTB：让 Windows 任务栏变透明 <a target="_blank" rel="noopener" href="https://github.com/TranslucentTB/TranslucentTB">https://github.com/TranslucentTB/TranslucentTB</a></p>
+<p>Beslyric-for-X：网易云歌词制作工具 <a target="_blank" rel="noopener" href="https://github.com/BesLyric-for-X/BesLyric-for-X">https://github.com/BesLyric-for-X/BesLyric-for-X</a></p>
+<p>web-clipper：网页剪藏插件，支持 Notion、OneNote、Bear、Yuque、Joplin <a target="_blank" rel="noopener" href="https://github.com/webclipper/web-clipper">https://github.com/webclipper/web-clipper</a></p>
+<p>QuickLook：Windows 上的空格预览软件，点击空格就能预览文件内容 <a target="_blank" rel="noopener" href="https://github.com/QL-Win/QuickLook">https://github.com/QL-Win/QuickLook</a></p>
+<p>藏起来！哔哩哔哩：将网页版的 B 站缩放成一个很小的播放窗口，摸鱼用 <a target="_blank" rel="noopener" href="https://github.com/chitosai/bilimini">https://github.com/chitosai/bilimini</a></p>
+<p>免费中文字体合集 <a target="_blank" rel="noopener" href="https://github.com/zenozeng/Free-Chinese-Fonts">https://github.com/zenozeng/Free-Chinese-Fonts</a></p>
+<p>科技爱好者周刊 <a target="_blank" rel="noopener" href="https://github.com/ruanyf/weekly">https://github.com/ruanyf/weekly</a></p>
+<p>互联网上的免费书籍 <a target="_blank" rel="noopener" href="https://github.com/ruanyf/free-books">https://github.com/ruanyf/free-books</a></p>
+<p>PicGo：图床工具，一个用于快速上传图片并获取图片 URL 链接的工具 <a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">https://github.com/Molunerfinn/PicGo</a></p>
+<p>京价保：一个帮助你自动申请京东价格保护的浏览器拓展 <a target="_blank" rel="noopener" href="https://github.com/sunoj/jjb">https://github.com/sunoj/jjb</a></p>
+<p>CopyTranslator：<a target="_blank" rel="noopener" href="https://github.com/CopyTranslator/CopyTranslator/blob/master/README_zh.md">https://github.com/CopyTranslator/CopyTranslator/blob/master/README_zh.md</a> 复制即翻译</p>
+<p>动态排名数据可视化：能够将历史数据排名转化为动态柱状图图表 <a target="_blank" rel="noopener" href="https://github.com/Jannchie/Historical-ranking-data-visualization-based-on-d3.js">https://github.com/Jannchie/Historical-ranking-data-visualization-based-on-d3.js</a></p>
+<p>设计工具合集：<a target="_blank" rel="noopener" href="https://github.com/phh95/Awesome-design-tools">https://github.com/phh95/Awesome-design-tools</a></p>
+<p>谷粒：Chrome 浏览器插件英雄榜 <a target="_blank" rel="noopener" href="https://github.com/zhaoolee/ChromeAppHeroes">https://github.com/zhaoolee/ChromeAppHeroes</a></p>
+<p>表情包博物馆：<a target="_blank" rel="noopener" href="https://github.com/zhaoolee/ChineseBQB">https://github.com/zhaoolee/ChineseBQB</a> （与上面的项目是同一个作者）</p>
+<p>在线制作表情包：<a target="_blank" rel="noopener" href="https://github.com/xtyxtyx/sorry">https://github.com/xtyxtyx/sorry</a> </p>
+<p>Listen 1：音乐平台聚合搜索工具 <a target="_blank" rel="noopener" href="https://github.com/listen1/listen1_chrome_extension">https://github.com/listen1/listen1_chrome_extension</a></p>
+<p>Gimp：图片处理工具 <a target="_blank" rel="noopener" href="https://github.com/GNOME/gimp">https://github.com/GNOME/gimp</a></p>
+<p>百度脑图离线版：<a target="_blank" rel="noopener" href="https://github.com/NaoTu/DesktopNaotu">https://github.com/NaoTu/DesktopNaotu</a></p>
+<p>稳部落：<a target="_blank" rel="noopener" href="https://github.com/YaoZeyuan/stablog">https://github.com/YaoZeyuan/stablog</a> 专业备份导出微博记录 ，有 Win 和 Mac 版</p>
+<p>新浪微博爬虫：<a target="_blank" rel="noopener" href="https://github.com/nlpjoe/weiboSpider">https://github.com/nlpjoe/weiboSpider</a> 用python爬取或分析他人微博账号的数据</p>
+<p>Parser：小程序富文本插件（html 渲染），支持微信、QQ、百度、头条、uni-app <a target="_blank" rel="noopener" href="https://github.com/jin-yufeng/Parser">https://github.com/jin-yufeng/Parser</a></p>
+<p>自由钢琴：<a target="_blank" rel="noopener" href="https://github.com/WarpPrism/AutoPiano">https://github.com/WarpPrism/AutoPiano</a> 一个在线的钢琴模拟器</p>
+<p>团子翻译器：基于 OCR 技术的翻译工具，可实时翻译日语和英语 <a target="_blank" rel="noopener" href="https://github.com/PantsuDango/Dango-Translator">https://github.com/PantsuDango/Dango-Translator</a> 使用教程：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1gp4y1Q7Ts">https://www.bilibili.com/video/BV1gp4y1Q7Ts</a></p>
+<p>GitHub-Dark：GitHub 黑夜模式浏览器插件 <a target="_blank" rel="noopener" href="https://github.com/StylishThemes/GitHub-Dark">https://github.com/StylishThemes/GitHub-Dark</a> 安利文章：<a target="_blank" rel="noopener" href="https://juejin.im/post/5ee2df3cf265da771c780138">https://juejin.im/post/5ee2df3cf265da771c780138</a> 《【译】原来 GitHub 还有这些骚操作？》</p>
+<p>微博图床：将图片上传到新浪微博图床并返回链接 <a target="_blank" rel="noopener" href="https://github.com/Semibold/Weibo-Picture-Store">https://github.com/Semibold/Weibo-Picture-Store</a></p>
+<p>参考文章</p>
+<p>掌握 3 个搜索技巧，在 GitHub 上快速找到实用软件资源 <a target="_blank" rel="noopener" href="https://sspai.com/post/46061">https://sspai.com/post/46061</a></p>
+<p>Github 搜索官方帮助文档 <a target="_blank" rel="noopener" href="https://help.github.com/cn/github/searching-for-information-on-github/about-searching-on-github">https://help.github.com/cn/github/searching-for-information-on-github/about-searching-on-github</a></p>
+</li>
+</ul>
+</div><script type="text/javascript" src="/js/share.js?v=1.0.0" async></script><a class="article-share-link" data-url="http://bnjy.eu.org/posts/2de2e452.html" data-id="cmjm3ary8000ek41k57bpdbo8" data-qrcode="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByUlEQVR42u3aS47CQAwFQO5/aWY7Ekp4trt7MlL1CpEEChaWf69XfN4X5/fVzzuv3vl8avHBxcUdc9+3J0dcgao/8up+XFzc89yriHH/+j5U5ffnz+Li4j6Ze0+8z0ySvwAXF/d/cZOSplr84OLiPpObFyr3zybJzaFaDRcXd8DNE5R9r7f0d3FxcVvcd/HkT+VhrvDtuLi4R7h5QJmMQ5IWSd5MwcXF3c2tLlJUw9OqVY9CzxUXF3fMTUqdSV1VTYyazRFcXNwN3Or4sxrI5sUSLi7ueW6emvRWMKuhLVLh4uJu5ibEVZOOyXgGFxf3DLe3bpVfzQNZdA8uLu4RbtIKWTWInQQ+XFzc89zJkDUvn/KE5ksgw8XFPcitNi6rDZRJQfWqdmRxcXEXcXvD1B1LXYWGKS4u7h9xq2GoF7aaxQ8uLu4RbvJxhbZmcYgbeXBxcTdz5zuevUZq3mrBxcU9z60WOb0ha3X9ohf+cHFx13J7U9k8xZmsdJSjLy4u7lJuPhadJCvV4qcwE8bFxX0Mt1cU5YXT4kCGi4u7mTtZpxgNY3BxcQ9y50En+dl5KvNlyIqLi7uZmwegavEzX8Ma9XdxcXE73B8z2OIxH/yj9QAAAABJRU5ErkJggg==">分享</a><div class="tags"><ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li></ul></div><div class="post-nav"><a class="pre" href="/posts/c5bcc62e.html">GitHub Action for Gitee Pages</a></div><div class="nofancybox" id="vcomment"></div><script src="https://unpkg.com/valine/dist/Valine.min.js"></script><script>var notify = 'false' == 'true' ? true : false;
+var verify = 'false' == 'true' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'6YJscbvqXJK7VrKYNhElZKr7-MdYXbMMI',
+  appKey:'zLLLAr1WaeicJQyhF896Mmcu',
+  serverURLs:'',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})
+</script></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/img/avatar.png"/></a><p>To be a better man.</p><a class="info-icon" href="https://twitter.com/" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="bjhwjy@126.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0/">教程学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/">生活记事</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E5%A5%BD%E6%96%87/">经典好文</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/RustDesk/" style="font-size: 15px;">RustDesk</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/%E7%BB%8F%E5%85%B8%E5%A5%BD%E6%96%87/" style="font-size: 15px;">经典好文</a> <a href="/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 15px;">邮件</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/posts/6efcbb1e.html">安徽合肥紫玥台房贷总结</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/89d7ccdc.html">Pake Plus</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/e2427986.html">超赞的 Linux 软件</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/89b64fc8.html">RustDesk 开源远程桌面软件系统，自建服务器部署 (审计)、发布和使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/72977dc0.html">HumanSystemOptimization-main</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/ab519416.html">比免费更好</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/f589171e.html">使用 Railway 和 Supabase 零成本搭建 n8n 自动化平台</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/97e9ea5a.html">国内开源镜像站点汇总</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/8.html">效率工作：高效开会</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/c9ff3035.html">当一位清华本硕博放弃 “北京中产”，去往非洲</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2025 <a href="/." rel="nofollow">捌月.</a> Powered by<a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Hexo.</a><a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Theme</a> by<a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Jam.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><link rel="stylesheet" type="text/css" href="/css/search.css?v=1.0.0"><script type="text/javascript" src="/js/search.js?v=1.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+  search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="/css/external.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
