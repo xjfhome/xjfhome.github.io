@@ -1,0 +1,3106 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content=""><title>docker 教程 | 捌月</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/pure-min.css"><link rel="stylesheet" type="text/css" href="https://unpkg.com/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="https://unpkg.com/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script type="text/javascript" src="https://unpkg.com/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="https://unpkg.com/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="https://unpkg.com/toastr/build/toastr.min.css"><div class="darkmode-toggle">🌓</div><script>var prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+var toggle = document.querySelector('.darkmode-toggle');
+var html = document.querySelector('html');
+
+html.dataset.dark = localStorage.dark || prefersDarkMode.matches;
+
+toggle.addEventListener('click', () => {
+localStorage.dark = !(html.dataset.dark == 'true');
+html.dataset.dark = localStorage.dark;
+});</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">docker 教程</h1><a id="logo" href="/.">捌月</a><p class="description"></p></div><div id="nav-menu"><a href="/."><i class="fa fa-home"> 首页</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/"><i class="fa fa-book"> 记事</i></a><a class="current" href="/system/"><i class="fa fa-television"> 系统</i></a><a target="_blank" rel="noopener" href="https://j.ynly.eu.org/"><i class="fa fa-graduation-cap"> 教育</i></a><a target="_blank" rel="noopener" href="https://l.ynly.eu.org/"><i class="fa fa-fighter-jet"> 旅游</i></a><a href="/tool/"><i class="fa fa-gavel"> 工具</i></a><a href="/web/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">docker 教程</h1><div class="post-content"><h1 id="Docker、Docker-compose-入门教程"><a href="#Docker、Docker-compose-入门教程" class="headerlink" title="Docker、Docker-compose 入门教程"></a>Docker、Docker-compose 入门教程</h1><p>1 Docker 简介 1.1 Docker 是什么？ docker 是一个开源的应用容器引擎。<br>1 Docker 简介 1.1 Docker 是什么？ docker 是一个开源的应用容器引擎。 1.2 容器是什么？ 容器是一种轻量级的虚拟化技术 ，它是一个由应用运行环境、容器基础镜像组成的集合。 以 Web 服务 Nginx 为例，如下图所示：Nginx 容器是由 Nginx 主程序、Ngin</p>
+<h2 id="1-1-Docker-是什么？"><a href="#1-1-Docker-是什么？" class="headerlink" title="1.1 Docker 是什么？"></a>1.1 Docker 是什么？</h2><p>docker 是一个开源的应用容器引擎。</p>
+<h2 id="1-2-容器是什么？"><a href="#1-2-容器是什么？" class="headerlink" title="1.2 容器是什么？"></a>1.2 容器是什么？</h2><p>容器是一种轻量级的虚拟化技术 ，它是一个由应用运行环境、容器基础镜像组成的集合。以 Web 服务 Nginx 为例，如下图所示：Nginx 容器是由 Nginx 主程序、Nginx 运行依赖组件（gcc、pcre、openssl）、CentOS 7 基础镜像组成。（注：CentOS 7 基础镜像并非完整的操作系统镜像，只是操作系统的基础文件和库文件）<br><img src="https://kb.fit2cloud.com/upload/metersphere/图片-kfsh.png" alt="img"></p>
+<h2 id="1-3-容器与虚拟机的区别"><a href="#1-3-容器与虚拟机的区别" class="headerlink" title="1.3 容器与虚拟机的区别"></a>1.3 容器与虚拟机的区别</h2><p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-dxdj.png" alt="img"></p>
+<ul>
+<li><strong>启动速度：</strong>每个虚拟都机是一个完整的操作系统包括操作系统和内核，所以它是一个重量级的系统；而容器是轻量级的，因为容器只打包了操作系统的基础文件和库文件、还有应用程序及所有的依赖，他的运行速度就如同在系统中创建一个进程一样快，所以启动速度较快。</li>
+<li><strong>运行性能：</strong>由于虚拟机增加了虚拟化层用于虚拟化硬件，势必会增加一定的开销，所以运行性能有所损失；而容器是直接运行在物理操作系统上的，他本身与系统上其他进程并没有太大区别，所以运行性能是接近原生的。</li>
+<li><strong>磁盘占用：</strong>虚拟机是一个完整的操作系统，是 GB 级别的，而容器只包含了一些系统启动的必要组件和程序依赖，是 MB 级别的。</li>
+<li><strong>数量：</strong>运行一个操作系统的开销较大，运行一个进程的开销较小，同样的服务器资源可以运行更多的容器。</li>
+<li><strong>隔离性：</strong>虚拟机是一个完整的操作系统级别的隔离，要比容器好很多；容器是进程级别的隔离，隔离的不彻底，因为多个容器之间使用的是同一个宿主机的操作系统内核。</li>
+<li><strong>封装速度：</strong>虚拟机封装会包含操作系统，封装速度比较慢，容器只封装操作系统的基础文件和库文件、应用程序、依赖，封装速度较快。</li>
+</ul>
+<h2 id="1-4-Docker-和容器的关系"><a href="#1-4-Docker-和容器的关系" class="headerlink" title="1.4 Docker 和容器的关系"></a>1.4 Docker 和容器的关系</h2><p>容器是一种虚拟化技术，docker 是实现容器的一种工具，我们称它为容器引擎；<br>可以驱动容器的引擎还有 podman、containerd 等，docker 是目前市面上应用范围最广的一种容器引擎。</p>
+<p>在 CentOS 7 系统上安装 docker</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">yum install -<span class="attribute">y</span> yum-utils device-mapper-persistent-data lvm2 &amp;&amp; \</span><br><span class="line">yum-config-manager <span class="attr">--add-repo</span> http:<span class="comment">//mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo &amp;&amp; yum makecache fast &amp;&amp; \ </span></span><br><span class="line">yum -<span class="attribute">y</span> install docker-ce &amp;&amp; \</span><br><span class="line">mkdir -<span class="selector-tag">p</span> /etc/docker</span><br><span class="line">tee /etc/docker/daemon<span class="selector-class">.json</span> &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: <span class="selector-attr">[<span class="string">&quot;https://j6o4qczl.mirror.aliyuncs.com&quot;</span>]</span></span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl enable docker</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+<p>执行以下命令，启动一个 Nginx 容器</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">run</span> -d <span class="comment">--name nginx_test  nginx</span></span><br><span class="line"></span><br><span class="line">注释：</span><br><span class="line">-d					</span><br><span class="line"><span class="comment">--name			</span></span><br><span class="line">nginx				</span><br></pre></td></tr></table></figure>
+<p>使用 docker ps 可以看到有一个名为 nginx_test 的容器在运行；</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-rtgw.png" alt="img"></p>
+<p>进入容器查看服务</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker exec -<span class="keyword">it</span> nginx_test bash</span><br><span class="line"></span><br><span class="line">注释：</span><br><span class="line">-<span class="keyword">it</span>		</span><br><span class="line">nginx_test	</span><br><span class="line">bash	</span><br></pre></td></tr></table></figure>
+<p>执行命令后，shell 端的主机名变成了随机字段串，说明进入到了容器内部；</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-nufu.png" alt="img"></p>
+<p>在 Nginx 容器中可以看出 Nginx 的服务和端口都是正常的</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-wpmm.png" alt="img"></p>
+<p>键入 <code>exit</code> 回到宿主机，执行 <code>netstat -lnt</code> 查看宿主机的端口；</p>
+<p>如下图所示，在宿主机并没有 Nginx 的端口，这是因为容器中的端口并没有映射到宿主机上，所以在宿主机无法访问到 Nginx 的服务。</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-nypd.png" alt="img"></p>
+<h2 id="3-1-如何访问容器服务"><a href="#3-1-如何访问容器服务" class="headerlink" title="3.1 如何访问容器服务"></a>3.1 如何访问容器服务</h2><p>我们在运行容器时使用 -p 参数将容器端口映射到宿主机端口</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d <span class="attr">--name</span> nginx_test -<span class="selector-tag">p</span> <span class="number">8080</span>:<span class="number">80</span> nginx</span><br><span class="line"></span><br><span class="line">注释：</span><br><span class="line">-<span class="selector-tag">p</span> <span class="number">8080</span>:<span class="number">80</span>	</span><br></pre></td></tr></table></figure>
+<p>容器运行后，在宿主机执行 <code>netstat -lnt</code> 可以看到，宿主机已经监听了 8080 端口;</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-xvlt.png" alt="img"></p>
+<p>查询服务器的 IP，使用 curl 命令访问 IP 地址 + 端口，可以返回 Nginx 服务的信息，说明可以正常访问 Nginx 服务了；</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-nsbo.png" alt="img"></p>
+<p>当然，用浏览器一样可以得到 Nginx 页面信息。</p>
+<h2 id="3-2-如何将容器内数据持久化存储"><a href="#3-2-如何将容器内数据持久化存储" class="headerlink" title="3.2 如何将容器内数据持久化存储"></a><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-epst.png" alt="img">3.2 如何将容器内数据持久化存储</h2><p>我们先来做个测试，测试内容是修改容器内的文件，然后删除容器、重建容器，查看文件是否会保持修改后的状态。</p>
+<p><strong>第一步、修改 Nginx 容器的 index.html 查看是否生效</strong></p>
+<p>我们尝试通过修改 Nginx 的 index.html 文件来更换页面信息；</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it nginx_test bash</span><br><span class="line"><span class="keyword">cd</span> nginx/html</span><br><span class="line"><span class="keyword">vi</span> <span class="built_in">index</span>.html</span><br><span class="line">This <span class="keyword">is</span> the demo page.</span><br></pre></td></tr></table></figure>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-xdfx.png" alt="img"></p>
+<p>退出容器，使用 curl 命令访问 Nginx 服务</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">curl</span> <span class="number">10.1.13.130:8080</span></span><br></pre></td></tr></table></figure>
+<p>可以返回我们更换的文本内容，index.html 修改完成。</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-jonf.png" alt="img"></p>
+<p><strong>第二步、删除 Nginx 容器，然后重新创建 Nginx， 观察 index.html 内容是否保持修改后状态</strong></p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> rm -f nginx_test</span><br><span class="line"><span class="attribute">docker</span> run -d --name nginx_test -p <span class="number">8080</span>:<span class="number">80</span> nginx</span><br></pre></td></tr></table></figure>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-rsun.png" alt="img"></p>
+<p>完成重建后，使用 curl 命令访问 nginx 服务</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">curl</span> <span class="number">10.1.13.130:8080</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-nrso.png" alt="img"></p>
+<p>可见，curl 返回了 Nginx 默认的页面信息，并不是我们修改的内容，<strong>这是因为我们删除了容器，容器内的所有文件都一同删除了。</strong>如果想在删除容器时，保持指定文件或目录不被删除，该怎么做呢</p>
+<p><strong>将宿主机的目录映射到容器目录，我们称这个操作为：持久化存储</strong></p>
+<p>在创建容器时使用 -v 参数将宿主机目录映射到容器目录</p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d <span class="params">--name</span> nginx_test -p 8080<span class="function">:80</span> -v <span class="string">/data/nginx</span>:<span class="string">/opt/nginx/html</span> nginx</span><br><span class="line"></span><br><span class="line">注释：</span><br><span class="line">-v <span class="string">/data/nginx</span>:<span class="string">/opt/nginx/html</span> </span><br></pre></td></tr></table></figure>
+<p>然后我们用同样的方法，在 Nginx 容器中新建一个 index.html，内容自定义，然后删除容器、重建容器；</p>
+<p>操作步骤如下图：</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-zviu.png" alt="img"></p>
+<p>可以发现，index.html 文件会保持自定义的内容；</p>
+<p>这是因为 index.html 创建到了宿主机的目录 /data/nginx 中，宿主机的目录 /data/nginx 映射到了容器中的 /opt/nginx/html 目录，即使删除容器，宿主机的文件也不会删除，再次创建容器仍然映射原目录，使得文件持久化存储。</p>
+<p>我们在创建运行容器时使用命令： <code>docker run -d nginx_test nginx</code></p>
+<p>命令最后的 “nginx” 是 Docker 官方仓库提供的 Nginx 镜像，我们也可以自己构建一个镜像来使用。</p>
+<p>构建镜像需要使用 dockerfile 文件，我们以 Nginx 为例，编写一个 Nginx 镜像的 dockerfile：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">vi dockerfile</span><br><span class="line"><span class="keyword">FROM</span> centos:<span class="number">7.9</span>.<span class="number">2009</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /opt</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ADD</span><span class="language-bash"> nginx-1.24.0.tar.gz /opt</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> yum install -y nc net-tools gcc-c++ pcre pcre-devel zlib zlib-devel openssl openssl-devel &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">yum clean all &amp;&amp; \</span></span><br><span class="line"><span class="language-bash"><span class="built_in">rm</span> -rf /tmp/* <span class="built_in">rm</span> -rf /var/cache/yum/* &amp;&amp; \</span></span><br><span class="line"><span class="language-bash"><span class="built_in">cd</span> /opt/nginx-1.24.0 &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">./configure --user=nobody --group=nobody --prefix=/opt/nginx --with-http_gzip_static_module --with-http_ssl_module --with-stream &amp;&amp; \</span></span><br><span class="line"><span class="language-bash">make &amp;&amp; make install &amp;&amp; \</span></span><br><span class="line"><span class="language-bash"><span class="built_in">rm</span> -rf /opt/nginx-1.24.0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> /opt/nginx/sbin/nginx &amp;&amp; <span class="built_in">tail</span> -f /dev/null</span></span><br></pre></td></tr></table></figure>
+<p>注释：</p>
+<p>FROM #构建镜像需要一个基础镜像，centos:7.9.2009 就是一个基础镜像</p>
+<p>WORKDIR #指定工作目录</p>
+<p>ADD #将宿主机目录的文件拷贝到容器中并自动解压，宿主机的文件与 dockerfile 位于相同目录中</p>
+<p>RUN #在基础镜像上要执行的命令</p>
+<p>CMD #指定启动容器时执行的命令</p>
+<p><strong>构建镜像</strong></p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker build -<span class="built_in">t</span> ngi<span class="symbol">nx:v2</span> .</span><br><span class="line"></span><br><span class="line">注释：</span><br><span class="line">-<span class="built_in">t</span>	</span><br><span class="line">. 	</span><br></pre></td></tr></table></figure>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-wcmn.png" alt="img"></p>
+<p>构建后的镜像名为 nginx:v2 , 在创建容器时可以这样使用:</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">run</span> -f nginx_test nginx:v2</span><br></pre></td></tr></table></figure>
+<p>说明：本教程中所有使用的 Nginx 镜像都是基于这个自定义构建的镜像操作的，因为官方的 Nginx 镜像中没有 ifconfig、netstat、nc 等命令，如果你在按照文章操作，请使用这个构建的镜像来操作。</p>
+<p><strong>启动容器</strong></p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="language-bash"> -d --name nginx_test -p 8080:80 -v /data/nginx:/opt/nginx/html nginx</span></span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<p>-d #后台运行</p>
+<p>-p #端口映射，-p 8080:80， 8080 表示宿主机端口，80 表示容器端口</p>
+<p>-v #目录映射，-v /data/nginx:/opt/nginx，/data/nginx 表示宿主机目录，/opt/nginx，/opt/nginx 表示容器目录</p>
+<p>—name #设置容器名称</p>
+<p>nginx #容器镜像</p>
+<p><strong>查看正在运行的容器</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker ps</span></span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<p>-a #查看运行的所有容器，包括运行状态和停止状态的容器</p>
+<p><strong>启动、停止、重启容器</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="literal">start</span> nginx_test </span><br><span class="line">docker <span class="literal">stop</span> nginx_test </span><br><span class="line">docker restart nginx_test </span><br></pre></td></tr></table></figure>
+<p><strong>进入容器</strong></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -<span class="keyword">it</span> nginx_test bash</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<p>-it #打开终端交互（进入容器操作）</p>
+<p><strong>删除运行的容器</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">rm</span> <span class="operator">-f</span> nginx_test</span><br></pre></td></tr></table></figure>
+<p><strong>查看容器镜像</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker images</span></span><br></pre></td></tr></table></figure>
+<p><strong>删除容器镜像</strong></p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker rmi nginx:latest</span><br><span class="line">docker rmi d64<span class="number">54d54b3d9</span> (IMAGE ID)</span><br></pre></td></tr></table></figure>
+<p><strong>下载容器镜像</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker search nginx</span></span><br><span class="line"><span class="attribute">docker pull nginx</span></span><br></pre></td></tr></table></figure>
+<p><strong>镜像导出为文件</strong></p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">save</span> nginx:latest nginx.tar</span><br></pre></td></tr></table></figure>
+<p><strong>从文件导入镜像</strong></p>
+<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">load</span> &lt; nginx.tar</span><br></pre></td></tr></table></figure>
+<p><strong>编译镜像</strong></p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">build </span>-t nginx:<span class="built_in">v1</span> .</span><br></pre></td></tr></table></figure>
+<h2 id="6-1-docker-copose-介绍"><a href="#6-1-docker-copose-介绍" class="headerlink" title="6.1 docker-copose 介绍"></a>6.1 docker-copose 介绍</h2><ul>
+<li>docker-compose 是一个容器编排工具（自动化部署、管理）;</li>
+<li>它用来在单台 Linux 服务器上运行多个 Docker 容器;</li>
+<li>docker-compose 使用 YAML 文件来配置所有需要运行的 Docker 容器，该 YAML 文件的默认名称为 docker-compose.yml</li>
+</ul>
+<h2 id="6-2-docker-compose-安装"><a href="#6-2-docker-compose-安装" class="headerlink" title="6.2 docker-compose 安装"></a>6.2 docker-compose 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -L <span class="string">&quot;https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-<span class="subst">$(uname -s)</span>-<span class="subst">$(uname -m)</span>&quot;</span> -o /usr/local/bin/docker-compose</span><br><span class="line"><span class="built_in">chmod</span> +x /usr/local/bin/docker-compose</span><br><span class="line"><span class="built_in">ln</span> -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br><span class="line">docker-compose version</span><br></pre></td></tr></table></figure>
+<h2 id="6-3-使用-docker-compose-启动一个容器"><a href="#6-3-使用-docker-compose-启动一个容器" class="headerlink" title="6.3 使用 docker-compose 启动一个容器"></a>6.3 使用 docker-compose 启动一个容器</h2><p>以下是 docker-compose.yml 的内容</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">version</span><span class="punctuation">:</span> <span class="string">&#x27;2.1&#x27;</span></span><br><span class="line"><span class="attribute">services</span><span class="punctuation">:</span></span><br><span class="line">  <span class="attribute">nginx</span><span class="punctuation">:</span></span><br><span class="line">    <span class="attribute">image</span><span class="punctuation">:</span> <span class="string">nginx:latest</span></span><br><span class="line">    <span class="attribute">container_name</span><span class="punctuation">:</span> <span class="string">nginx_test</span></span><br><span class="line">    <span class="attribute">ports</span><span class="punctuation">:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">8080:80</span></span><br><span class="line">    <span class="attribute">volumes</span><span class="punctuation">:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/opt/nginx:/opt/nginx/html</span></span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<p>compose 文件格式的版本，恒定为 2.1</p>
+<p>services 标签下可以定义多个类似 nginx 这样的服务</p>
+<p>container_name 服务定义， nginx_test 是容器的名称</p>
+<p>image nginx 容器所使用的镜像</p>
+<p>ports 定义端口映射，本例将容器内的 80 端口映射到宿主机的 8080 端口</p>
+<p>volumes 定义目录映射，本例将容器内的 /opt/nginx/html 目录映射到宿主机的 /opt/nginx 目录</p>
+<p><strong>启动容器</strong></p>
+<p>在 docker-compose 所在目录执行</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker compose up -d</span></span><br></pre></td></tr></table></figure>
+<p><em>参数：</em></p>
+<p><em>up 表示启动</em></p>
+<p><em>-d 表示后台运行</em></p>
+<p><em>-f 指定 docker-compose 文件位置 docker-compose -f /root/docker-compose/docker-compose.yml up -d</em></p>
+<h2 id="6-4-Dockerdocker-compose-命令总结"><a href="#6-4-Dockerdocker-compose-命令总结" class="headerlink" title="6.4 Dockerdocker-compose 命令总结"></a>6.4 Dockerdocker-compose 命令总结</h2><p>在 docker-compose 所在目录执行</p>
+<p><strong>启动容器</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker-compose up -d</span></span><br></pre></td></tr></table></figure>
+<p><strong>停止容器</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker-compose down</span></span><br></pre></td></tr></table></figure>
+<p><strong>重启容器</strong></p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker-compose restart</span></span><br></pre></td></tr></table></figure>
+<p><strong>重载 docker-compose.yml</strong></p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up <span class="comment">--force-recreate -d</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-5-docker-compose-创建多个容器"><a href="#6-5-docker-compose-创建多个容器" class="headerlink" title="6.5 docker-compose 创建多个容器"></a>6.5 docker-compose 创建多个容器</h2><p>使用 docker-compose 启动 Nginx 和 Redis 两个容器：</p>
+<p>docker-compose.yml 内容如下：</p>
+<figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">version</span><span class="punctuation">:</span> <span class="string">&#x27;2.1&#x27;</span></span><br><span class="line"><span class="attribute">services</span><span class="punctuation">:</span></span><br><span class="line"><span class="punctuation"></span></span><br><span class="line">  <span class="attribute">nginx</span><span class="punctuation">:</span></span><br><span class="line">    <span class="attribute">image</span><span class="punctuation">:</span> <span class="string">nginx:latest</span></span><br><span class="line">    <span class="attribute">container_name</span><span class="punctuation">:</span> <span class="string">nginx_host1</span></span><br><span class="line">    <span class="attribute">ports</span><span class="punctuation">:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">8081:80</span></span><br><span class="line">    <span class="attribute">volumes</span><span class="punctuation">:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/opt/nginx:/opt/nginx/html</span></span><br><span class="line">    <span class="attribute">networks</span><span class="punctuation">:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">host1-network</span></span><br><span class="line"></span><br><span class="line">  <span class="attribute">redis</span><span class="punctuation">:</span></span><br><span class="line">    <span class="attribute">image</span><span class="punctuation">:</span> <span class="string">redis:latest</span></span><br><span class="line">    <span class="attribute">container_name</span><span class="punctuation">:</span> <span class="string">redis_host1</span></span><br><span class="line">    <span class="attribute">ports</span><span class="punctuation">:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">63790:6379</span></span><br><span class="line">    <span class="attribute">networks</span><span class="punctuation">:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">host1-network</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">networks</span><span class="punctuation">:</span></span><br><span class="line">  <span class="attribute">host1-network</span><span class="punctuation">:</span></span><br><span class="line">    <span class="attribute">driver</span><span class="punctuation">:</span> <span class="string">bridge</span></span><br><span class="line">    <span class="attribute">ipam</span><span class="punctuation">:</span></span><br><span class="line">      <span class="attribute">driver</span><span class="punctuation">:</span> <span class="string">default</span></span><br><span class="line">      <span class="attribute">config</span><span class="punctuation">:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">subnet: 192.168.11.0/24</span></span><br><span class="line">          <span class="attribute">gateway</span><span class="punctuation">:</span> <span class="string">192.168.11.254</span></span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<p>networks 定义容器网络，host1-network 为定义的网络名称，</p>
+<p>config 网络配置，subnet 代表网段，gateway 代表网关。</p>
+<p>执行创建命令</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker-compose up -d</span></span><br></pre></td></tr></table></figure>
+<p>可以看到成功创建了 Nginx 和 Redis 两个容器</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-kepz.png" alt="img"></p>
+<p>可以进入 nginx_host1 容器查看一下端口和 IP</p>
+<p><img src="https://kb.fit2cloud.com/upload/metersphere/%E5%9B%BE%E7%89%87-arbk.png" alt="img"></p>
+<p>上图可见，nginx_host1 的 IP 为：192.168.11.2 , 符合 docker-compose 中定义的 192.168.11.0/24 网段；</p>
+<p>如果访问 Redis 可以直接使用 docker-compose 定义的 redis_host1 容器名访问即可。</p>
+<p><em>以上是 Docker 的入门教程，欢迎大家留言评论交流！</em></p>
+<hr>
+<h1 id="docker项目介绍"><a href="#docker项目介绍" class="headerlink" title="docker项目介绍"></a>docker项目介绍</h1><p>1、本项目为个人收集的可使用docker部署的项目合集，因为我是NAS玩家，喜爱折腾NAS和docker项目，同时经营有自媒体，索性将日常发现、更新的项目进行整合发布，供有需要的朋友查阅。</p>
+<p>2、每一个项目都包含<strong>项目地址</strong>、<strong>部署教程</strong></p>
+<p>3、更新时间不确定，欢迎大家关注我的<strong>公众号</strong>或<strong>首发平台-什么值得买</strong>订阅最新文章。</p>
+<p>4、因个人时间和能力有限，很多优秀的项目都无法及时获取，如果有更好的项目补充的。<strong>可提issue或者通过公众号联系我。</strong></p>
+<hr>
+<h2 id="docker管理"><a href="#docker管理" class="headerlink" title="docker管理"></a>docker管理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">amprobe</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">docker可视化监控与管理工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/amuluze/amprobe">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm4798w/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">AutoCompose</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">一键转换现存docker</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Red5d/docker-autocompose">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96zqolo/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">dagda</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">用于对 docker 镜像/容器中的已知漏洞、木马、病毒、恶意软件和其他恶意威胁进行静态分析的工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/eliasgranderubio/dagda">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z6lv6/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">diun</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">docker镜像升级提醒，支持多渠道通知</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/crazy-max/diun">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7pxkkml/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">dockge</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">docker-compose可视化管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/louislam/dockge">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3dq2gd/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">docu</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">docker存储空间使用量分析和管理工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/amerkurev/doku">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awoepv8p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">DweebUI</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">内置商城的docker可视化管理页面</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/lllllllillllllillll/DweebUI">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4xr8nlx/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">watchtower</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">docker镜像自动更新服务</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/containrrr/watchtower">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeqx5z3k/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">what’s up docker</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">docker镜像升级提醒</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/fmartinou/whats-up-docker">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xkedwk/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">yacht</td>
+<td style="text-align:left">docker管理</td>
+<td style="text-align:left">docker可视化管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/SelfhostedPro/Yacht">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr493pg/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="nas操作系统"><a href="#nas操作系统" class="headerlink" title="nas操作系统"></a>nas操作系统</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">14-NASOS</td>
+<td style="text-align:left">系统介绍</td>
+<td style="text-align:left">介绍14款免费的NAS系统</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/azomrxmn/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">cosmos-server</td>
+<td style="text-align:left">容器系统</td>
+<td style="text-align:left">一款NAS操作系统，集成应用商城、容器管理、导航栏，着重针对容器间的安全访问策略，实现一个端口访问所有容器</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/azukaar/Cosmos-Server">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9expp7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">IstoreNAS</td>
+<td style="text-align:left">NAS系统</td>
+<td style="text-align:left">基于openwrt的开源nas操作系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://fw.koolcenter.com/iStoreNAS/">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4x7k2k8/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">UmbrelOS</td>
+<td style="text-align:left">容器系统</td>
+<td style="text-align:left">一款全新的NAS操作系统，集成应用商城、容器管理、导航栏</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/getumbrel/umbrel">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xmk243/">教程地址</a></td>
+<td style="text-align:left">官方小主机</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="服务器管理"><a href="#服务器管理" class="headerlink" title="服务器管理"></a>服务器管理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1panel</td>
+<td style="text-align:left">服务器管理</td>
+<td style="text-align:left">1panel的docker版本</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://registry.hub.docker.com/r/moelin/1panel">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm2o3e7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">fenrus</td>
+<td style="text-align:left">导航栏</td>
+<td style="text-align:left">一款花里胡哨的导航系统，支持引入外部连接和导航嵌套</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/revenz/Fenrus">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xklmrn/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">mafl</td>
+<td style="text-align:left">导航栏</td>
+<td style="text-align:left">一款新上线github的极简导航工具，使用yaml部署导航栏，支持主题设定，支持分组，超过200,000种免费图标，支持中文。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/hywax/mafl">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">bind（Webmin）</td>
+<td style="text-align:left">服务器管理</td>
+<td style="text-align:left">一个基于 Web 的Linux/Unix 系统管理软件</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/sameersbn/docker-bind">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">hertzbeat</td>
+<td style="text-align:left">服务器管理</td>
+<td style="text-align:left">一站式实时监控、预警、通知系统，支持网络、服务器性能、数据库、容器等</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/apache/hertzbeat">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96zn847/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">kener</td>
+<td style="text-align:left">服务器管理</td>
+<td style="text-align:left">服务器监控</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/rajnandan1/kener">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5x7k3n7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">netdata</td>
+<td style="text-align:left">服务器管理</td>
+<td style="text-align:left">经典的服务器监控仪表盘</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/netdata/netdata">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z6lv6/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">nginxwebui</td>
+<td style="text-align:left">服务器管理</td>
+<td style="text-align:left">基于Nginx开发的可视化配置工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/cym1102/nginxWebUI">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeq473oz/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">team-nav</td>
+<td style="text-align:left">导航栏</td>
+<td style="text-align:left">一款适合团队使用的导航栏工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/tuituidan/team-nav">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo0gxw4/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="数据与网络安全"><a href="#数据与网络安全" class="headerlink" title="数据与网络安全"></a>数据与网络安全</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2FAuth</td>
+<td style="text-align:left">2FA</td>
+<td style="text-align:left">2FA管理工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Bubka/2FAuth">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm7w23x/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">cowire</td>
+<td style="text-align:left">蜜罐</td>
+<td style="text-align:left">ssh蜜罐</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/cowrie/cowrie">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5m9326/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">fakessh</td>
+<td style="text-align:left">蜜罐</td>
+<td style="text-align:left">ssh蜜罐</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/fffaraz/fakessh">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5m9326/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">MyIP</td>
+<td style="text-align:left">网络</td>
+<td style="text-align:left">在线网络工具箱，支持IP查询、魔法查询等</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/jason5ng32/MyIP">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96o5lne/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Next Terminal</td>
+<td style="text-align:left">堡垒机</td>
+<td style="text-align:left">开源堡垒机系统，支持RDP、SSH、VNC、Telnet、Kubernetes协议</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/dushixiang/next-terminal">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm669zp/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">orion-visor</td>
+<td style="text-align:left">堡垒机</td>
+<td style="text-align:left">高颜值、现代化的智能运维&amp;轻量堡垒机平台</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/dromara/orion-visor">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqqgz5zx/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">safeline</td>
+<td style="text-align:left">waf</td>
+<td style="text-align:left">开源的waf工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/chaitin/SafeLine">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a2x26eg2/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">web-check</td>
+<td style="text-align:left">网络</td>
+<td style="text-align:left">站长必备，网站分析工具，支持域名、ip完整分析</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Lissy93/web-check">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/azoq9gq0/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="办公协作"><a href="#办公协作" class="headerlink" title="办公协作"></a>办公协作</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">claper</td>
+<td style="text-align:left">办公</td>
+<td style="text-align:left">PPT演讲过程中的问卷调查、在线聊天、信息收集工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ClaperCo/Claper">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x390kd/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">erpnext</td>
+<td style="text-align:left">ERP</td>
+<td style="text-align:left">国内很好用的开源erp系统，一键部署版本</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://hub.docker.com/r/lvxj11/erpnext">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm54vkk/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ILLA</td>
+<td style="text-align:left">协作</td>
+<td style="text-align:left">一个强大的开源低代码平台，供开发人员构建内部工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/illacloud/illa-builder">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">InvenTree</td>
+<td style="text-align:left">ERP</td>
+<td style="text-align:left">开源的库存管理系统，提供直观的零件管理和库存控制</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/inventree/InvenTree">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x9wlmn/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">iToP</td>
+<td style="text-align:left">IT</td>
+<td style="text-align:left">基于ITIL的IT服务管理工具，包括一个完全可定制的CMDB，一个帮助台系统和一个文档管理工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Combodo/iTop">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5elm7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">kimai</td>
+<td style="text-align:left">办公</td>
+<td style="text-align:left">个人时间管理工具，管理打工人自己在不同项目、不同工种上的时间分配</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/kimai/kimai">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4xnxdwx/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">o2oa</td>
+<td style="text-align:left">OA</td>
+<td style="text-align:left">国内很好用的的一款OA系统，通过插件可以实现如车辆管理、财务管理等其它系统功能</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/o2oa/o2oa">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo588gd/">教程地址</a></td>
+<td style="text-align:left">pro收费</td>
+</tr>
+<tr>
+<td style="text-align:left">our shopping list</td>
+<td style="text-align:left">TODO</td>
+<td style="text-align:left">针对家庭、采购物资适配的todo工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/nanawel/our-shopping-list">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6pg6pwg/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">planka</td>
+<td style="text-align:left">TODO</td>
+<td style="text-align:left">高颜值项目管理、团队协作、任务跟踪的todo工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/plankanban/planka">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a2x3w66d/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Screego</td>
+<td style="text-align:left">协作</td>
+<td style="text-align:left">基于 WebRTC 进行安全传输的屏幕共享</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/screego/server">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">snipe-it</td>
+<td style="text-align:left">IT</td>
+<td style="text-align:left">IT设备、设施管理系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/snipe/snipe-it">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axovo3q2/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Superset</td>
+<td style="text-align:left">BI</td>
+<td style="text-align:left">免费的BI系统、数据驾驶舱系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/apache/superset">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5x706zk/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">twenty</td>
+<td style="text-align:left">CRM</td>
+<td style="text-align:left">高颜值跨平台的开源CRM项目，核心还在财务和客户管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/twentyhq/twenty">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a8pvk290/">教程地址</a></td>
+<td style="text-align:left">客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">univer</td>
+<td style="text-align:left">Office</td>
+<td style="text-align:left">支持在线excel、文档、ppt协作，google文档开源替代项目</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/dream-num/univer">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3nzp5k/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">vikunja</td>
+<td style="text-align:left">TODO</td>
+<td style="text-align:left">支持项目管理、团队管理、任务管理的todo应用，worklite开源替代项目</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/go-vikunja/vikunja">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9pn760/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">wbo</td>
+<td style="text-align:left">TODO</td>
+<td style="text-align:left">简易的在线白板绘图</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/lovasoa/whitebophir">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo58d6w/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">WorkAdventure</td>
+<td style="text-align:left">办公</td>
+<td style="text-align:left">是一个基于 Web 的协作工作区，以 16 位视频游戏的形式呈现</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/workadventure/workadventure">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">xiaojusurvey</td>
+<td style="text-align:left">问卷</td>
+<td style="text-align:left">针对调查问卷开发的在线问卷系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/didi/xiaoju-survey">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm60wzn/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">卷王</td>
+<td style="text-align:left">问卷</td>
+<td style="text-align:left">开源问卷&amp;在线考试</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/xianyu-one/surveyking-docker">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xmwo37/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="个人爱好与家庭管理"><a href="#个人爱好与家庭管理" class="headerlink" title="个人爱好与家庭管理"></a>个人爱好与家庭管理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">DailyTxT</td>
+<td style="text-align:left">个人管理</td>
+<td style="text-align:left">一款加密的个人日记工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/PhiTux/DailyTxT">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arromn07/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">actual</td>
+<td style="text-align:left">财务应用</td>
+<td style="text-align:left">以预算管理为核心的一款个人财务管理系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/actualbudget/actual">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo5zop4/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">babybuddy</td>
+<td style="text-align:left">家庭管理</td>
+<td style="text-align:left">婴幼儿吃喝拉撒记录、管理工具，支持和HA联动</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/babybuddy/babybuddy">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/avp56q4m/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">grocy</td>
+<td style="text-align:left">家庭管理</td>
+<td style="text-align:left">一款专注于家庭、厨卫、物资的家用ERP系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/linuxserver/docker-grocy">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z6lv6/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">habitica</td>
+<td style="text-align:left">个人管理</td>
+<td style="text-align:left">将习惯养成变为一种mmoprg游戏，支持职业、武器、宠物、副本等</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/HabitRPG/habitica">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3g004k/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">hammond</td>
+<td style="text-align:left">个人管理</td>
+<td style="text-align:left">家庭汽车相关费用支出管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/akhilrex/hammond">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq77xox/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">homebox</td>
+<td style="text-align:left">家庭管理</td>
+<td style="text-align:left">家庭用户搭建的库存与物资管理系统。专注于简单性和易用性，是满足您家庭库存、组织和管理需求的完美解决方案</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/hay-kot/homebox">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo5vm53/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">howtocook</td>
+<td style="text-align:left">个人管理</td>
+<td style="text-align:left">程序员烧饭手册大全</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Anduin2017/HowToCook">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovd0p0m/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">kerberos-agent</td>
+<td style="text-align:left">监控</td>
+<td style="text-align:left">开源的监控设备统一管理系统，支持H264/H265的nvif/rtsp协议</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/kerberos-io/agent">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm355pp/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">manage-my-damn-life</td>
+<td style="text-align:left">个人管理</td>
+<td style="text-align:left">个人管理软件psm，用于管理您的 CalDAV 任务和日历</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/intri-in/manage-my-damn-life-nextjs">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">manyfold</td>
+<td style="text-align:left">兴趣爱好</td>
+<td style="text-align:left">用于管理3D打印机资料的开源项目</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/manyfold3d/manyfold">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">monica</td>
+<td style="text-align:left">家庭管理</td>
+<td style="text-align:left">一款个人关系管理系统，可让记录自己的人际关系、生活经验</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/monicahq/monica">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">SheetAble</td>
+<td style="text-align:left">兴趣爱好</td>
+<td style="text-align:left">一款易于使用的乐谱整理器和乐谱软件</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/SheetAble/SheetAble">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">traggo</td>
+<td style="text-align:left">个人管理</td>
+<td style="text-align:left">以时间轴为核心的时间分配、管理工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/traggo/website">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6p6x62o/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">wallos</td>
+<td style="text-align:left">财务应用</td>
+<td style="text-align:left">针对周期财务、账单进行管理的财务管理系统，支持如自动续费、代扣、过期管理、纪念日等</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ellite/Wallos">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aklplzd8/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="影音相关"><a href="#影音相关" class="headerlink" title="影音相关"></a>影音相关</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">audiobookshelf</td>
+<td style="text-align:left">播客</td>
+<td style="text-align:left">一款管理播客和有声书的自托管系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/advplyr/audiobookshelf">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovll8e9/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">ChineseSubFinder</td>
+<td style="text-align:left">字幕</td>
+<td style="text-align:left">中文字幕下载工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ChineseSubFinder/ChineseSubFinder">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">douban-tool</td>
+<td style="text-align:left">影视</td>
+<td style="text-align:left">基于豆瓣想看的BT下载工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://hub.docker.com/r/zack357/douban-tool">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an94l6nv/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">feishin</td>
+<td style="text-align:left">音乐</td>
+<td style="text-align:left">一款高颜值的音乐播放器前端</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/jeffvli/feishin">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xvek78/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">namer</td>
+<td style="text-align:left">影视</td>
+<td style="text-align:left">欧美小姐姐作品重命名工具，方便刮削</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ThePornDatabase/namer">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xvek78/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">melody</td>
+<td style="text-align:left">音乐</td>
+<td style="text-align:left">基于网易云云盘的音乐下载工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/olahol/melody">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awop82zm/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">movie-web</td>
+<td style="text-align:left">影视</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">已删库</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">musicn</td>
+<td style="text-align:left">音乐</td>
+<td style="text-align:left">mp3音乐下载工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/zonemeen/musicn">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7px95gl/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">onelist</td>
+<td style="text-align:left">影视</td>
+<td style="text-align:left">用于alist挂载后的影视刮削工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/msterzhang/onelist">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9wdeo3/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">R3PLAY</td>
+<td style="text-align:left">音乐</td>
+<td style="text-align:left">网易云第三方播放器，docker部署版</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/qier222/YesPlayMusic">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm5pwen/">教程地址</a></td>
+<td style="text-align:left">客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">teemii</td>
+<td style="text-align:left">漫画</td>
+<td style="text-align:left">在线漫画下载与管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/dokkaner/teemii">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xew2kn/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">xiaomusic</td>
+<td style="text-align:left">音乐</td>
+<td style="text-align:left">小米/红米/小爱音箱第三方口令与音乐下载、播放工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/hanxi/xiaomusic">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/avpe7n99/">教程地址</a></td>
+<td style="text-align:left">基于小米音箱</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="社交工具"><a href="#社交工具" class="headerlink" title="社交工具"></a>社交工具</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">fiora</td>
+<td style="text-align:left">聊天</td>
+<td style="text-align:left">自建开源社交即时聊天工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/yinxin630/fiora">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4x9lkz7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">flarum</td>
+<td style="text-align:left">论坛</td>
+<td style="text-align:left">一款高颜值、轻量化的论坛</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/mondediefr/docker-flarum">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7przldd/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">misskey</td>
+<td style="text-align:left">社区</td>
+<td style="text-align:left">一款基于星级网络的自托管社区</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/misskey-dev/misskey">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeq92dpk/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">tailChat</td>
+<td style="text-align:left">聊天</td>
+<td style="text-align:left">类似discord的开源自建聊天服务器</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/msgbyte/tailchat">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm4z88x/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Zammad</td>
+<td style="text-align:left">客服</td>
+<td style="text-align:left">基于Web的开源服务台与客户支持系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/zammad/zammad/">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo970lp/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">春松客服</td>
+<td style="text-align:left">客服</td>
+<td style="text-align:left">在线客服管理系统，支持多平台外挂式接入，支持坐席管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/cskefu/cskefu">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6pgn2v0/">教程地址</a></td>
+<td style="text-align:left">pro收费</td>
+</tr>
+<tr>
+<td style="text-align:left">唐僧叨叨</td>
+<td style="text-align:left">聊天</td>
+<td style="text-align:left">一款支持web、windows、macos、linux、IOS、安卓的全平台开源聊天项目</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/TangSengDaoDao/TangSengDaoDaoServer">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="生产力与ai"><a href="#生产力与ai" class="headerlink" title="生产力与ai"></a>生产力与ai</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">chatALL</td>
+<td style="text-align:left">AI集成</td>
+<td style="text-align:left">同时与ChatGPT、Bing Chat、Bard、Alpaca、Vicuna、Claude、ChatGLM、MOSS、讯飞星火、文心一言等聊天的集成客户端。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/sunner/ChatALL">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">chatgpt-next-web</td>
+<td style="text-align:left">AI集成</td>
+<td style="text-align:left">AI集成对话面板</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">copilot-gpt4-service</td>
+<td style="text-align:left">AI集成</td>
+<td style="text-align:left">将GitHub Copilot免费转换为ChatGPT</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/newskyforest/copilot-gpt4-service">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">darktable</td>
+<td style="text-align:left">绘图</td>
+<td style="text-align:left">专门面向摄影师服务的开源数字摄影后期处理软件，平替Lightroom</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/darktable-org/darktable">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xmn9xx/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">DragGAN</td>
+<td style="text-align:left">AI应用</td>
+<td style="text-align:left">基于点的浏览器在线P图，只需要控制点的位置，即可自动进行P图，实现交互式编辑</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/XingangPan/DragGAN">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">free-cad</td>
+<td style="text-align:left">生产力</td>
+<td style="text-align:left">免费开源的3D建模工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/FreeCAD/FreeCAD">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7p9k3mo/">教程地址</a></td>
+<td style="text-align:left">客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">image-matting</td>
+<td style="text-align:left">AI应用</td>
+<td style="text-align:left">一键在线扣除图片背景</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ihmily/image-matting">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/al82xpxe/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">jan</td>
+<td style="text-align:left">AI</td>
+<td style="text-align:left">一款100%在本地运行的多平台的OpenAI模型，支持MacOS、Windows、Linux客户端，支持Docker环境部署。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/janhq/jan">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">kimi-free-api</td>
+<td style="text-align:left">AI集成</td>
+<td style="text-align:left">基于kimi网页版生成的API，免费使用</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/LLM-Red-Team/kimi-free-api">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z3xdm/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">koishi</td>
+<td style="text-align:left">机器人</td>
+<td style="text-align:left">一个跨平台、可扩展、高性能的机器人框架</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/koishijs/koishi">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">LocalAI</td>
+<td style="text-align:left">AI</td>
+<td style="text-align:left">完全离线运行的本地AI大模型系统，支持抱脸虫上的各类库，支持api输出</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/mudler/LocalAI">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x3qngr/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Minio</td>
+<td style="text-align:left">生产力</td>
+<td style="text-align:left">一款自托管的S3存储池</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/minio/minio">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/avp2l2mm/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">penpot</td>
+<td style="text-align:left">生产力</td>
+<td style="text-align:left">好用好看的原型设计软件，Kaleidos的平替项目</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/penpot/penpot">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3noxek/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">QChatGPT</td>
+<td style="text-align:left">机器人</td>
+<td style="text-align:left">支持AI接入的QQ/QQ频道/OneBot 机器人平台</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/RockChinQ/QChatGPT">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z6lv6/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">windows-docker</td>
+<td style="text-align:left">生产力</td>
+<td style="text-align:left">在docker容器中运行windows系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/dockur/windows">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arre448q/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="知识库管理"><a href="#知识库管理" class="headerlink" title="知识库管理"></a>知识库管理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">affine</td>
+<td style="text-align:left">个人笔记</td>
+<td style="text-align:left">无界白板+超强文档管理，Notion的开源替代</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/toeverything/AFFiNE">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3w7724/">教程地址</a></td>
+<td style="text-align:left">客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">benotes</td>
+<td style="text-align:left">个人笔记</td>
+<td style="text-align:left">一个开源的自托管笔记和书签网络应用程序</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/fr0tt/benotes">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">bookstack</td>
+<td style="text-align:left">团队文档</td>
+<td style="text-align:left">团队，个人知识库、wiki管理系统，支持项目、书籍、书页等多个层级管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/solidnerd/docker-bookstack">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x3p6rn/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">freshrss</td>
+<td style="text-align:left">RSS</td>
+<td style="text-align:left">一个免费的，可自托管的新闻聚合器</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/FreshRSS/FreshRSS">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">huntly</td>
+<td style="text-align:left">个人笔记</td>
+<td style="text-align:left">RSS集大成者，包含RSS、稍后阅读、收藏功能，支持github、推特文章优化</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/lcomplete/huntly">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5x5v253/">教程地址</a></td>
+<td style="text-align:left">浏览器扩展</td>
+</tr>
+<tr>
+<td style="text-align:left">language-tool</td>
+<td style="text-align:left">翻译</td>
+<td style="text-align:left">语言在线校验工具，支持30多种语言的在线翻译和书写校验</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://elest.io/open-source/languagetool">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9ek28p/">教程地址</a></td>
+<td style="text-align:left">浏览器扩展</td>
+</tr>
+<tr>
+<td style="text-align:left">libretranslate</td>
+<td style="text-align:left">翻译</td>
+<td style="text-align:left">一款本地化部署的翻译软件及API</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/LibreTranslate/LibreTranslate">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">memonts</td>
+<td style="text-align:left">个人笔记</td>
+<td style="text-align:left">自托管的“朋友圈”风格博客</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/kingwrcy/moments/">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6p27wxn/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">memos</td>
+<td style="text-align:left">个人笔记</td>
+<td style="text-align:left">碎片化知识闪记、笔记</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/usememos/memos">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awog97x2/">教程地址</a></td>
+<td style="text-align:left">app/小程序</td>
+</tr>
+<tr>
+<td style="text-align:left">Perlite</td>
+<td style="text-align:left">团队文档</td>
+<td style="text-align:left">Obsidian Publish开源代替项目，支持在线阅读md文件，支持分权限共享</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/secure-77/Perlite">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/admp5wgz/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">reference</td>
+<td style="text-align:left">个人笔记</td>
+<td style="text-align:left">稳定更新的快速开发备忘录，包含数据库、前端、后端、api、各类工具命令等170个工具、软件，</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/reference">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4x2zv08/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">showdoc</td>
+<td style="text-align:left">团队文档</td>
+<td style="text-align:left">专门针对IT场景开发的个人知识库、团队文档管理工具，支持通过api生成文档，支持api文档、数据字典等</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/star7th/showdoc">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/al8go3no/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Slash</td>
+<td style="text-align:left">短连接</td>
+<td style="text-align:left">网址短链接工具，包含了书签管理与连接分享功能</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/toss/slash">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a8pkm257/">教程地址</a></td>
+<td style="text-align:left">浏览器扩展</td>
+</tr>
+<tr>
+<td style="text-align:left">wallabag</td>
+<td style="text-align:left">个人笔记</td>
+<td style="text-align:left">是一个自我托管的应用程序，用于保存网页：保存和分类文章，稍后阅读</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/wallabag/wallabag">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">yourls</td>
+<td style="text-align:left">短连接</td>
+<td style="text-align:left">网站短链接生成</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/YOURLS/YOURLS">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6pmelqg/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">filebrowser</td>
+<td style="text-align:left">文件管理</td>
+<td style="text-align:left">经典的文件管理工具，没有多余的功能模块，就是简简单单的管理文件、文件夹</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/filebrowser/filebrowser">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5r8076/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">filecodebox</td>
+<td style="text-align:left">共享</td>
+<td style="text-align:left">一款以匿名口令分享文本、文件的工具，旨在让共享成为像拿快递一样方便。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/vastsa/FileCodeBox">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">FreeFileSync</td>
+<td style="text-align:left">文件同步</td>
+<td style="text-align:left">一款文件夹比较和同步软件，可创建和管理所有重要文件的备份副本</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/jlesage/docker-freefilesync">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aov74pkr//">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">JmalCloud</td>
+<td style="text-align:left">网盘</td>
+<td style="text-align:left">私有云存储网盘项目，支持本地存储和OSS对象存储，兼容在线office编辑和文件浏览</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/jamebal/jmal-cloud-server">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awoeolxk/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">MicroBin</td>
+<td style="text-align:left">文件共享</td>
+<td style="text-align:left">稍后阅读，可设置次数、时间的资料共享 Web 应用程序</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/szabodanika/microbin">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm2mo8x/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">verysync</td>
+<td style="text-align:left">文件共享</td>
+<td style="text-align:left">微力同步，全平台的文件同步工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Jonnyan404/verysync">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96e832p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">spacedrive</td>
+<td style="text-align:left">文件管理</td>
+<td style="text-align:left">跨平台文件管理系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/spacedriveapp/spacedrive">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aklnd2p8/">教程地址</a></td>
+<td style="text-align:left">APP/客户端</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="相册与图库"><a href="#相册与图库" class="headerlink" title="相册与图库"></a>相册与图库</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">czkawka</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">一款多平台的相册去重工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/qarmin/czkawka">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an945pgp/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ente</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">端对端加密的相册管理、2FA管理工具，google 相册开源替代</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ente-io/ente">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5zqez6/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">icloudpd</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">从 iCloud 下载照片的命令行工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/boredazfcuk/docker-icloudpd">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axop8eqd/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">immich</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">开源家庭相册管理，支持clip</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/immich-app/immich">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a8p33pnl/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">kamera</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">专供摄影佬使用的记录网站，采用瀑布流图片展示方式</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/besscroft/kamera">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">lomorage</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">全平台自托管照片管理软件，重点在照片上传</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/lomorage/lomo-docker">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aklnwd34/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">Mt photos</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">最强相册管理软件之一</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://mtmt.tech/">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96xxm5e/">教程地址</a></td>
+<td style="text-align:left">收费闭源</td>
+</tr>
+<tr>
+<td style="text-align:left">photostruct</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">家庭照片管理工具，专门针对文件夹浏览进行开发</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/photostructure/photostructure-for-servers">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/al85veop/">教程地址</a></td>
+<td style="text-align:left">pro收费/客户端</td>
+</tr>
+<tr>
+<td style="text-align:left">photoview</td>
+<td style="text-align:left">相册管理</td>
+<td style="text-align:left">为摄影佬开发的瀑布流相册管理工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/photoview/photoview">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5x7d958/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">easyimage2</td>
+<td style="text-align:left">图床</td>
+<td style="text-align:left">轻量级图床</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://hub.docker.com/r/ddsderek/easyimage">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awog2w92/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="消息通知"><a href="#消息通知" class="headerlink" title="消息通知"></a>消息通知</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">bark</td>
+<td style="text-align:left">消息通知</td>
+<td style="text-align:left">苹果专用的消息推送服务</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Finb/Bark">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9wn4d2/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">gotify</td>
+<td style="text-align:left">消息通知</td>
+<td style="text-align:left">安卓专用的消息推送服务</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/gotify/website">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9wn4d2/">教程地址</a></td>
+<td style="text-align:left">APP</td>
+</tr>
+<tr>
+<td style="text-align:left">heimdallr</td>
+<td style="text-align:left">消息通知</td>
+<td style="text-align:left">支持根据不同消息来源，不同消息目的进行消息推送的聚合消息推送平台，支持10+消息推送方式</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/LeslieLeung/heimdallr">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awoer49g/">教程地址</a></td>
+<td style="text-align:left">无头服务器部署</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="游戏娱乐"><a href="#游戏娱乐" class="headerlink" title="游戏娱乐"></a>游戏娱乐</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">项目名称</td>
+<td style="text-align:left">类型</td>
+<td style="text-align:left">介绍</td>
+<td style="text-align:left">项目地址</td>
+<td style="text-align:left">教程地址</td>
+<td style="text-align:left">备注</td>
+</tr>
+<tr>
+<td style="text-align:left">DNF</td>
+<td style="text-align:left">游戏</td>
+<td style="text-align:left">一款老版本的DNF私服</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/1995chen/dnf">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a8pnw860/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">docker-minecraft-server</td>
+<td style="text-align:left">游戏</td>
+<td style="text-align:left">专门运行在docker里的minecraft（Java 版）社区服务器</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/itzg/docker-minecraft-server">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">karaoke-eternal</td>
+<td style="text-align:left">游戏</td>
+<td style="text-align:left">一款以KTV氛围设计的卡拉ok软件</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/bhj/KaraokeEternal">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">palworld</td>
+<td style="text-align:left">娱乐</td>
+<td style="text-align:left">幻兽帕鲁的服务器搭建docker</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/jammsen/docker-palworld-dedicated-server">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeqgp8wk/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">pokerogue</td>
+<td style="text-align:left">游戏</td>
+<td style="text-align:left">PokéRogue 是一款基于浏览器的神奇宝贝同人游戏，深受 Roguelite 类型的启发。</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/pagefaultgames/pokerogue">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xnnn5k/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">RetroArch-web</td>
+<td style="text-align:left">游戏</td>
+<td style="text-align:left">网页版的复古游戏模拟器</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/nenge123/retroarch-web">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7pxp96d/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">RomM</td>
+<td style="text-align:left">Rom管理器</td>
+<td style="text-align:left">一个漂亮的，强大的，自托管的rom管理器</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/rommapp/romm">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">vue-idle-game</td>
+<td style="text-align:left">游戏</td>
+<td style="text-align:left">一个放置的西幻点击游戏</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Couy69/vue-idle-game">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x6z4e9/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">雾锁王国</td>
+<td style="text-align:left">游戏</td>
+<td style="text-align:left">雾锁王国社区服务器</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/jsknnr/enshrouded-server">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="赚钱项目"><a href="#赚钱项目" class="headerlink" title="赚钱项目"></a>赚钱项目</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">acg-faka</td>
+<td style="text-align:left">建站</td>
+<td style="text-align:left">acg-faka是一款二次元风格的卡券管理平台</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/lizhipay/acg-faka">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4xvkmkk/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">bar-assistant</td>
+<td style="text-align:left">酒吧管理</td>
+<td style="text-align:left">包含鸡尾酒做法、库存管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/karlomikus/bar-assistant">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a8pnr7o0/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">C-shopping</td>
+<td style="text-align:left">商城</td>
+<td style="text-align:left">完整的在线商城系统，支持app、小程序等</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/huanghanzhilian/c-shopping">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeq0w253/">教程地址</a></td>
+<td style="text-align:left">app/小程序</td>
+</tr>
+<tr>
+<td style="text-align:left">dailycheckin</td>
+<td style="text-align:left">签到</td>
+<td style="text-align:left">支持docker、青龙部署的多平台打卡、签到工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Sitoi/dailycheckin">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA4NzMyNzU5Mg==&amp;mid=2453060982&amp;idx=1&amp;sn=c4438804d1aa0aee58bed839970b144a&amp;chksm=87f90b71b08e82675adb3c38462bab33c0fa4b8eacd7884690da6373bb8d7116457ae2563742&amp;token=2114886914&amp;lang=zh_CN#rd">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">douyin</td>
+<td style="text-align:left">前端</td>
+<td style="text-align:left">完整度超高的抖音前端项目</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/zyronon/douyin">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo93dzp/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">douyinLiveRecorder</td>
+<td style="text-align:left">下载工具</td>
+<td style="text-align:left">支持15+直播平台的自动录制工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ihmily/DouyinLiveRecorder">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3n6w2p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">imaotai</td>
+<td style="text-align:left">签到</td>
+<td style="text-align:left">自动预约i茅台</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/oddfar/campus-imaotai">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5nlvz7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">novel-plus</td>
+<td style="text-align:left">建站</td>
+<td style="text-align:left">小说网站建站系统</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/201206030/novel-plus">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aklpvgnk/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Pterodactyl</td>
+<td style="text-align:left">建站</td>
+<td style="text-align:left">服务器开服与管理工具，支持近120款游戏一键开服</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/pterodactyl/panel">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6p7xzwn/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">qd</td>
+<td style="text-align:left">签到</td>
+<td style="text-align:left">支持100+网页系统的自动签到、自动打卡工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/qd-today/qd">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/azowrgd5/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">zyplayer-doc</td>
+<td style="text-align:left">建站</td>
+<td style="text-align:left">团队、个人知识库、文档管理工具，支持付费阅读</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://doc.zyplayer.com/">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x96d77/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">独角数卡</td>
+<td style="text-align:left">商城</td>
+<td style="text-align:left">一款自动发卡、售卡的在线商城项目</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/assimon/dujiaoka">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xk5e3d/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">魔豆文库</td>
+<td style="text-align:left">建站</td>
+<td style="text-align:left">开源版百度文库系统，支持知识付费</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/mnt-ltd/moredoc">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6pgrkxo/">教程地址</a></td>
+<td style="text-align:left">pro收费</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="其它工具"><a href="#其它工具" class="headerlink" title="其它工具"></a>其它工具</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">项目名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">介绍</th>
+<th style="text-align:left">项目地址</th>
+<th style="text-align:left">教程地址</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">archiveB</td>
+<td style="text-align:left">工具</td>
+<td style="text-align:left">互联网存档工具，用于保存互联网页面</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ArchiveBox/ArchiveBox">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xe2l8x/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">CloudDrive</td>
+<td style="text-align:left">工具</td>
+<td style="text-align:left">将网盘挂载为本地磁盘</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://hub.docker.com/r/cloudnas/clouddrive2">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96e9pr0/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">genact</td>
+<td style="text-align:left">工具</td>
+<td style="text-align:left">假装你一直在敲代码的网页版docker</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/svenstaro/genact">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm8nen0/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">it-tools</td>
+<td style="text-align:left">工具</td>
+<td style="text-align:left">在线IT工具箱</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/CorentinTh/it-tools">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovl8lo7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">iyuuplus-des</td>
+<td style="text-align:left">PT</td>
+<td style="text-align:left">用于PT种子转种、辅种</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/ledccn/iyuuplus-dev">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9doeq7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">metube</td>
+<td style="text-align:left">下载</td>
+<td style="text-align:left">一款基于ytb-dlp的可视化下载工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/alexta69/metube">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5644zd/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">N.eko</td>
+<td style="text-align:left">浏览器</td>
+<td style="text-align:left">基于webRTC的嵌套浏览器</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/m1k1o/neko-rooms">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">photopea</td>
+<td style="text-align:left">绘图</td>
+<td style="text-align:left">在线PS</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/DUOLabs333/Photopea-Offline">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovl8lo7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">qbittorrent</td>
+<td style="text-align:left">下载</td>
+<td style="text-align:left">最强的BT/PT下载工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/qbittorrent/qBittorrent">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeqr7344/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">rustdesk</td>
+<td style="text-align:left">远程</td>
+<td style="text-align:left">自托管的远程控制工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/rustdesk/rustdesk">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag56xz76/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">sshwifty</td>
+<td style="text-align:left">远程</td>
+<td style="text-align:left">一款浏览器的webssh工具，支持SSH和Telnet服务</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/nirui/sshwifty">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/akl26xq8/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Stirling-PDF</td>
+<td style="text-align:left">办公</td>
+<td style="text-align:left">在线PDF转换与管理</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/Stirling-Tools/Stirling-PDF">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovl8lo7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">tailscale</td>
+<td style="text-align:left">网络</td>
+<td style="text-align:left">异地组网工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/tailscale/tailscale">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apmolqw7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">umami</td>
+<td style="text-align:left">工具</td>
+<td style="text-align:left">个人博客、网站流量分析工具，支持流量分析到页到ip</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/umami-software/umami">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96ok3kp/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">upsnap</td>
+<td style="text-align:left">网络</td>
+<td style="text-align:left">一款局域网唤醒 Web 应用程序</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/seriousm4x/UpSnap">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">zerotier</td>
+<td style="text-align:left">网络</td>
+<td style="text-align:left">异地组网工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://github.com/zerotier/ZeroTierOne">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apmolqw7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">星空组网</td>
+<td style="text-align:left">网络</td>
+<td style="text-align:left">一款国产开发的异地组网工具</td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://doc.starvpn.cn/">项目地址</a></td>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apmolqw7/">教程地址</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目名称</th>
+<th>类型</th>
+<th>介绍</th>
+<th>项目地址</th>
+<th>教程地址</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amprobe</td>
+<td>docker管理</td>
+<td>docker可视化监控与管理工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/amuluze/amprobe">https://github.com/amuluze/amprobe</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm4798w/">https://post.smzdm.com/p/apm4798w/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>AutoCompose</td>
+<td>docker管理</td>
+<td>一键转换现存docker</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Red5d/docker-autocompose">https://github.com/Red5d/docker-autocompose</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96zqolo/">https://post.smzdm.com/p/a96zqolo/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dagda</td>
+<td>docker管理</td>
+<td>用于对 docker 镜像/容器中的已知漏洞、木马、病毒、恶意软件和其他恶意威胁进行静态分析的工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/eliasgranderubio/dagda">https://github.com/eliasgranderubio/dagda</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z6lv6/">https://post.smzdm.com/p/ag5z6lv6/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>diun</td>
+<td>docker管理</td>
+<td>docker镜像升级提醒，支持多渠道通知</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/crazy-max/diun">https://github.com/crazy-max/diun</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7pxkkml/">https://post.smzdm.com/p/a7pxkkml/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dockge</td>
+<td>docker管理</td>
+<td>docker-compose可视化管理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/louislam/dockge">https://github.com/louislam/dockge</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3dq2gd/">https://post.smzdm.com/p/am3dq2gd/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>docu</td>
+<td>docker管理</td>
+<td>docker存储空间使用量分析和管理工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/amerkurev/doku">https://github.com/amerkurev/doku</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awoepv8p/">https://post.smzdm.com/p/awoepv8p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>watchtower</td>
+<td>docker管理</td>
+<td>docker镜像自动更新服务</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/containrrr/watchtower">https://github.com/containrrr/watchtower</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeqx5z3k/">https://post.smzdm.com/p/aeqx5z3k/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>what’s up docker</td>
+<td>docker管理</td>
+<td>docker镜像升级提醒</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/fmartinou/whats-up-docker">https://github.com/fmartinou/whats-up-docker</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xkedwk/">https://post.smzdm.com/p/a3xkedwk/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>yacht</td>
+<td>docker管理</td>
+<td>docker可视化管理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/SelfhostedPro/Yacht">https://github.com/SelfhostedPro/Yacht</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr493pg/">https://post.smzdm.com/p/arr493pg/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>cosmos-server</td>
+<td>NAS操作系统</td>
+<td>一款NAS操作系统，集成应用商城、容器管理、导航栏，着重针对容器间的安全访问策略，实现一个端口访问所有容器</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/azukaar/Cosmos-Server">https://github.com/azukaar/Cosmos-Server</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9expp7/">https://post.smzdm.com/p/an9expp7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>IstoreNAS</td>
+<td>NAS操作系统</td>
+<td>基于openwrt的开源nas操作系统</td>
+<td><a target="_blank" rel="noopener" href="https://fw.koolcenter.com/iStoreNAS/">https://fw.koolcenter.com/iStoreNAS/</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4x7k2k8/">https://post.smzdm.com/p/a4x7k2k8/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>UmbrelOS</td>
+<td>NAS操作系统</td>
+<td>一款全新的NAS操作系统，集成应用商城、容器管理、导航栏</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/getumbrel/umbrel">https://github.com/getumbrel/umbrel</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xmk243/">https://post.smzdm.com/p/a5xmk243/</a></td>
+<td>官方小主机</td>
+</tr>
+<tr>
+<td>2FAuth</td>
+<td>安全</td>
+<td>2FA管理工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Bubka/2FAuth">https://github.com/Bubka/2FAuth</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm7w23x/">https://post.smzdm.com/p/apm7w23x/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>cowire</td>
+<td>安全</td>
+<td>ssh蜜罐</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/cowrie/cowrie">https://github.com/cowrie/cowrie</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5m9326/">https://post.smzdm.com/p/ag5m9326/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>fakessh</td>
+<td>安全</td>
+<td>ssh蜜罐</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/fffaraz/fakessh">https://github.com/fffaraz/fakessh</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5m9326/">https://post.smzdm.com/p/ag5m9326/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>MyIP</td>
+<td>安全</td>
+<td>在线网络工具箱，支持IP查询、魔法查询等</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/jason5ng32/MyIP">https://github.com/jason5ng32/MyIP</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96o5lne/">https://post.smzdm.com/p/a96o5lne/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Next Terminal</td>
+<td>安全</td>
+<td>开源堡垒机系统，支持RDP、SSH、VNC、Telnet、Kubernetes协议</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/dushixiang/next-terminal">https://github.com/dushixiang/next-terminal</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm669zp/">https://post.smzdm.com/p/adm669zp/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>safeline</td>
+<td>安全</td>
+<td>开源的waf工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/chaitin/SafeLine">https://github.com/chaitin/SafeLine</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a2x26eg2/">https://post.smzdm.com/p/a2x26eg2/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>web-check</td>
+<td>安全</td>
+<td>站长必备，网站分析工具，支持域名、ip完整分析</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Lissy93/web-check">https://github.com/Lissy93/web-check</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/azoq9gq0/">https://post.smzdm.com/p/azoq9gq0/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>claper</td>
+<td>办公团队</td>
+<td>PPT演讲过程中的问卷调查、在线聊天、信息收集工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ClaperCo/Claper">https://github.com/ClaperCo/Claper</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x390kd/">https://post.smzdm.com/p/a3x390kd/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>erpnext</td>
+<td>办公团队</td>
+<td>国内很好用的开源erp系统，一键部署版本</td>
+<td><a target="_blank" rel="noopener" href="https://hub.docker.com/r/lvxj11/erpnext">https://hub.docker.com/r/lvxj11/erpnext</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm54vkk/">https://post.smzdm.com/p/adm54vkk/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>ILLA</td>
+<td>办公团队</td>
+<td>一个强大的开源低代码平台，供开发人员构建内部工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/illacloud/illa-builder">https://github.com/illacloud/illa-builder</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">https://post.smzdm.com/p/a0x5ol58/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>iToP</td>
+<td>办公团队</td>
+<td>基于ITIL的IT服务管理工具，包括一个完全可定制的CMDB，一个帮助台系统和一个文档管理工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Combodo/iTop">https://github.com/Combodo/iTop</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5elm7/">https://post.smzdm.com/p/aqq5elm7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>kimai</td>
+<td>办公团队</td>
+<td>个人时间管理工具，管理打工人自己在不同项目、不同工种上的时间分配</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/kimai/kimai">https://github.com/kimai/kimai</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4xnxdwx/">https://post.smzdm.com/p/a4xnxdwx/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>o2oa</td>
+<td>办公团队</td>
+<td>国内很好用的的一款OA系统，通过插件可以实现如车辆管理、财务管理等其它系统功能</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/o2oa/o2oa">https://github.com/o2oa/o2oa</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo588gd/">https://post.smzdm.com/p/axo588gd/</a></td>
+<td>pro收费</td>
+</tr>
+<tr>
+<td>our shopping list</td>
+<td>办公团队</td>
+<td>针对家庭、采购物资适配的todo工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/nanawel/our-shopping-list">https://github.com/nanawel/our-shopping-list</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6pg6pwg/">https://post.smzdm.com/p/a6pg6pwg/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>planka</td>
+<td>办公团队</td>
+<td>高颜值项目管理、团队协作、任务跟踪的todo工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/plankanban/planka">https://github.com/plankanban/planka</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a2x3w66d/">https://post.smzdm.com/p/a2x3w66d/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Screego</td>
+<td>办公团队</td>
+<td>基于 WebRTC 进行安全传输的屏幕共享</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/screego/server">https://github.com/screego/server</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">https://post.smzdm.com/p/a0x5ol58/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>snipe-it</td>
+<td>办公团队</td>
+<td>IT设备、设施管理系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/snipe/snipe-it">https://github.com/snipe/snipe-it</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axovo3q2/">https://post.smzdm.com/p/axovo3q2/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Superset</td>
+<td>办公团队</td>
+<td>免费的BI系统、数据驾驶舱系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/apache/superset">https://github.com/apache/superset</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5x706zk/">https://post.smzdm.com/p/a5x706zk/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>twenty</td>
+<td>办公团队</td>
+<td>高颜值跨平台的开源CRM项目，核心还在财务和客户管理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/twentyhq/twenty">https://github.com/twentyhq/twenty</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a8pvk290/">https://post.smzdm.com/p/a8pvk290/</a></td>
+<td>客户端</td>
+</tr>
+<tr>
+<td>univer</td>
+<td>办公团队</td>
+<td>支持在线excel、文档、ppt协作，google文档开源替代项目</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/dream-num/univer">https://github.com/dream-num/univer</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3nzp5k/">https://post.smzdm.com/p/am3nzp5k/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>vikunja</td>
+<td>办公团队</td>
+<td>支持项目管理、团队管理、任务管理的todo应用，worklite开源替代项目</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/go-vikunja/vikunja">https://github.com/go-vikunja/vikunja</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9pn760/">https://post.smzdm.com/p/an9pn760/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>wbo</td>
+<td>办公团队</td>
+<td>简易的在线白板绘图</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/lovasoa/whitebophir">https://github.com/lovasoa/whitebophir</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo58d6w/">https://post.smzdm.com/p/axo58d6w/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>WorkAdventure</td>
+<td>办公团队</td>
+<td>是一个基于 Web 的协作工作区，以 16 位视频游戏的形式呈现</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/workadventure/workadventure">https://github.com/workadventure/workadventure</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">https://post.smzdm.com/p/awo7e94p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>xiaojusurvey</td>
+<td>办公团队</td>
+<td>针对调查问卷开发的在线问卷系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/didi/xiaoju-survey">https://github.com/didi/xiaoju-survey</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm60wzn/">https://post.smzdm.com/p/adm60wzn/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>halo</td>
+<td>博客</td>
+<td>轻量级博客系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/halo-dev/halo">https://github.com/halo-dev/halo</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/al853zzg/">https://post.smzdm.com/p/al853zzg/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>fenrus</td>
+<td>导航栏</td>
+<td>一款花里胡哨的导航系统，支持引入外部连接和导航嵌套</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/revenz/Fenrus">https://github.com/revenz/Fenrus</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xklmrn/">https://post.smzdm.com/p/a3xklmrn/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>mafl</td>
+<td>导航栏</td>
+<td>一款新上线github的极简导航工具，使用yaml部署导航栏，支持主题设定，支持分组，超过200,000种免费图标，支持中文。</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/hywax/mafl">https://github.com/hywax/mafl</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">https://post.smzdm.com/p/arr4q90q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>bind（Webmin）</td>
+<td>服务器管理</td>
+<td>一个基于 Web 的Linux/Unix 系统管理软件</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/sameersbn/docker-bind">https://github.com/sameersbn/docker-bind</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">https://post.smzdm.com/p/arr4q90q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>hertzbeat</td>
+<td>服务器管理</td>
+<td>一站式实时监控、预警、通知系统，支持网络、服务器性能、数据库、容器等</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/apache/hertzbeat">https://github.com/apache/hertzbeat</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96zn847/">https://post.smzdm.com/p/a96zn847/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>kener</td>
+<td>服务器管理</td>
+<td>服务器监控</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/rajnandan1/kener">https://github.com/rajnandan1/kener</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5x7k3n7/">https://post.smzdm.com/p/a5x7k3n7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>netdata</td>
+<td>服务器管理</td>
+<td>经典的服务器监控仪表盘</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/netdata/netdata">https://github.com/netdata/netdata</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z6lv6/">https://post.smzdm.com/p/ag5z6lv6/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>nginxwebui</td>
+<td>服务器管理</td>
+<td>基于Nginx开发的可视化配置工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/cym1102/nginxWebUI">https://github.com/cym1102/nginxWebUI</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeq473oz/">https://post.smzdm.com/p/aeq473oz/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>actual</td>
+<td>个人与家庭应用</td>
+<td>以预算管理为核心的一款个人财务管理系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/actualbudget/actual">https://github.com/actualbudget/actual</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo5zop4/">https://post.smzdm.com/p/axo5zop4/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>babybuddy</td>
+<td>个人与家庭应用</td>
+<td>婴幼儿吃喝拉撒记录、管理工具，支持和HA联动</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/babybuddy/babybuddy">https://github.com/babybuddy/babybuddy</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/avp56q4m/">https://post.smzdm.com/p/avp56q4m/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>grocy</td>
+<td>个人与家庭应用</td>
+<td>一款专注于家庭、厨卫、物资的家用ERP系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/linuxserver/docker-grocy">https://github.com/linuxserver/docker-grocy</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z6lv6/">https://post.smzdm.com/p/ag5z6lv6/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>hammond</td>
+<td>个人与家庭应用</td>
+<td>家庭汽车相关费用支出管理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/akhilrex/hammond">https://github.com/akhilrex/hammond</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq77xox/">https://post.smzdm.com/p/aqq77xox/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>homebox</td>
+<td>个人与家庭应用</td>
+<td>家庭用户搭建的库存与物资管理系统。专注于简单性和易用性，是满足您家庭库存、组织和管理需求的完美解决方案</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/hay-kot/homebox">https://github.com/hay-kot/homebox</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/axo5vm53/">https://post.smzdm.com/p/axo5vm53/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>kerberos-agent</td>
+<td>个人与家庭应用</td>
+<td>开源的监控设备统一管理系统，支持H264/H265的nvif/rtsp协议</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/kerberos-io/agent">https://github.com/kerberos-io/agent</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm355pp/">https://post.smzdm.com/p/adm355pp/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>manage-my-damn-life</td>
+<td>个人与家庭应用</td>
+<td>个人管理软件psm，用于管理您的 CalDAV 任务和日历</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/intri-in/manage-my-damn-life-nextjs">https://github.com/intri-in/manage-my-damn-life-nextjs</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">https://post.smzdm.com/p/aqq5m787/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>monica</td>
+<td>个人与家庭应用</td>
+<td>一款个人关系管理系统，可让记录自己的人际关系、生活经验</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/monicahq/monica">https://github.com/monicahq/monica</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">https://post.smzdm.com/p/awogdx6p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>traggo</td>
+<td>个人与家庭应用</td>
+<td>以时间轴为核心的时间分配、管理工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/traggo/website">https://github.com/traggo/website</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6p6x62o/">https://post.smzdm.com/p/a6p6x62o/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>wallos</td>
+<td>个人与家庭应用</td>
+<td>针对周期财务、账单进行管理的财务管理系统，支持如自动续费、代扣、过期管理、纪念日等</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ellite/Wallos">https://github.com/ellite/Wallos</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aklplzd8/">https://post.smzdm.com/p/aklplzd8/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>archiveB</td>
+<td>工具</td>
+<td>互联网存档工具，用于保存互联网页面</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ArchiveBox/ArchiveBox">https://github.com/ArchiveBox/ArchiveBox</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xe2l8x/">https://post.smzdm.com/p/a5xe2l8x/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>genact</td>
+<td>工具</td>
+<td>假装你一直在敲代码的网页版docker</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/svenstaro/genact">https://github.com/svenstaro/genact</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apm8nen0/">https://post.smzdm.com/p/apm8nen0/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>it-tools</td>
+<td>工具</td>
+<td>在线IT工具箱</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/CorentinTh/it-tools">https://github.com/CorentinTh/it-tools</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovl8lo7/">https://post.smzdm.com/p/aovl8lo7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>N.eko</td>
+<td>工具</td>
+<td>基于webRTC的嵌套浏览器</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/m1k1o/neko-rooms">https://github.com/m1k1o/neko-rooms</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">https://post.smzdm.com/p/awogdx6p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>photopea</td>
+<td>工具</td>
+<td>在线PS</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/DUOLabs333/Photopea-Offline">https://github.com/DUOLabs333/Photopea-Offline</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovl8lo7/">https://post.smzdm.com/p/aovl8lo7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>qd</td>
+<td>工具</td>
+<td>支持100+网页系统的自动签到、自动打卡工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/qd-today/qd">https://github.com/qd-today/qd</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/azowrgd5/">https://post.smzdm.com/p/azowrgd5/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Slash</td>
+<td>工具</td>
+<td>网址短链接工具，包含了书签管理与连接分享功能</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/toss/slash">https://github.com/toss/slash</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a8pkm257/">https://post.smzdm.com/p/a8pkm257/</a></td>
+<td>浏览器扩展</td>
+</tr>
+<tr>
+<td>Stirling-PDF</td>
+<td>工具</td>
+<td>在线PDF转换与管理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Stirling-Tools/Stirling-PDF">https://github.com/Stirling-Tools/Stirling-PDF</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovl8lo7/">https://post.smzdm.com/p/aovl8lo7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>tailscale</td>
+<td>工具</td>
+<td>异地组网工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/tailscale/tailscale">https://github.com/tailscale/tailscale</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apmolqw7/">https://post.smzdm.com/p/apmolqw7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>umami</td>
+<td>工具</td>
+<td>个人博客、网站流量分析工具，支持流量分析到页到ip</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/umami-software/umami">https://github.com/umami-software/umami</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96ok3kp/">https://post.smzdm.com/p/a96ok3kp/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>upsnap</td>
+<td>工具</td>
+<td>一款局域网唤醒 Web 应用程序</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/seriousm4x/UpSnap">https://github.com/seriousm4x/UpSnap</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">https://post.smzdm.com/p/awogdx6p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>zerotier</td>
+<td>工具</td>
+<td>异地组网工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/zerotier/ZeroTierOne">https://github.com/zerotier/ZeroTierOne</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apmolqw7/">https://post.smzdm.com/p/apmolqw7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>卷王</td>
+<td>工具</td>
+<td>开源问卷&amp;在线考试</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/xianyu-one/surveyking-docker">https://github.com/xianyu-one/surveyking-docker</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xmwo37/">https://post.smzdm.com/p/a5xmwo37/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>星空组网</td>
+<td>工具</td>
+<td>异地组网工具</td>
+<td><a target="_blank" rel="noopener" href="https://doc.starvpn.cn/">https://doc.starvpn.cn/</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/apmolqw7/">https://post.smzdm.com/p/apmolqw7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>audiobookshelf</td>
+<td>家庭影音漫画小说</td>
+<td>一款管理播客和有声书的自托管系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/advplyr/audiobookshelf">https://github.com/advplyr/audiobookshelf</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aovll8e9/">https://post.smzdm.com/p/aovll8e9/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>ChineseSubFinder</td>
+<td>家庭影音漫画小说</td>
+<td>中文字幕下载工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ChineseSubFinder/ChineseSubFinder">https://github.com/ChineseSubFinder/ChineseSubFinder</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">https://post.smzdm.com/p/aqq5m787/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>movie-web</td>
+<td>家庭影音漫画小说</td>
+<td></td>
+<td>已删库</td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">https://post.smzdm.com/p/arr4q90q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>musicn</td>
+<td>家庭影音漫画小说</td>
+<td>mp3音乐下载工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/zonemeen/musicn">https://github.com/zonemeen/musicn</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7px95gl/">https://post.smzdm.com/p/a7px95gl/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>onelist</td>
+<td>家庭影音漫画小说</td>
+<td>用于alist挂载后的影视刮削工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/msterzhang/onelist">https://github.com/msterzhang/onelist</a></td>
+<td>post.smzdm.com/p/an9wdeo3/</td>
+<td></td>
+</tr>
+<tr>
+<td>R3PLAY</td>
+<td>家庭影音漫画小说</td>
+<td>网易云第三方播放器，docker部署版</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/qier222/YesPlayMusic">https://github.com/qier222/YesPlayMusic</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/adm5pwen/">https://post.smzdm.com/p/adm5pwen/</a></td>
+<td>客户端</td>
+</tr>
+<tr>
+<td>teemii</td>
+<td>家庭影音漫画小说</td>
+<td>在线漫画下载与管理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/dokkaner/teemii">https://github.com/dokkaner/teemii</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xew2kn/">https://post.smzdm.com/p/a3xew2kn/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>xiaomusic</td>
+<td>家庭影音漫画小说</td>
+<td>小米/红米/小爱音箱第三方口令与音乐下载、播放工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/hanxi/xiaomusic">https://github.com/hanxi/xiaomusic</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/avpe7n99/">https://post.smzdm.com/p/avpe7n99/</a></td>
+<td>基于小米音箱</td>
+</tr>
+<tr>
+<td>fiora</td>
+<td>社交工具</td>
+<td>自建开源社交即时聊天工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/yinxin630/fiora">https://github.com/yinxin630/fiora</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4x9lkz7/">https://post.smzdm.com/p/a4x9lkz7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Zammad</td>
+<td>社交工具</td>
+<td>基于Web的开源服务台与客户支持系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/zammad/zammad/">https://github.com/zammad/zammad/</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo970lp/">https://post.smzdm.com/p/awo970lp/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>春松客服</td>
+<td>社交工具</td>
+<td>在线客服管理系统，支持多平台外挂式接入，支持坐席管理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/cskefu/cskefu">https://github.com/cskefu/cskefu</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6pgn2v0/">https://post.smzdm.com/p/a6pgn2v0/</a></td>
+<td>pro收费</td>
+</tr>
+<tr>
+<td>唐僧叨叨</td>
+<td>社交工具</td>
+<td>一款支持web、windows、macos、linux、IOS、安卓的全平台开源聊天项目</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/TangSengDaoDao/TangSengDaoDaoServer">https://github.com/TangSengDaoDao/TangSengDaoDaoServer</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">https://post.smzdm.com/p/aqq5m787/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>chatALL</td>
+<td>生产力与AI</td>
+<td>齐叨是一款同时与ChatGPT、Bing Chat、Bard、Alpaca、Vicuna、Claude、ChatGLM、MOSS、讯飞星火、文心一言等聊天的集成客户端。</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/sunner/ChatALL">https://github.com/sunner/ChatALL</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">https://post.smzdm.com/p/awo7e94p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>chatgpt-next-web</td>
+<td>生产力与AI</td>
+<td>AI集成对话面板</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web">https://github.com/ChatGPTNextWeb/ChatGPT-Next-Web</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">https://post.smzdm.com/p/arr4q90q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>copilot-gpt4-service</td>
+<td>生产力与AI</td>
+<td>将GitHub Copilot免费转换为ChatGPT</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/newskyforest/copilot-gpt4-service">https://github.com/newskyforest/copilot-gpt4-service</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">https://post.smzdm.com/p/arr4q90q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>darktable</td>
+<td>生产力与AI</td>
+<td>专门面向摄影师服务的开源数字摄影后期处理软件，平替Lightroom</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/darktable-org/darktable">https://github.com/darktable-org/darktable</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5xmn9xx/">https://post.smzdm.com/p/a5xmn9xx/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>DragGAN</td>
+<td>生产力与AI</td>
+<td>基于点的浏览器在线P图，只需要控制点的位置，即可自动进行P图，实现交互式编辑</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/XingangPan/DragGAN">https://github.com/XingangPan/DragGAN</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">https://post.smzdm.com/p/aqq5m787/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>free-cad</td>
+<td>生产力与AI</td>
+<td>免费开源的3D建模工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/FreeCAD/FreeCAD">https://github.com/FreeCAD/FreeCAD</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7p9k3mo/">https://post.smzdm.com/p/a7p9k3mo/</a></td>
+<td>客户端</td>
+</tr>
+<tr>
+<td>image-matting</td>
+<td>生产力与AI</td>
+<td>一键在线扣除图片背景</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ihmily/image-matting">https://github.com/ihmily/image-matting</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/al82xpxe/">https://post.smzdm.com/p/al82xpxe/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>jan</td>
+<td>生产力与AI</td>
+<td>一款100%在本地运行的多平台的OpenAI模型，支持MacOS、Windows、Linux客户端，支持Docker环境部署。</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/janhq/jan">https://github.com/janhq/jan</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">https://post.smzdm.com/p/awo7e94p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>kimi-free-api</td>
+<td>生产力与AI</td>
+<td>基于kimi网页版生成的API，免费使用</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/LLM-Red-Team/kimi-free-api">https://github.com/LLM-Red-Team/kimi-free-api</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z3xdm/">https://post.smzdm.com/p/ag5z3xdm/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>koishi</td>
+<td>生产力与AI</td>
+<td>一个跨平台、可扩展、高性能的机器人框架</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/koishijs/koishi">https://github.com/koishijs/koishi</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">https://post.smzdm.com/p/awo7e94p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>LocalAI</td>
+<td>生产力与AI</td>
+<td>完全离线运行的本地AI大模型系统，支持抱脸虫上的各类库，支持api输出</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/mudler/LocalAI">https://github.com/mudler/LocalAI</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x3qngr/">https://post.smzdm.com/p/a3x3qngr/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>penpot</td>
+<td>生产力与AI</td>
+<td>好用好看的原型设计软件，Kaleidos的平替项目</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/penpot/penpot">https://github.com/penpot/penpot</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3noxek/">https://post.smzdm.com/p/am3noxek/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>QChatGPT</td>
+<td>生产力与AI</td>
+<td>支持AI接入的QQ/QQ频道/OneBot 机器人平台</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/RockChinQ/QChatGPT">https://github.com/RockChinQ/QChatGPT</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5z6lv6/">https://post.smzdm.com/p/ag5z6lv6/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>windows-docker</td>
+<td>生产力与AI</td>
+<td>在docker容器中运行windows系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/dockur/windows">https://github.com/dockur/windows</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arre448q/">https://post.smzdm.com/p/arre448q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>easyimage2</td>
+<td>图床</td>
+<td>轻量级图床</td>
+<td><a target="_blank" rel="noopener" href="https://hub.docker.com/r/ddsderek/easyimage">https://hub.docker.com/r/ddsderek/easyimage</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awog2w92/">https://post.smzdm.com/p/awog2w92/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>affine</td>
+<td>文档知识</td>
+<td>无界白板+超强文档管理，Notion的开源替代</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/toeverything/AFFiNE">https://github.com/toeverything/AFFiNE</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3w7724/">https://post.smzdm.com/p/am3w7724/</a></td>
+<td>客户端</td>
+</tr>
+<tr>
+<td>benotes</td>
+<td>文档知识</td>
+<td>一个开源的自托管笔记和书签网络应用程序</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/fr0tt/benotes">https://github.com/fr0tt/benotes</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">https://post.smzdm.com/p/a0x5ol58/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>bookstack</td>
+<td>文档知识</td>
+<td>团队，个人知识库、wiki管理系统，支持项目、书籍、书页等多个层级管理</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/solidnerd/docker-bookstack">https://github.com/solidnerd/docker-bookstack</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x3p6rn/">https://post.smzdm.com/p/a3x3p6rn/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>freshrss</td>
+<td>文档知识</td>
+<td>一个免费的，可自托管的新闻聚合器</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/FreshRSS/FreshRSS">https://github.com/FreshRSS/FreshRSS</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">https://post.smzdm.com/p/awo7e94p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>huntly</td>
+<td>文档知识</td>
+<td>RSS集大成者，包含RSS、稍后阅读、收藏功能，支持github、推特文章优化</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/lcomplete/huntly">https://github.com/lcomplete/huntly</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5x5v253/">https://post.smzdm.com/p/a5x5v253/</a></td>
+<td>浏览器扩展</td>
+</tr>
+<tr>
+<td>language-tool</td>
+<td>文档知识</td>
+<td>语言在线校验工具，支持30多种语言的在线翻译和书写校验</td>
+<td><a target="_blank" rel="noopener" href="https://elest.io/open-source/languagetool">https://elest.io/open-source/languagetool</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9ek28p/">https://post.smzdm.com/p/an9ek28p/</a></td>
+<td>浏览器扩展</td>
+</tr>
+<tr>
+<td>libretranslate</td>
+<td>文档知识</td>
+<td>一款本地化部署的翻译软件及API</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/LibreTranslate/LibreTranslate">https://github.com/LibreTranslate/LibreTranslate</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">https://post.smzdm.com/p/awogdx6p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>memonts</td>
+<td>文档知识</td>
+<td>自托管的“朋友圈”风格博客</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/kingwrcy/moments/">https://github.com/kingwrcy/moments/</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6p27wxn/">https://post.smzdm.com/p/a6p27wxn/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>memos</td>
+<td>文档知识</td>
+<td>碎片化知识闪记、笔记</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/usememos/memos">https://github.com/usememos/memos</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awog97x2/">https://post.smzdm.com/p/awog97x2/</a></td>
+<td>app/小程序</td>
+</tr>
+<tr>
+<td>Perlite</td>
+<td>文档知识</td>
+<td>Obsidian Publish开源代替项目，支持在线阅读md文件，支持分权限共享</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/secure-77/Perlite">https://github.com/secure-77/Perlite</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/admp5wgz/">https://post.smzdm.com/p/admp5wgz/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>reference</td>
+<td>文档知识</td>
+<td>稳定更新的快速开发备忘录，包含数据库、前端、后端、api、各类工具命令等170个工具、软件，</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/jaywcjlove/reference">https://github.com/jaywcjlove/reference</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a4x2zv08/">https://post.smzdm.com/p/a4x2zv08/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>showdoc</td>
+<td>文档知识</td>
+<td>专门针对IT场景开发的个人知识库、团队文档管理工具，支持通过api生成文档，支持api文档、数据字典等</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/star7th/showdoc">https://github.com/star7th/showdoc</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/al8go3no/">https://post.smzdm.com/p/al8go3no/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>wallabag</td>
+<td>文档知识</td>
+<td>是一个自我托管的应用程序，用于保存网页：保存和分类文章，稍后阅读</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/wallabag/wallabag">https://github.com/wallabag/wallabag</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo7e94p/">https://post.smzdm.com/p/awo7e94p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>yourls</td>
+<td>文档知识</td>
+<td>网站短链接生成</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/YOURLS/YOURLS">https://github.com/YOURLS/YOURLS</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6pmelqg/">https://post.smzdm.com/p/a6pmelqg/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>filecodebox</td>
+<td>文件管理</td>
+<td>一款以匿名口令分享文本、文件的工具，旨在让共享成为像拿快递一样方便。</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/vastsa/FileCodeBox">https://github.com/vastsa/FileCodeBox</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">https://post.smzdm.com/p/a0x5ol58/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>JmalCloud</td>
+<td>文件管理</td>
+<td>私有云存储网盘项目，支持本地存储和OSS对象存储，兼容在线office编辑和文件浏览</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/jamebal/jmal-cloud-server">https://github.com/jamebal/jmal-cloud-server</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awoeolxk/">https://post.smzdm.com/p/awoeolxk/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>spacedrive</td>
+<td>文件管理</td>
+<td>跨平台文件管理系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/spacedriveapp/spacedrive">https://github.com/spacedriveapp/spacedrive</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aklnd2p8/">https://post.smzdm.com/p/aklnd2p8/</a></td>
+<td>APP/客户端</td>
+</tr>
+<tr>
+<td>ente</td>
+<td>相册管理</td>
+<td>端对端加密的相册管理、2FA管理工具，google 相册开源替代</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ente-io/ente">https://github.com/ente-io/ente</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5zqez6/">https://post.smzdm.com/p/ag5zqez6/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>icloudpd</td>
+<td>相册管理</td>
+<td>从 iCloud 下载照片的命令行工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/boredazfcuk/docker-icloudpd">https://github.com/boredazfcuk/docker-icloudpd</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">https://post.smzdm.com/p/arr4q90q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>immich</td>
+<td>相册管理</td>
+<td>开源家庭相册管理，支持clip</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/immich-app/immich">https://github.com/immich-app/immich</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/avp8z5e9/">https://post.smzdm.com/p/avp8z5e9/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>kamera</td>
+<td>相册管理</td>
+<td>专供摄影佬使用的记录网站，采用瀑布流图片展示方式</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/besscroft/kamera">https://github.com/besscroft/kamera</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">https://post.smzdm.com/p/aqq5m787/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>lomorage</td>
+<td>相册管理</td>
+<td>全平台自托管照片管理软件，重点在照片上传</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/lomorage/lomo-docker">https://github.com/lomorage/lomo-docker</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aklnwd34/">https://post.smzdm.com/p/aklnwd34/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>Mt photos</td>
+<td>相册管理</td>
+<td>最强相册管理软件之一</td>
+<td><a target="_blank" rel="noopener" href="https://mtmt.tech/">https://mtmt.tech/</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a96xxm5e/">https://post.smzdm.com/p/a96xxm5e/</a></td>
+<td>收费闭源</td>
+</tr>
+<tr>
+<td>photostruct</td>
+<td>相册管理</td>
+<td>家庭照片管理工具，专门针对文件夹浏览进行开发</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/photostructure/photostructure-for-servers">https://github.com/photostructure/photostructure-for-servers</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/al85veop/">https://post.smzdm.com/p/al85veop/</a></td>
+<td>pro收费/客户端</td>
+</tr>
+<tr>
+<td>photoview</td>
+<td>相册管理</td>
+<td>为摄影佬开发的瀑布流相册管理工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/photoview/photoview">https://github.com/photoview/photoview</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a5x7d958/">https://post.smzdm.com/p/a5x7d958/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>bark</td>
+<td>消息通知</td>
+<td>苹果专用的消息推送服务</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Finb/Bark">https://github.com/Finb/Bark</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9wn4d2/">https://post.smzdm.com/p/an9wn4d2/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>gotify</td>
+<td>消息通知</td>
+<td>安卓专用的消息推送服务</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/gotify/website">https://github.com/gotify/website</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/an9wn4d2/">https://post.smzdm.com/p/an9wn4d2/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>heimdallr</td>
+<td>消息通知</td>
+<td>支持根据不同消息来源，不同消息目的进行消息推送的聚合消息推送平台，支持10+消息推送方式</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/LeslieLeung/heimdallr">https://github.com/LeslieLeung/heimdallr</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awoer49g/">https://post.smzdm.com/p/awoer49g/</a></td>
+<td>无头服务器部署</td>
+</tr>
+<tr>
+<td>habitica</td>
+<td>兴趣爱好</td>
+<td>将习惯养成变为一种mmoprg游戏，支持职业、武器、宠物、副本等</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/HabitRPG/habitica">https://github.com/HabitRPG/habitica</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3g004k/">https://post.smzdm.com/p/am3g004k/</a></td>
+<td>APP</td>
+</tr>
+<tr>
+<td>manyfold</td>
+<td>兴趣爱好</td>
+<td>用于管理3D打印机资料的开源项目</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/manyfold3d/manyfold">https://github.com/manyfold3d/manyfold</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">https://post.smzdm.com/p/awogdx6p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>SheetAble</td>
+<td>兴趣爱好</td>
+<td>一款易于使用的乐谱整理器和乐谱软件</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/SheetAble/SheetAble">https://github.com/SheetAble/SheetAble</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awogdx6p/">https://post.smzdm.com/p/awogdx6p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>docker-minecraft-server</td>
+<td>娱乐</td>
+<td>专门运行在docker里的minecraft（Java 版）社区服务器</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/itzg/docker-minecraft-server">https://github.com/itzg/docker-minecraft-server</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">https://post.smzdm.com/p/arr4q90q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>karaoke-eternal</td>
+<td>娱乐</td>
+<td>一款以KTV氛围设计的卡拉ok软件</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/bhj/KaraokeEternal">https://github.com/bhj/KaraokeEternal</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/arr4q90q/">https://post.smzdm.com/p/arr4q90q/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>palworld</td>
+<td>娱乐</td>
+<td>幻兽帕鲁的服务器搭建docker</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/jammsen/docker-palworld-dedicated-server">https://github.com/jammsen/docker-palworld-dedicated-server</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeqgp8wk/">https://post.smzdm.com/p/aeqgp8wk/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>RetroArch-web</td>
+<td>娱乐</td>
+<td>网页版的复古游戏模拟器</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/nenge123/retroarch-web">https://github.com/nenge123/retroarch-web</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a7pxp96d/">https://post.smzdm.com/p/a7pxp96d/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>RomM</td>
+<td>娱乐</td>
+<td>一个漂亮的，强大的，自托管的rom管理器</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/rommapp/romm">https://github.com/rommapp/romm</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a0x5ol58/">https://post.smzdm.com/p/a0x5ol58/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>雾锁王国</td>
+<td>娱乐</td>
+<td>雾锁王国社区服务器</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/jsknnr/enshrouded-server">https://github.com/jsknnr/enshrouded-server</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aqq5m787/">https://post.smzdm.com/p/aqq5m787/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>C-shopping</td>
+<td>赚钱</td>
+<td>完整的在线商城系统，支持app、小程序等</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/huanghanzhilian/c-shopping">https://github.com/huanghanzhilian/c-shopping</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aeq0w253/">https://post.smzdm.com/p/aeq0w253/</a></td>
+<td>app/小程序</td>
+</tr>
+<tr>
+<td>dailycheckin</td>
+<td>赚钱</td>
+<td>支持docker、青龙部署的多平台打卡、签到工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/Sitoi/dailycheckin">https://github.com/Sitoi/dailycheckin</a></td>
+<td><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA4NzMyNzU5Mg==&amp;mid=2453060982&amp;idx=1&amp;sn=c4438804d1aa0aee58bed839970b144a&amp;chksm=87f90b71b08e82675adb3c38462bab33c0fa4b8eacd7884690da6373bb8d7116457ae2563742&amp;token=2114886914&amp;lang=zh_CN#rd">https://mp.weixin.qq.com/s?__biz=MzA4NzMyNzU5Mg==&amp;mid=2453060982&amp;idx=1&amp;sn=c4438804d1aa0aee58bed839970b144a&amp;chksm=87f90b71b08e82675adb3c38462bab33c0fa4b8eacd7884690da6373bb8d7116457ae2563742&amp;token=2114886914&amp;lang=zh_CN#rd</a></td>
+<td></td>
+</tr>
+<tr>
+<td>douyin</td>
+<td>赚钱</td>
+<td>完整度超高的抖音前端项目</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/zyronon/douyin">https://github.com/zyronon/douyin</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/awo93dzp/">https://post.smzdm.com/p/awo93dzp/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>douyinLiveRecorder</td>
+<td>赚钱</td>
+<td>支持15+直播平台的自动录制工具</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/ihmily/DouyinLiveRecorder">https://github.com/ihmily/DouyinLiveRecorder</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/am3n6w2p/">https://post.smzdm.com/p/am3n6w2p/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>imaotai</td>
+<td>赚钱</td>
+<td>自动预约i茅台</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/oddfar/campus-imaotai">https://github.com/oddfar/campus-imaotai</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/ag5nlvz7/">https://post.smzdm.com/p/ag5nlvz7/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>novel-plus</td>
+<td>赚钱</td>
+<td>小说网站建站系统</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/201206030/novel-plus">https://github.com/201206030/novel-plus</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/aklpvgnk/">https://post.smzdm.com/p/aklpvgnk/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Pterodactyl</td>
+<td>赚钱</td>
+<td>服务器开服与管理工具，支持近120款游戏一键开服</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/pterodactyl/panel">https://github.com/pterodactyl/panel</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6p7xzwn/">https://post.smzdm.com/p/a6p7xzwn/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>zyplayer-doc</td>
+<td>赚钱</td>
+<td>团队、个人知识库、文档管理工具，支持付费阅读</td>
+<td><a target="_blank" rel="noopener" href="https://doc.zyplayer.com/">https://doc.zyplayer.com/</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3x96d77/">https://post.smzdm.com/p/a3x96d77/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>独角数卡</td>
+<td>赚钱</td>
+<td>一款自动发卡、售卡的在线商城项目</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/assimon/dujiaoka">https://github.com/assimon/dujiaoka</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a3xk5e3d/">https://post.smzdm.com/p/a3xk5e3d/</a></td>
+<td></td>
+</tr>
+<tr>
+<td>魔豆文库</td>
+<td>赚钱</td>
+<td>开源版百度文库系统，支持知识付费</td>
+<td><a target="_blank" rel="noopener" href="https://github.com/mnt-ltd/moredoc">https://github.com/mnt-ltd/moredoc</a></td>
+<td><a target="_blank" rel="noopener" href="https://post.smzdm.com/p/a6pgrkxo/">https://post.smzdm.com/p/a6pgrkxo/</a></td>
+<td>pro收费</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div></div><div class="nofancybox" id="vcomment"></div><script src="https://unpkg.com/valine/dist/Valine.min.js"></script><script>var notify = 'false' == 'true' ? true : false;
+var verify = 'false' == 'true' ? true : false;
+var GUEST_INFO = ['nick','mail','link'];
+var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+  return GUEST_INFO.indexOf(item) > -1
+});
+guest_info = guest_info.length == 0 ? GUEST_INFO :guest_info;
+window.valine = new Valine({
+  el:'#vcomment',
+  notify:notify,
+  verify:verify,
+  appId:'6YJscbvqXJK7VrKYNhElZKr7-MdYXbMMI',
+  appKey:'zLLLAr1WaeicJQyhF896Mmcu',
+  serverURLs:'',
+  placeholder:'Just so so',
+  avatar:'mm',
+  guest_info:guest_info,
+  pageSize:'10'
+})
+</script></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="author-info"><a class="info-avatar" href="/about/" title="关于"><img class="nofancybox" src="/img/avatar.png"/></a><p>To be a better man.</p><a class="info-icon" href="https://twitter.com/" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="bjhwjy@126.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0/">教程学习</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB%E8%AE%B0%E4%BA%8B/">生活记事</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BB%8F%E5%85%B8%E5%A5%BD%E6%96%87/">经典好文</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/RustDesk/" style="font-size: 15px;">RustDesk</a> <a href="/tags/cadence/" style="font-size: 15px;">cadence</a> <a href="/tags/%E6%95%99%E7%A8%8B%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">教程学习</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%B0%81%E8%A3%85/" style="font-size: 15px;">系统封装</a> <a href="/tags/Github/" style="font-size: 15px;">Github</a> <a href="/tags/%E7%BB%8F%E5%85%B8%E5%A5%BD%E6%96%87/" style="font-size: 15px;">经典好文</a> <a href="/tags/%E9%82%AE%E4%BB%B6/" style="font-size: 15px;">邮件</a> <a href="/tags/Win%E8%BD%AF%E4%BB%B6/" style="font-size: 15px;">Win软件</a> <a href="/tags/office/" style="font-size: 15px;">office</a> <a href="/tags/Alist/" style="font-size: 15px;">Alist</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/posts/1b92e87a.html">cadence笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/6efcbb1e.html">安徽合肥紫玥台房贷总结</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/89d7ccdc.html">Pake Plus</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/e2427986.html">超赞的 Linux 软件</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/89b64fc8.html">RustDesk 开源远程桌面软件系统，自建服务器部署 (审计)、发布和使用教程</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/72977dc0.html">HumanSystemOptimization-main</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/795668d8.html">2024年总结</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/6bf5081a.html">一键DD脚本，支持性好，更智能更全面，支持国内外各种VPS重装，特别是对国内各种访问国外资源慢的VPS安装有奇效。</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/ab519416.html">比免费更好</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/f589171e.html">使用 Railway 和 Supabase 零成本搭建 n8n 自动化平台</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2026 <a href="/." rel="nofollow">捌月.</a> Powered by<a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Hexo.</a><a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Theme</a> by<a rel="nofollow" target="_blank" href="https://bnjy.eu.org/"> Jam.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0" async></script><link rel="stylesheet" type="text/css" href="https://unpkg.com/@fancyapps/fancybox/dist/jquery.fancybox.min.css"><link rel="stylesheet" type="text/css" href="/css/search.css?v=1.0.0"><script type="text/javascript" src="/js/search.js?v=1.0.0"></script><script>var search_path = 'search.xml';
+if (search_path.length == 0) {
+  search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="/css/external.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>
