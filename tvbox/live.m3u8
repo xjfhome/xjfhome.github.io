@@ -1,0 +1,947 @@
+#EXTM3U x-tvg-url=http://epg.51zmt.top:8000/cc.xml,http://epg.51zmt.top:8000/difang.xml
+#EXTINF:-1 tvg-id="CCTV1hd" tvg-name="CCTV1HD" ,CCTV-1HD
+http://107.150.60.122/live/cctv1hd.m3u8
+#EXTINF:-1 tvg-id="CCTV2hd" tvg-name="CCTV2HD" ,CCTV-2HD
+http://107.150.60.122/live/cctv2hd.m3u8
+#EXTINF:-1 tvg-id="CCTV3hd" tvg-name="CCTV3HD" ,CCTV-3HD
+http://107.150.60.122/live/cctv3hd.m3u8
+#EXTINF:-1 tvg-id="CCTV4hd" tvg-name="CCTV4HD" ,CCTV-4HD
+http://107.150.60.122/live/cctv4hd.m3u8
+#EXTINF:-1 tvg-id="CCTV5hd" tvg-name="CCTV5HD" ,CCTV-5HD
+http://107.150.60.122/live/cctv5hd.m3u8
+#EXTINF:-1 tvg-id="CCTV6hd" tvg-name="CCTV6HD" ,CCTV-6HD
+http://107.150.60.122/live/cctv6hd.m3u8
+#EXTINF:-1 tvg-id="CCTV7hd" tvg-name="CCTV7HD" ,CCTV-7HD
+http://107.150.60.122/live/cctv7hd.m3u8
+#EXTINF:-1 tvg-id="CCTV8hd" tvg-name="CCTV8HD" ,CCTV-8HD
+http://107.150.60.122/live/cctv8hd.m3u8
+#EXTINF:-1 tvg-id="CCTV9hd" tvg-name="CCTV9HD" ,CCTV-9HD
+http://107.150.60.122/live/cctv9hd.m3u8
+#EXTINF:-1 tvg-id="CCTV10hd" tvg-name="CCTV10HD" ,CCTV-10HD
+http://107.150.60.122/live/cctv10hd.m3u8
+#EXTINF:-1 tvg-id="CCTV11hd" tvg-name="CCTV11HD" ,CCTV-11HD
+http://107.150.60.122/live/cctv11hd.m3u8
+#EXTINF:-1 tvg-id="CCTV12hd" tvg-name="CCTV12HD" ,CCTV-12HD
+http://107.150.60.122/live/cctv12hd.m3u8
+#EXTINF:-1 tvg-id="CCTV13hd" tvg-name="CCTV13HD" ,CCTV-13HD
+http://107.150.60.122/live/cctv13hd.m3u8
+#EXTINF:-1 tvg-id="CCTV14hd" tvg-name="CCTV14HD" ,CCTV-14HD
+http://107.150.60.122/live/cctv14hd.m3u8
+#EXTINF:-1 tvg-id="CCTV15hd" tvg-name="CCTV15HD" ,CCTV-15HD
+http://107.150.60.122/live/cctv15hd.m3u8
+#EXTINF:-1 tvg-id="CCTV16hd" tvg-name="CCTV16HD" ,CCTV-16HD
+http://107.150.60.122/live/cctv16hd.m3u8
+#EXTINF:-1 tvg-id="CCTV17hd" tvg-name="CCTV17HD" ,CCTV-17HD
+http://107.150.60.122/live/cctv17hd.m3u8
+#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" ,CCTV-5+HD
+http://107.150.60.122/live/cctv5p.m3u8
+#EXTINF:-1 tvg-id="CCTV4k超" tvg-name="CCTV4k超" ,CCTV-4K超高清
+http://107.150.60.122/live/cctv4k.m3u8
+#EXTINF:-1 tvg-id="CCTV8k超" tvg-name="CCTV8k超" ,CCTV-8K超高清
+http://107.150.60.122/live/cctv8k.m3u8
+#EXTINF:-1 tvg-id="CCTV1hd" tvg-name="CCTV1HD" ,CCTV-1HD
+http://192.151.150.154/live/cctv1hd.m3u8
+#EXTINF:-1 tvg-id="CCTV2hd" tvg-name="CCTV2HD" ,CCTV-2HD
+http://192.151.150.154/live/cctv2hd.m3u8
+#EXTINF:-1 tvg-id="CCTV4hd" tvg-name="CCTV4HD" ,CCTV-4HD
+http://192.151.150.154/live/cctv4hd.m3u8
+#EXTINF:-1 tvg-id="CCTV6hd" tvg-name="CCTV6HD" ,CCTV-6HD
+http://192.151.150.154/live/cctv6hd.m3u8
+#EXTINF:-1 tvg-id="CCTV7hd" tvg-name="CCTV7HD" ,CCTV-7HD
+http://192.151.150.154/live/cctv7hd.m3u8
+#EXTINF:-1 tvg-id="CCTV8hd" tvg-name="CCTV8HD" ,CCTV-8HD
+http://192.151.150.154/live/cctv8hd.m3u8
+#EXTINF:-1 tvg-id="CCTV9hd" tvg-name="CCTV9HD" ,CCTV-9HD
+http://192.151.150.154/live/cctv9hd.m3u8
+#EXTINF:-1 tvg-id="CCTV10hd" tvg-name="CCTV10HD" ,CCTV-10HD
+http://192.151.150.154/live/cctv10hd.m3u8
+#EXTINF:-1 tvg-id="CCTV11hd" tvg-name="CCTV11HD" ,CCTV-11HD
+http://192.151.150.154/live/cctv11hd.m3u8
+#EXTINF:-1 tvg-id="CCTV13hd" tvg-name="CCTV13HD" ,CCTV-13HD
+http://192.151.150.154/live/cctv13hd.m3u8
+#EXTINF:-1 tvg-id="CCTV17hd" tvg-name="CCTV17HD" ,CCTV-17HD
+http://192.151.150.154/live/cctv17hd.m3u8
+#EXTINF:-1 tvg-id="CCTV4k超" tvg-name="CCTV4k超" ,CCTV-4K超高清
+http://192.151.150.154/live/cctv4k.m3u8
+#EXTINF:-1 tvg-id="CCTV8k超" tvg-name="CCTV8k超" ,CCTV-8K超高清
+http://192.151.150.154/live/cctv8k.m3u8
+#EXTINF:-1 tvg-id="CCTV1hd" tvg-name="CCTV1HD" ,CCTV-1HD
+http://198.204.228.26/live/cctv1hd.m3u8
+#EXTINF:-1 tvg-id="CCTV3hd" tvg-name="CCTV3HD" ,CCTV-3HD
+http://198.204.228.26/live/cctv3hd.m3u8
+#EXTINF:-1 tvg-id="CCTV4hd" tvg-name="CCTV4HD" ,CCTV-4HD
+http://198.204.228.26/live/cctv4hd.m3u8
+#EXTINF:-1 tvg-id="CCTV5hd" tvg-name="CCTV5HD" ,CCTV-5HD
+http://198.204.228.26/live/cctv5hd.m3u8
+#EXTINF:-1 tvg-id="CCTV6hd" tvg-name="CCTV6HD" ,CCTV-6HD
+http://198.204.228.26/live/cctv6hd.m3u8
+#EXTINF:-1 tvg-id="CCTV8hd" tvg-name="CCTV8HD" ,CCTV-8HD
+http://198.204.228.26/live/cctv8hd.m3u8
+#EXTINF:-1 tvg-id="CCTV9hd" tvg-name="CCTV9HD" ,CCTV-9HD
+http://198.204.228.26/live/cctv9hd.m3u8
+#EXTINF:-1 tvg-id="CCTV10hd" tvg-name="CCTV10HD" ,CCTV-10HD
+http://198.204.228.26/live/cctv10hd.m3u8
+#EXTINF:-1 tvg-id="CCTV11hd" tvg-name="CCTV11HD" ,CCTV-11HD
+http://198.204.228.26/live/cctv11hd.m3u8
+#EXTINF:-1 tvg-id="CCTV12hd" tvg-name="CCTV12HD" ,CCTV-12HD
+http://198.204.228.26/live/cctv12hd.m3u8
+#EXTINF:-1 tvg-id="CCTV13hd" tvg-name="CCTV13HD" ,CCTV-13HD
+http://198.204.228.26/live/cctv13hd.m3u8
+#EXTINF:-1 tvg-id="CCTV14hd" tvg-name="CCTV14HD" ,CCTV-14HD
+http://198.204.228.26/live/cctv14hd.m3u8
+#EXTINF:-1 tvg-id="CCTV15hd" tvg-name="CCTV15HD" ,CCTV-15HD
+http://198.204.228.26/live/cctv15hd.m3u8
+#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" ,CCTV-5+HD
+http://198.204.228.26/live/cctv5p.m3u8
+#EXTINF:-1 tvg-id="CCTV4k超" tvg-name="CCTV4k超" ,CCTV-4K超高清
+http://198.204.228.26/live/cctv4k.m3u8
+#EXTINF:-1 tvg-id="CCTV8k超" tvg-name="CCTV8k超" ,CCTV-8K超高清
+http://198.204.228.26/live/cctv8k.m3u8
+#EXTINF:-1 tvg-id="CCTV电视指南" tvg-name="CCTV电视指南" ,CCTV-电视指南
+http://198.204.228.26/live/dszn.m3u8
+#EXTINF:-1 tvg-id="CCTV第一剧场" tvg-name="CCTV第一剧场" ,CCTV-第一剧场
+http://198.204.228.26/live/dyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云剧场" tvg-name="CCTV风云剧场" ,CCTV-风云剧场
+http://198.204.228.26/live/fyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云音乐" tvg-name="CCTV风云音乐" ,CCTV-风云音乐
+http://198.204.228.26/live/fyyy.m3u8
+#EXTINF:-1 tvg-id="CCTV风云足球" tvg-name="CCTV风云足球" ,CCTV-风云足球
+http://198.204.228.26/live/fyzq.m3u8
+#EXTINF:-1 tvg-id="CCTV高尔夫网球" tvg-name="CCTV高尔夫网球" ,CCTV-高尔夫网球
+http://198.204.228.26/live/gefwq.m3u8
+#EXTINF:-1 tvg-id="CCTV兵器科技" tvg-name="CCTV兵器科技" ,CCTV-兵器科技
+http://198.204.228.26/live/gfjs.m3u8
+#EXTINF:-1 tvg-id="CCTV世界地理" tvg-name="CCTV世界地理" ,CCTV-世界地理
+http://198.204.228.26/live/sjdl.m3u8
+#EXTINF:-1 tvg-id="CCTV怀旧剧场" tvg-name="CCTV怀旧剧场" ,CCTV-怀旧剧场
+http://198.204.228.26/live/hjjc.m3u8
+#EXTINF:-1 tvg-id="CCTV央视台球" tvg-name="CCTV央视台球" ,CCTV-央视台球
+http://198.204.228.26/live/ystq.m3u8
+#EXTINF:-1,BTV新闻
+http://103.72.172.253:8041/hls/382837277/index.m3u8
+#EXTINF:-1,BTV文艺
+http://103.72.172.253:8041/hls/346478234/index.m3u8
+#EXTINF:-1,BTV科教
+http://103.72.172.253:8041/hls/347295318/index.m3u8
+#EXTINF:-1,BTV影视
+http://103.72.172.253:8041/hls/357945484/index.m3u8
+#EXTINF:-1,BTV财经
+http://103.72.172.253:8041/hls/358948176/index.m3u8
+#EXTINF:-1,BTV生活
+http://103.72.172.253:8041/hls/366415771/index.m3u8
+#EXTINF:-1,KAKU少儿
+http://103.72.172.253:8041/hls/385413834/index.m3u8
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视
+http://103.72.172.253:8041/hls/345649569/index.m3u8
+#EXTINF:-1,CHC动作电影
+http://107.150.60.122/live/chcdz.m3u8
+#EXTINF:-1,CHC影迷电影
+http://107.150.60.122/live/chchd.m3u8
+#EXTINF:-1,CHC家庭影院
+http://107.150.60.122/live/chcjt.m3u8
+#EXTINF:-1,重温经典
+http://107.150.60.122/live/cwjd.m3u8
+#EXTINF:-1 tvg-id="CCTV电视指南" tvg-name="CCTV电视指南" ,CCTV-电视指南
+http://107.150.60.122/live/dszn.m3u8
+#EXTINF:-1 tvg-id="CCTV第一剧场" tvg-name="CCTV第一剧场" ,CCTV-第一剧场
+http://107.150.60.122/live/dyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云剧场" tvg-name="CCTV风云剧场" ,CCTV-风云剧场
+http://107.150.60.122/live/fyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云音乐" tvg-name="CCTV风云音乐" ,CCTV-风云音乐
+http://107.150.60.122/live/fyyy.m3u8
+#EXTINF:-1 tvg-id="CCTV风云足球" tvg-name="CCTV风云足球" ,CCTV-风云足球
+http://107.150.60.122/live/fyzq.m3u8
+#EXTINF:-1 tvg-id="CCTV高尔夫网球" tvg-name="CCTV高尔夫网球" ,CCTV-高尔夫网球
+http://107.150.60.122/live/gefwq.m3u8
+#EXTINF:-1 tvg-id="CCTV兵器科技" tvg-name="CCTV兵器科技" ,CCTV-兵器科技
+http://107.150.60.122/live/gfjs.m3u8
+#EXTINF:-1 tvg-id="CCTV世界地理" tvg-name="CCTV世界地理" ,CCTV-世界地理
+http://107.150.60.122/live/sjdl.m3u8
+#EXTINF:-1 tvg-id="CCTV怀旧剧场" tvg-name="CCTV怀旧剧场" ,CCTV-怀旧剧场
+http://107.150.60.122/live/hjjc.m3u8
+#EXTINF:-1 tvg-id="CCTV央视台球" tvg-name="CCTV央视台球" ,CCTV-央视台球
+http://107.150.60.122/live/ystq.m3u8
+#EXTINF:-1,天元围棋
+http://107.150.60.122/live/gztywq.m3u8
+#EXTINF:-1,北京卡酷少儿
+http://107.150.60.122/live/btvkk.m3u8
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视HD
+http://107.150.60.122/live/bjwshd.m3u8
+#EXTINF:-1 tvg-id="重庆卫视" tvg-name="重庆卫视" ,重庆卫视HD
+http://107.150.60.122/live/cqwshd.m3u8
+#EXTINF:-1,大湾区卫视(国际版)
+http://107.150.60.122/live/gdgj.m3u8
+#EXTINF:-1 tvg-id="东方卫视" tvg-name="东方卫视" ,东方卫视HD
+http://107.150.60.122/live/dfwshd.m3u8
+#EXTINF:-1 tvg-id="东南卫视" tvg-name="东南卫视" ,东南卫视HD
+http://107.150.60.122/live/dnwshd.m3u8
+#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" ,广东卫视HD
+http://107.150.60.122/live/gdwshd.m3u8
+#EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" ,广西卫视HD
+http://107.150.60.122/live/gxwshd.m3u8
+#EXTINF:-1 tvg-id="贵州卫视" tvg-name="贵州卫视" ,贵州卫视HD
+http://107.150.60.122/live/gzwshd.m3u8
+#EXTINF:-1 tvg-id="河南卫视" tvg-name="河南卫视" ,河南卫视HD
+http://107.150.60.122/live/hawshd.m3u8
+#EXTINF:-1 tvg-id="湖北卫视" tvg-name="湖北卫视" ,湖北卫视HD
+http://107.150.60.122/live/hbwshd.m3u8
+#EXTINF:-1 tvg-id="河北卫视" tvg-name="河北卫视" ,河北卫视HD
+http://107.150.60.122/live/hewshd.m3u8
+#EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" ,湖南卫视HD
+http://107.150.60.122/live/hnwshd.m3u8
+#EXTINF:-1 tvg-id="吉林卫视" tvg-name="吉林卫视" ,吉林卫视HD
+http://107.150.60.122/live/jlwshd.m3u8
+#EXTINF:-1 tvg-id="江苏卫视" tvg-name="江苏卫视" ,江苏卫视HD
+http://107.150.60.122/live/jswshd.m3u8
+#EXTINF:-1 tvg-id="辽宁卫视" tvg-name="辽宁卫视" ,辽宁卫视HD
+http://107.150.60.122/live/lnwshd.m3u8
+#EXTINF:-1 tvg-id="内蒙古卫视" tvg-name="内蒙古卫视" ,内蒙古卫视
+http://107.150.60.122/live/nmgws.m3u8
+#EXTINF:-1 tvg-id="宁夏卫视" tvg-name="宁夏卫视" ,宁夏卫视
+http://107.150.60.122/live/nxws.m3u8
+#EXTINF:-1 tvg-id="青海卫视" tvg-name="青海卫视" ,青海卫视
+http://107.150.60.122/live/qhws.m3u8
+#EXTINF:-1 tvg-id="陕西卫视" tvg-name="陕西卫视" ,陕西卫视HD
+http://107.150.60.122/live/snwshd.m3u8
+#EXTINF:-1 tvg-id="三沙卫视" tvg-name="三沙卫视" ,三沙卫视
+http://107.150.60.122/live/ssws.m3u8
+#EXTINF:-1 tvg-id="天津卫视" tvg-name="天津卫视" ,天津卫视HD
+http://107.150.60.122/live/tjwshd.m3u8
+#EXTINF:-1 tvg-id="新疆卫视" tvg-name="新疆卫视" ,新疆卫视
+http://107.150.60.122/live/xjws.m3u8
+#EXTINF:-1 tvg-id="云南卫视" tvg-name="云南卫视" ,云南卫视HD
+http://107.150.60.122/live/ynwshd.m3u8
+#EXTINF:-1 tvg-id="浙江卫视" tvg-name="浙江卫视" ,浙江卫视HD
+http://107.150.60.122/live/zjwshd.m3u8
+#EXTINF:-1 tvg-id="CCTV央视文化精品" tvg-name="CCTV央视文化精品" ,CCTV-央视文化精品
+http://107.150.60.122/live/ysjp.m3u8
+#EXTINF:-1 tvg-id="CCTV卫生健康" tvg-name="CCTV卫生健康" ,CCTV-卫生健康
+http://107.150.60.122/live/wsjk.m3u8
+#EXTINF:-1,广东新闻
+http://107.150.60.122/live/gdxw.m3u8
+#EXTINF:-1,广东新闻
+http://107.150.60.122/live/gdxwa.m3u8
+#EXTINF:-1,广东珠江
+http://107.150.60.122/live/gdzja.m3u8
+#EXTINF:-1,广东珠江
+http://107.150.60.122/live/gdzj.m3u8
+#EXTINF:-1,广东少儿
+http://107.150.60.122/live/gdtvs5.m3u8
+#EXTINF:-1,广东体育
+http://107.150.60.122/live/gdty.m3u8
+#EXTINF:-1,广东民生
+http://107.150.60.122/live/gdgg.m3u8
+#EXTINF:-1,广西影视
+http://107.150.60.122/live/gxys.m3u8
+#EXTINF:-1,广西综艺旅游
+http://107.150.60.122/live/gxzy.m3u8
+#EXTINF:-1,广西都市
+http://107.150.60.122/live/gxds.m3u8
+#EXTINF:-1,广西新闻
+http://107.150.60.122/live/gxxw.m3u8
+#EXTINF:-1,广西国际
+http://107.150.60.122/live/gxgj.m3u8
+#EXTINF:-1,湖南娱乐
+http://107.150.60.122/live/hnyl.m3u8
+#EXTINF:-1,湖南教育
+http://107.150.60.122/live/hnjy.m3u8
+#EXTINF:-1,江西新闻频道
+http://107.150.60.122/live/jxtv7.m3u8
+#EXTINF:-1,成龙电影
+http://107.150.60.122/live/lbcl.m3u8
+#EXTINF:-1,周星驰电影
+http://107.150.60.122/live/lbzxc.m3u8
+#EXTINF:-1,林正英影院
+http://107.150.60.122/live/lblzy.m3u8
+#EXTINF:-1,CHC动作电影
+http://192.151.150.154/live/chcdz.m3u8
+#EXTINF:-1,CHC影迷电影
+http://192.151.150.154/live/chchd.m3u8
+#EXTINF:-1,CHC家庭影院
+http://192.151.150.154/live/chcjt.m3u8
+#EXTINF:-1,重温经典
+http://192.151.150.154/live/cwjd.m3u8
+#EXTINF:-1 tvg-id="CCTV电视指南" tvg-name="CCTV电视指南" ,CCTV-电视指南
+http://192.151.150.154/live/dszn.m3u8
+#EXTINF:-1 tvg-id="CCTV第一剧场" tvg-name="CCTV第一剧场" ,CCTV-第一剧场
+http://192.151.150.154/live/dyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云剧场" tvg-name="CCTV风云剧场" ,CCTV-风云剧场
+http://192.151.150.154/live/fyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云音乐" tvg-name="CCTV风云音乐" ,CCTV-风云音乐
+http://192.151.150.154/live/fyyy.m3u8
+#EXTINF:-1 tvg-id="CCTV风云足球" tvg-name="CCTV风云足球" ,CCTV-风云足球
+http://192.151.150.154/live/fyzq.m3u8
+#EXTINF:-1 tvg-id="CCTV高尔夫网球" tvg-name="CCTV高尔夫网球" ,CCTV-高尔夫网球
+http://192.151.150.154/live/gefwq.m3u8
+#EXTINF:-1 tvg-id="CCTV兵器科技" tvg-name="CCTV兵器科技" ,CCTV-兵器科技
+http://192.151.150.154/live/gfjs.m3u8
+#EXTINF:-1 tvg-id="CCTV世界地理" tvg-name="CCTV世界地理" ,CCTV-世界地理
+http://192.151.150.154/live/sjdl.m3u8
+#EXTINF:-1 tvg-id="CCTV怀旧剧场" tvg-name="CCTV怀旧剧场" ,CCTV-怀旧剧场
+http://192.151.150.154/live/hjjc.m3u8
+#EXTINF:-1 tvg-id="CCTV央视台球" tvg-name="CCTV央视台球" ,CCTV-央视台球
+http://192.151.150.154/live/ystq.m3u8
+#EXTINF:-1,天元围棋
+http://192.151.150.154/live/gztywq.m3u8
+#EXTINF:-1,北京卡酷少儿
+http://192.151.150.154/live/btvkk.m3u8
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视HD
+http://192.151.150.154/live/bjwshd.m3u8
+#EXTINF:-1 tvg-id="重庆卫视" tvg-name="重庆卫视" ,重庆卫视HD
+http://192.151.150.154/live/cqwshd.m3u8
+#EXTINF:-1,大湾区卫视(国际版)
+http://192.151.150.154/live/gdgj.m3u8
+#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" ,广东卫视HD
+http://192.151.150.154/live/gdwshd.m3u8
+#EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" ,广西卫视HD
+http://192.151.150.154/live/gxwshd.m3u8
+#EXTINF:-1 tvg-id="贵州卫视" tvg-name="贵州卫视" ,贵州卫视HD
+http://192.151.150.154/live/gzwshd.m3u8
+#EXTINF:-1 tvg-id="河南卫视" tvg-name="河南卫视" ,河南卫视HD
+http://192.151.150.154/live/hawshd.m3u8
+#EXTINF:-1 tvg-id="湖北卫视" tvg-name="湖北卫视" ,湖北卫视HD
+http://192.151.150.154/live/hbwshd.m3u8
+#EXTINF:-1 tvg-id="河北卫视" tvg-name="河北卫视" ,河北卫视HD
+http://192.151.150.154/live/hewshd.m3u8
+#EXTINF:-1 tvg-id="黑龙江卫视" tvg-name="黑龙江卫视" ,黑龙江卫视HD
+http://192.151.150.154/live/hljwshd.m3u8
+#EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" ,湖南卫视HD
+http://192.151.150.154/live/hnwshd.m3u8
+#EXTINF:-1 tvg-id="辽宁卫视" tvg-name="辽宁卫视" ,辽宁卫视HD
+http://192.151.150.154/live/lnwshd.m3u8
+#EXTINF:-1 tvg-id="内蒙古卫视" tvg-name="内蒙古卫视" ,内蒙古卫视
+http://192.151.150.154/live/nmgws.m3u8
+#EXTINF:-1 tvg-id="宁夏卫视" tvg-name="宁夏卫视" ,宁夏卫视
+http://192.151.150.154/live/nxws.m3u8
+#EXTINF:-1 tvg-id="青海卫视" tvg-name="青海卫视" ,青海卫视
+http://192.151.150.154/live/qhws.m3u8
+#EXTINF:-1 tvg-id="四川卫视" tvg-name="四川卫视" ,四川卫视HD
+http://192.151.150.154/live/scwshd.m3u8
+#EXTINF:-1 tvg-id="山东卫视" tvg-name="山东卫视" ,山东卫视HD
+http://192.151.150.154/live/sdwshd.m3u8
+#EXTINF:-1 tvg-id="陕西卫视" tvg-name="陕西卫视" ,陕西卫视HD
+http://192.151.150.154/live/snwshd.m3u8
+#EXTINF:-1 tvg-id="三沙卫视" tvg-name="三沙卫视" ,三沙卫视
+http://192.151.150.154/live/ssws.m3u8
+#EXTINF:-1 tvg-id="山西卫视" tvg-name="山西卫视" ,山西卫视HD
+http://192.151.150.154/live/sxwshd.m3u8
+#EXTINF:-1 tvg-id="天津卫视" tvg-name="天津卫视" ,天津卫视HD
+http://192.151.150.154/live/tjwshd.m3u8
+#EXTINF:-1 tvg-id="新疆卫视" tvg-name="新疆卫视" ,新疆卫视
+http://192.151.150.154/live/xjws.m3u8
+#EXTINF:-1 tvg-id="云南卫视" tvg-name="云南卫视" ,云南卫视HD
+http://192.151.150.154/live/ynwshd.m3u8
+#EXTINF:-1 tvg-id="CCTV央视文化精品" tvg-name="CCTV央视文化精品" ,CCTV-央视文化精品
+http://192.151.150.154/live/ysjp.m3u8
+#EXTINF:-1,广东新闻
+http://192.151.150.154/live/gdxwa.m3u8
+#EXTINF:-1,广东珠江
+http://192.151.150.154/live/gdzja.m3u8
+#EXTINF:-1,广东珠江
+http://192.151.150.154/live/gdzj.m3u8
+#EXTINF:-1,广东少儿
+http://192.151.150.154/live/gdtvs5.m3u8
+#EXTINF:-1,广东体育
+http://192.151.150.154/live/gdty.m3u8
+#EXTINF:-1,广东民生
+http://192.151.150.154/live/gdgg.m3u8
+#EXTINF:-1,广西影视
+http://192.151.150.154/live/gxys.m3u8
+#EXTINF:-1,广西综艺旅游
+http://192.151.150.154/live/gxzy.m3u8
+#EXTINF:-1,广西都市
+http://192.151.150.154/live/gxds.m3u8
+#EXTINF:-1,广西新闻
+http://192.151.150.154/live/gxxw.m3u8
+#EXTINF:-1,广西国际
+http://192.151.150.154/live/gxgj.m3u8
+#EXTINF:-1,湖南娱乐
+http://192.151.150.154/live/hnyl.m3u8
+#EXTINF:-1,湖南教育
+http://192.151.150.154/live/hnjy.m3u8
+#EXTINF:-1,江西新闻频道
+http://192.151.150.154/live/jxtv7.m3u8
+#EXTINF:-1,成龙电影
+http://192.151.150.154/live/lbcl.m3u8
+#EXTINF:-1,周星驰电影
+http://192.151.150.154/live/lbzxc.m3u8
+#EXTINF:-1,林正英影院
+http://192.151.150.154/live/lblzy.m3u8
+#EXTINF:-1,CHC动作电影
+http://198.204.228.26/live/chcdz.m3u8
+#EXTINF:-1,CHC影迷电影
+http://198.204.228.26/live/chchd.m3u8
+#EXTINF:-1,CHC家庭影院
+http://198.204.228.26/live/chcjt.m3u8
+#EXTINF:-1,重温经典
+http://198.204.228.26/live/cwjd.m3u8
+#EXTINF:-1,天元围棋
+http://198.204.228.26/live/gztywq.m3u8
+#EXTINF:-1,北京纪实科教
+http://198.204.228.26/live/btv3.m3u8
+#EXTINF:-1,北京卡酷少儿
+http://198.204.228.26/live/btvkk.m3u8
+#EXTINF:-1 tvg-id="安徽卫视" tvg-name="安徽卫视" ,安徽卫视HD
+http://198.204.228.26/live/ahwshd.m3u8
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视HD
+http://198.204.228.26/live/bjwshd.m3u8
+#EXTINF:-1 tvg-id="重庆卫视" tvg-name="重庆卫视" ,重庆卫视HD
+http://198.204.228.26/live/cqwshd.m3u8
+#EXTINF:-1,大湾区卫视(国际版)
+http://198.204.228.26/live/gdgj.m3u8
+#EXTINF:-1 tvg-id="东南卫视" tvg-name="东南卫视" ,东南卫视HD
+http://198.204.228.26/live/dnwshd.m3u8
+#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" ,广东卫视HD
+http://198.204.228.26/live/gdwshd.m3u8
+#EXTINF:-1 tvg-id="贵州卫视" tvg-name="贵州卫视" ,贵州卫视HD
+http://198.204.228.26/live/gzwshd.m3u8
+#EXTINF:-1 tvg-id="河南卫视" tvg-name="河南卫视" ,河南卫视HD
+http://198.204.228.26/live/hawshd.m3u8
+#EXTINF:-1 tvg-id="湖北卫视" tvg-name="湖北卫视" ,湖北卫视HD
+http://198.204.228.26/live/hbwshd.m3u8
+#EXTINF:-1 tvg-id="河北卫视" tvg-name="河北卫视" ,河北卫视HD
+http://198.204.228.26/live/hewshd.m3u8
+#EXTINF:-1 tvg-id="黑龙江卫视" tvg-name="黑龙江卫视" ,黑龙江卫视HD
+http://198.204.228.26/live/hljwshd.m3u8
+#EXTINF:-1 tvg-id="吉林卫视" tvg-name="吉林卫视" ,吉林卫视HD
+http://198.204.228.26/live/jlwshd.m3u8
+#EXTINF:-1 tvg-id="江苏卫视" tvg-name="江苏卫视" ,江苏卫视HD
+http://198.204.228.26/live/jswshd.m3u8
+#EXTINF:-1 tvg-id="江西卫视" tvg-name="江西卫视" ,江西卫视HD
+http://198.204.228.26/live/jxwshd.m3u8
+#EXTINF:-1 tvg-id="辽宁卫视" tvg-name="辽宁卫视" ,辽宁卫视HD
+http://198.204.228.26/live/lnwshd.m3u8
+#EXTINF:-1 tvg-id="内蒙古卫视" tvg-name="内蒙古卫视" ,内蒙古卫视
+http://198.204.228.26/live/nmgws.m3u8
+#EXTINF:-1 tvg-id="四川卫视" tvg-name="四川卫视" ,四川卫视HD
+http://198.204.228.26/live/scwshd.m3u8
+#EXTINF:-1 tvg-id="山东卫视" tvg-name="山东卫视" ,山东卫视HD
+http://198.204.228.26/live/sdwshd.m3u8
+#EXTINF:-1 tvg-id="三沙卫视" tvg-name="三沙卫视" ,三沙卫视
+http://198.204.228.26/live/ssws.m3u8
+#EXTINF:-1 tvg-id="深圳卫视" tvg-name="深圳卫视" ,深圳卫视HD
+http://198.204.228.26/live/szwshd.m3u8
+#EXTINF:-1 tvg-id="天津卫视" tvg-name="天津卫视" ,天津卫视HD
+http://198.204.228.26/live/tjwshd.m3u8
+#EXTINF:-1 tvg-id="新疆卫视" tvg-name="新疆卫视" ,新疆卫视
+http://198.204.228.26/live/xjws.m3u8
+#EXTINF:-1 tvg-id="浙江卫视" tvg-name="浙江卫视" ,浙江卫视HD
+http://198.204.228.26/live/zjwshd.m3u8
+#EXTINF:-1 tvg-id="CCTV央视文化精品" tvg-name="CCTV央视文化精品" ,CCTV-央视文化精品
+http://198.204.228.26/live/ysjp.m3u8
+#EXTINF:-1,广东新闻
+http://198.204.228.26/live/gdxw.m3u8
+#EXTINF:-1,广东新闻
+http://198.204.228.26/live/gdxwa.m3u8
+#EXTINF:-1,广东珠江
+http://198.204.228.26/live/gdzja.m3u8
+#EXTINF:-1,广东珠江
+http://198.204.228.26/live/gdzj.m3u8
+#EXTINF:-1,广东少儿
+http://198.204.228.26/live/gdtvs5.m3u8
+#EXTINF:-1,广东体育
+http://198.204.228.26/live/gdty.m3u8
+#EXTINF:-1,广东民生
+http://198.204.228.26/live/gdgg.m3u8
+#EXTINF:-1,广西影视
+http://198.204.228.26/live/gxys.m3u8
+#EXTINF:-1,广西综艺旅游
+http://198.204.228.26/live/gxzy.m3u8
+#EXTINF:-1,广西都市
+http://198.204.228.26/live/gxds.m3u8
+#EXTINF:-1,广西新闻
+http://198.204.228.26/live/gxxw.m3u8
+#EXTINF:-1,广西国际
+http://198.204.228.26/live/gxgj.m3u8
+#EXTINF:-1,湖南娱乐
+http://198.204.228.26/live/hnyl.m3u8
+#EXTINF:-1,湖南教育
+http://198.204.228.26/live/hnjy.m3u8
+#EXTINF:-1,江西新闻频道
+http://198.204.228.26/live/jxtv7.m3u8
+#EXTINF:-1,成龙电影
+http://198.204.228.26/live/lbcl.m3u8
+#EXTINF:-1,周星驰电影
+http://198.204.228.26/live/lbzxc.m3u8
+#EXTINF:-1,林正英影院
+http://198.204.228.26/live/lblzy.m3u8
+#EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" ,CCTV-1
+http://bztv.tvbus.cc:8081/cdnlive/cctv1.m3u8
+#EXTINF:-1 tvg-id="CCTV2" tvg-name="CCTV2" ,CCTV-2
+http://bztv.tvbus.cc:8081/cdnlive/cctv2.m3u8
+#EXTINF:-1 tvg-id="CCTV3" tvg-name="CCTV3" ,CCTV-3
+http://bztv.tvbus.cc:8081/cdnlive/cctv3.m3u8
+#EXTINF:-1 tvg-id="CCTV4" tvg-name="CCTV4" ,CCTV-4
+http://bztv.tvbus.cc:8081/cdnlive/cctv4.m3u8
+#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" ,CCTV-5
+http://bztv.tvbus.cc:8081/cdnlive/cctv5.m3u8
+#EXTINF:-1 tvg-id="CCTV6" tvg-name="CCTV6" ,CCTV-6
+http://bztv.tvbus.cc:8081/cdnlive/cctv6.m3u8
+#EXTINF:-1 tvg-id="CCTV7" tvg-name="CCTV7" ,CCTV-7
+http://bztv.tvbus.cc:8081/cdnlive/cctv7.m3u8
+#EXTINF:-1 tvg-id="CCTV8" tvg-name="CCTV8" ,CCTV-8
+http://bztv.tvbus.cc:8081/cdnlive/cctv8.m3u8
+#EXTINF:-1 tvg-id="CCTV9" tvg-name="CCTV9" ,CCTV-9
+http://bztv.tvbus.cc:8081/cdnlive/cctv9.m3u8
+#EXTINF:-1 tvg-id="CCTV11" tvg-name="CCTV11" ,CCTV-11
+http://bztv.tvbus.cc:8081/cdnlive/cctv11.m3u8
+#EXTINF:-1 tvg-id="CCTV12" tvg-name="CCTV12" ,CCTV-12
+http://bztv.tvbus.cc:8081/cdnlive/cctv12.m3u8
+#EXTINF:-1 tvg-id="CCTV13" tvg-name="CCTV13" ,CCTV-13
+http://bztv.tvbus.cc:8081/cdnlive/cctv13.m3u8
+#EXTINF:-1 tvg-id="CCTV14" tvg-name="CCTV14" ,CCTV-14
+http://bztv.tvbus.cc:8081/cdnlive/cctv14.m3u8
+#EXTINF:-1 tvg-id="CCTV15" tvg-name="CCTV15" ,CCTV-15
+http://bztv.tvbus.cc:8081/cdnlive/cctv15.m3u8
+#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" ,CCTV-5+
+http://bztv.tvbus.cc:8081/cdnlive/cctv5p.m3u8
+#EXTINF:-1 tvg-id="CCTV电视指南" tvg-name="CCTV电视指南" ,CCTV-电视指南
+http://bztv.tvbus.cc:8081/cdnlive/dszn.m3u8
+#EXTINF:-1 tvg-id="CCTV第一剧场" tvg-name="CCTV第一剧场" ,CCTV-第一剧场
+http://bztv.tvbus.cc:8081/cdnlive/dyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云剧场" tvg-name="CCTV风云剧场" ,CCTV-风云剧场
+http://bztv.tvbus.cc:8081/cdnlive/fyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云音乐" tvg-name="CCTV风云音乐" ,CCTV-风云音乐
+http://bztv.tvbus.cc:8081/cdnlive/fyyy.m3u8
+#EXTINF:-1 tvg-id="CCTV风云足球" tvg-name="CCTV风云足球" ,CCTV-风云足球
+http://bztv.tvbus.cc:8081/cdnlive/fyzq.m3u8
+#EXTINF:-1 tvg-id="CCTV高尔夫网球" tvg-name="CCTV高尔夫网球" ,CCTV-高尔夫网球
+http://bztv.tvbus.cc:8081/cdnlive/gefwq.m3u8
+#EXTINF:-1 tvg-id="CCTV兵器科技" tvg-name="CCTV兵器科技" ,CCTV-兵器科技
+http://bztv.tvbus.cc:8081/cdnlive/gfjs.m3u8
+#EXTINF:-1 tvg-id="CCTV世界地理" tvg-name="CCTV世界地理" ,CCTV-世界地理
+http://bztv.tvbus.cc:8081/cdnlive/sjdl.m3u8
+#EXTINF:-1 tvg-id="CCTV怀旧剧场" tvg-name="CCTV怀旧剧场" ,CCTV-怀旧剧场
+http://bztv.tvbus.cc:8081/cdnlive/hjjc.m3u8
+#EXTINF:-1 tvg-id="CCTV央视台球" tvg-name="CCTV央视台球" ,CCTV-央视台球
+http://bztv.tvbus.cc:8081/cdnlive/ystq.m3u8
+#EXTINF:-1 tvg-id="CCTV央视文化精品" tvg-name="CCTV央视文化精品" ,CCTV-央视文化精品
+http://bztv.tvbus.cc:8081/cdnlive/ysjp.m3u8
+#EXTINF:-1 tvg-id="安徽卫视" tvg-name="安徽卫视" ,安徽卫视
+http://bztv.tvbus.cc:8081/cdnlive/ahws.m3u8
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视
+http://bztv.tvbus.cc:8081/cdnlive/bjws.m3u8
+#EXTINF:-1 tvg-id="重庆卫视" tvg-name="重庆卫视" ,重庆卫视
+http://bztv.tvbus.cc:8081/cdnlive/cqws.m3u8
+#EXTINF:-1 tvg-id="东南卫视" tvg-name="东南卫视" ,东南卫视
+http://bztv.tvbus.cc:8081/cdnlive/dnws.m3u8
+#EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" ,广西卫视
+http://bztv.tvbus.cc:8081/cdnlive/gxws.m3u8
+#EXTINF:-1 tvg-id="贵州卫视" tvg-name="贵州卫视" ,贵州卫视
+http://bztv.tvbus.cc:8081/cdnlive/gzws.m3u8
+#EXTINF:-1 tvg-id="湖北卫视" tvg-name="湖北卫视" ,湖北卫视
+http://bztv.tvbus.cc:8081/cdnlive/hbws.m3u8
+#EXTINF:-1 tvg-id="黑龙江卫视" tvg-name="黑龙江卫视" ,黑龙江卫视
+http://bztv.tvbus.cc:8081/cdnlive/hljws.m3u8
+#EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" ,湖南卫视
+http://bztv.tvbus.cc:8081/cdnlive/hnws.m3u8
+#EXTINF:-1 tvg-id="江苏卫视" tvg-name="江苏卫视" ,江苏卫视
+http://bztv.tvbus.cc:8081/cdnlive/jsws.m3u8
+#EXTINF:-1 tvg-id="江西卫视" tvg-name="江西卫视" ,江西卫视
+http://bztv.tvbus.cc:8081/cdnlive/jxws.m3u8
+#EXTINF:-1 tvg-id="辽宁卫视" tvg-name="辽宁卫视" ,辽宁卫视
+http://bztv.tvbus.cc:8081/cdnlive/lnws.m3u8
+#EXTINF:-1 tvg-id="山东卫视" tvg-name="山东卫视" ,山东卫视
+http://bztv.tvbus.cc:8081/cdnlive/sdws.m3u8
+#EXTINF:-1 tvg-id="山西卫视" tvg-name="山西卫视" ,山西卫视
+http://bztv.tvbus.cc:8081/cdnlive/sxws.m3u8
+#EXTINF:-1 tvg-id="天津卫视" tvg-name="天津卫视" ,天津卫视
+http://bztv.tvbus.cc:8081/cdnlive/tjws.m3u8
+#EXTINF:-1 tvg-id="新疆卫视" tvg-name="新疆卫视" ,新疆卫视
+http://bztv.tvbus.cc:8081/cdnlive/xjws.m3u8
+#EXTINF:-1 tvg-id="浙江卫视" tvg-name="浙江卫视" ,浙江卫视
+http://bztv.tvbus.cc:8081/cdnlive/zjws.m3u8
+#EXTINF:-1 tvg-id="CCTV1综合" tvg-name="CCTV1综合" ,CCTV-1综合
+http://173.208.212.130:8181/720p/cctv1.m3u8
+#EXTINF:-1 tvg-id="CCTV2财经" tvg-name="CCTV2财经" ,CCTV-2财经
+http://173.208.212.130:8181/720p/cctv2.m3u8
+#EXTINF:-1 tvg-id="CCTV3综艺" tvg-name="CCTV3综艺" ,CCTV-3综艺
+http://173.208.212.130:8181/720p/cctv3.m3u8
+#EXTINF:-1 tvg-id="CCTV4中文国际" tvg-name="CCTV4中文国际" ,CCTV-4中文国际
+http://173.208.212.130:8181/720p/cctv4.m3u8
+#EXTINF:-1 tvg-id="CCTV5体育" tvg-name="CCTV5体育" ,CCTV-5体育
+http://173.208.212.130:8181/720p/cctv5.m3u8
+#EXTINF:-1 tvg-id="CCTV6电影" tvg-name="CCTV6电影" ,CCTV-6电影
+http://173.208.212.130:8181/720p/cctv6.m3u8
+#EXTINF:-1 tvg-id="CCTV8电视剧" tvg-name="CCTV8电视剧" ,CCTV-8电视剧
+http://173.208.212.130:8181/720p/cctv8.m3u8
+#EXTINF:-1 tvg-id="CCTV9纪录" tvg-name="CCTV9纪录" ,CCTV-9纪录
+http://173.208.212.130:8181/720p/cctv9.m3u8
+#EXTINF:-1 tvg-id="CCTV11戏曲" tvg-name="CCTV11戏曲" ,CCTV-11戏曲
+http://173.208.212.130:8181/720p/cctv11.m3u8
+#EXTINF:-1 tvg-id="CCTV12社会与法" tvg-name="CCTV12社会与法" ,CCTV-12社会与法
+http://173.208.212.130:8181/720p/cctv12.m3u8
+#EXTINF:-1 tvg-id="CCTV13新闻" tvg-name="CCTV13新闻" ,CCTV-13新闻
+http://173.208.212.130:8181/720p/cctv13.m3u8
+#EXTINF:-1 tvg-id="CCTV14少儿" tvg-name="CCTV14少儿" ,CCTV-14少儿
+http://173.208.212.130:8181/720p/cctv14.m3u8
+#EXTINF:-1 tvg-id="CCTV15音乐" tvg-name="CCTV15音乐" ,CCTV-15音乐
+http://173.208.212.130:8181/720p/cctv15.m3u8
+#EXTINF:-1 tvg-id="CCTV16奥林匹克" tvg-name="CCTV16奥林匹克" ,CCTV-16奥林匹克
+http://173.208.212.130:8181/720p/cctv16.m3u8
+#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" ,CCTV-5+HD
+http://173.208.212.130:8181/720p/cctv5p.m3u8
+#EXTINF:-1 tvg-id="CCTV第一剧场" tvg-name="CCTV第一剧场" ,CCTV-第一剧场
+http://173.208.212.130:8181/720p/dyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV风云剧场" tvg-name="CCTV风云剧场" ,CCTV-风云剧场
+http://173.208.212.130:8181/720p/fyjc.m3u8
+#EXTINF:-1 tvg-id="CCTV怀旧剧场" tvg-name="CCTV怀旧剧场" ,CCTV-怀旧剧场
+http://173.208.212.130:8181/720p/hjjc.m3u8
+#EXTINF:-1 tvg-id="CCTV兵器科技" tvg-name="CCTV兵器科技" ,CCTV-兵器科技
+http://173.208.212.130:8181/720p/gfjs.m3u8
+#EXTINF:-1 tvg-id="CCTV世界地理" tvg-name="CCTV世界地理" ,CCTV-世界地理
+http://173.208.212.130:8181/720p/sjdl.m3u8
+#EXTINF:-1 tvg-id="CCTV卫生健康" tvg-name="CCTV卫生健康" ,CCTV-卫生健康
+http://173.208.212.130:8181/720p/wsjk.m3u8
+#EXTINF:-1 tvg-id="CCTV央视文化精品" tvg-name="CCTV央视文化精品" ,CCTV-央视文化精品
+http://173.208.212.130:8181/720p/ysjp.m3u8
+#EXTINF:-1 tvg-id="CCTV风云音乐" tvg-name="CCTV风云音乐" ,CCTV-风云音乐
+http://173.208.212.130:8181/720p/fyyy.m3u8
+#EXTINF:-1 tvg-id="CCTV央视台球" tvg-name="CCTV央视台球" ,CCTV-央视台球
+http://173.208.212.130:8181/720p/ystq.m3u8
+#EXTINF:-1 tvg-id="CCTV风云足球" tvg-name="CCTV风云足球" ,CCTV-风云足球
+http://173.208.212.130:8181/720p/fyzq.m3u8
+#EXTINF:-1 tvg-id="CCTV高尔夫网球" tvg-name="CCTV高尔夫网球" ,CCTV-高尔夫网球
+http://173.208.212.130:8181/720p/gefwq.m3u8
+#EXTINF:-1 tvg-id="CCTV1综合" tvg-name="CCTV1综合" ,CCTV-1综合
+http://173.208.212.130:8181/1080p/cctv1.m3u8
+#EXTINF:-1 tvg-id="CCTV2财经" tvg-name="CCTV2财经" ,CCTV-2财经
+http://173.208.212.130:8181/1080p/cctv2.m3u8
+#EXTINF:-1 tvg-id="CCTV3综艺" tvg-name="CCTV3综艺" ,CCTV-3综艺
+http://173.208.212.130:8181/1080p/cctv3.m3u8
+#EXTINF:-1 tvg-id="CCTV4中文国际" tvg-name="CCTV4中文国际" ,CCTV-4中文国际
+http://173.208.212.130:8181/1080p/cctv4.m3u8
+#EXTINF:-1 tvg-id="CCTV5体育" tvg-name="CCTV5体育" ,CCTV-5体育
+http://173.208.212.130:8181/1080p/cctv5.m3u8
+#EXTINF:-1 tvg-id="CCTV6电影" tvg-name="CCTV6电影" ,CCTV-6电影
+http://173.208.212.130:8181/1080p/cctv6.m3u8
+#EXTINF:-1 tvg-id="CCTV7国防军事" tvg-name="CCTV7国防军事" ,CCTV-7国防军事
+http://173.208.212.130:8181/1080p/cctv7.m3u8
+#EXTINF:-1 tvg-id="CCTV8电视剧" tvg-name="CCTV8电视剧" ,CCTV-8电视剧
+http://173.208.212.130:8181/1080p/cctv8.m3u8
+#EXTINF:-1 tvg-id="CCTV10科教" tvg-name="CCTV10科教" ,CCTV-10科教
+http://173.208.212.130:8181/1080p/cctv10.m3u8
+#EXTINF:-1 tvg-id="CCTV11戏曲" tvg-name="CCTV11戏曲" ,CCTV-11戏曲
+http://173.208.212.130:8181/1080p/cctv11.m3u8
+#EXTINF:-1 tvg-id="CCTV12社会与法" tvg-name="CCTV12社会与法" ,CCTV-12社会与法
+http://173.208.212.130:8181/1080p/cctv12.m3u8
+#EXTINF:-1 tvg-id="CCTV13新闻" tvg-name="CCTV13新闻" ,CCTV-13新闻
+http://173.208.212.130:8181/1080p/cctv13.m3u8
+#EXTINF:-1 tvg-id="CCTV14少儿" tvg-name="CCTV14少儿" ,CCTV-14少儿
+http://173.208.212.130:8181/1080p/cctv14.m3u8
+#EXTINF:-1 tvg-id="CCTV15音乐" tvg-name="CCTV15音乐" ,CCTV-15音乐
+http://173.208.212.130:8181/1080p/cctv15.m3u8
+#EXTINF:-1 tvg-id="CCTV16奥林匹克" tvg-name="CCTV16奥林匹克" ,CCTV-16奥林匹克
+http://173.208.212.130:8181/1080p/cctv16.m3u8
+#EXTINF:-1 tvg-id="CCTV17农业农村" tvg-name="CCTV17农业农村" ,CCTV-17农业农村
+http://173.208.212.130:8181/1080p/cctv17.m3u8
+#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" ,CCTV-5+HD
+http://173.208.212.130:8181/1080p/cctv5p.m3u8
+#EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" ,湖南卫视
+http://173.208.212.130:8181/720p/hnws.m3u8
+#EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" ,湖南卫视
+http://173.208.212.130:8181/1080p/hnws.m3u8
+#EXTINF:-1 tvg-id="河北卫视" tvg-name="河北卫视" ,河北卫视
+http://173.208.212.130:8181/720p/hews.m3u8
+#EXTINF:-1 tvg-id="山东卫视" tvg-name="山东卫视" ,山东卫视
+http://173.208.212.130:8181/720p/sdws.m3u8
+#EXTINF:-1 tvg-id="天津卫视" tvg-name="天津卫视" ,天津卫视
+http://173.208.212.130:8181/720p/tjws.m3u8
+#EXTINF:-1 tvg-id="深圳卫视" tvg-name="深圳卫视" ,深圳卫视
+http://173.208.212.130:8181/720p/szws.m3u8
+#EXTINF:-1 tvg-id="安徽卫视" tvg-name="安徽卫视" ,安徽卫视
+http://173.208.212.130:8181/720p/ahws.m3u8
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视
+http://173.208.212.130:8181/720p/bjws.m3u8
+#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" ,广东卫视
+http://173.208.212.130:8181/720p/gdws.m3u8
+#EXTINF:-1 tvg-id="江苏卫视" tvg-name="江苏卫视" ,江苏卫视
+http://173.208.212.130:8181/720p/jsws.m3u8
+#EXTINF:-1 tvg-id="江苏卫视" tvg-name="江苏卫视" ,江苏卫视
+http://173.208.212.130:8181/1080p/jsws.m3u8
+#EXTINF:-1 tvg-id="浙江卫视" tvg-name="浙江卫视" ,浙江卫视
+http://173.208.212.130:8181/720p/zjws.m3u8
+#EXTINF:-1 tvg-id="河南卫视" tvg-name="河南卫视" ,河南卫视
+http://112.30.73.119:9901/tsfile/live/1404_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" ,广西卫视
+http://112.30.73.119:9901/tsfile/live/1405_1.m3u8?key=txiptv&playlive=0&authid=0
+#EXTINF:-1 tvg-id="辽宁卫视" tvg-name="辽宁卫视" ,辽宁卫视
+https://live.264788.xyz/channel/liaoningweishi?streamid=0c788b01c7fa1a38fee180bf3638a6ab&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" ,广西卫视
+https://live.264788.xyz/channel/guangxiweishi?streamid=b3bc55706bd074b608a3b955fbffea4b&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="陕西卫视" tvg-name="陕西卫视" ,陕西卫视
+https://live.264788.xyz/channel/shaanxiweishi?streamid=80bc4fd254b8b27efa395953b61d5026&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="甘肃卫视" tvg-name="甘肃卫视" ,甘肃卫视
+https://live.264788.xyz/channel/gansuweishi?streamid=466083ee6981dccb38d23b5556b27f6e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="金鹰纪实" tvg-name="金鹰纪实" ,金鹰纪实
+https://live.264788.xyz/channel/jinyingjishi?streamid=4e14722244f78fc9c49bf260b10b3cad&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1,CETV-4职业教育
+https://live.264788.xyz/channel/cetv4?streamid=37d60172a2bbb0d41f072d29213e6264&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="金鹰卡通" tvg-name="金鹰卡通" ,金鹰卡通
+https://live.264788.xyz/channel/jinyingkatong?streamid=6bd8e7571b60048f177f05de68f25f68&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="凤凰卫视资讯台" tvg-name="凤凰卫视资讯台" ,凤凰卫视资讯台
+https://live.264788.xyz/channel/fenghuangweishizixun?streamid=77bd953dbf073e11b80bba0a8aca92c5&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="凤凰卫视中文台" tvg-name="凤凰卫视中文台" ,凤凰卫视中文台
+https://live.264788.xyz/channel/fenghuangweishizhongwen?streamid=3ed416f2709e7ecaf6dc1b9d9c66bb5e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="CCTV16奥林匹克4k" tvg-name="CCTV16奥林匹克4k" ,CCTV-16奥林匹克4K
+https://live.264788.xyz/channel/cctv164k?streamid=e2fed648244b0ba2817187fcba2ca6cb&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视4K
+https://live.264788.xyz/channel/beijingweishi4k?streamid=9859ef98cc152feae0c066e8c100ad2e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视4K
+https://live.264788.xyz/channel/beijingweishi4k?streamid=9f84199ceee704199264bb5ec58b8345&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="浙江卫视" tvg-name="浙江卫视" ,浙江卫视4K
+https://live.264788.xyz/channel/zhejiangweishi4k?streamid=a5b6e60170ee8c69290def1c2fe00cc8&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="湖南卫视" tvg-name="湖南卫视" ,湖南卫视4K
+https://live.264788.xyz/channel/hunanweishi4k?streamid=1d2cff60e497ead8198445a199d19583&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" ,广东卫视4K
+https://live.264788.xyz/channel/guangdongweishi4k?streamid=0508c0316aedc9152adcf323fa95c2c0&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="深圳卫视" tvg-name="深圳卫视" ,深圳卫视4K
+https://live.264788.xyz/channel/shenzhenweishi4k?streamid=9828b90c3948bae63cb8de76cdccd646&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1,福建综合
+https://live.264788.xyz/channel/fujianzonghe?streamid=f614d92b7259456dde72c14924c6323a&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1,福建综合
+https://live.264788.xyz/channel/fujianzonghe?streamid=6464f306ec4c0acd88d9a698fc2d699e&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1,福建综合
+https://live.264788.xyz/channel/fujianzonghe?streamid=4e7312db2a9e0b2effa6c08feab90786&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1,福建新闻
+https://live.264788.xyz/channel/fujianxinwen?streamid=1d7a4e8614e13d43791f381297047a1a&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1,福建文体
+https://live.264788.xyz/channel/fujianwenti?streamid=5b085b708bf8a4e62daa5ed392f810ce&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1,福建少儿
+https://live.264788.xyz/channel/fujianshaoer?streamid=e835a9456b847a72e1a0b8d64b585300&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1,福建教育
+https://live.264788.xyz/channel/fujianjiaoyu?streamid=250b5a0e97980f68e40f3f91ab10ac74&livekey=01WgOR41rriMmMkzNsd0UoaxJRwetZdxIvtVk
+#EXTINF:-1 tvg-id="CCTV02" tvg-name="CCTV02" ,CCTV-02
+http://cdn6.bkpcp.top/tl/tuiliu.php?id=cctv2
+#EXTINF:-1 tvg-id="CCTV03" tvg-name="CCTV03" ,CCTV-03
+http://cdn6.bkpcp.top/tl/tuiliu.php?id=cctv3
+#EXTINF:-1 tvg-id="CCTV04" tvg-name="CCTV04" ,CCTV-04
+http://cdn6.bkpcp.top/tl/tuiliu.php?id=cctv4
+#EXTINF:-1 tvg-id="CCTV05" tvg-name="CCTV05" ,CCTV-05
+http://cdn6.bkpcp.top/tl/tuiliu.php?id=cctv5
+#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" ,CCTV-5+
+http://cdn6.bkpcp.top/tl/tuiliu.php?id=cctv5p
+#EXTINF:-1 tvg-id="CCTV1综合" tvg-name="CCTV1综合" ,CCTV1综合
+http://mg.cttv.vip/608807420
+#EXTINF:-1 tvg-id="CCTV2财经" tvg-name="CCTV2财经" ,CCTV2财经
+http://mg.cttv.vip/631780532
+#EXTINF:-1 tvg-id="CCTV3综艺" tvg-name="CCTV3综艺" ,CCTV3综艺
+http://mg.cttv.vip/624878271
+#EXTINF:-1 tvg-id="CCTV4中文国际" tvg-name="CCTV4中文国际" ,CCTV4中文国际
+http://mg.cttv.vip/631780421
+#EXTINF:-1 tvg-id="CCTV5体育" tvg-name="CCTV5体育" ,CCTV5体育
+http://mg.cttv.vip/641886683
+#EXTINF:-1 tvg-id="CCTV5" tvg-name="CCTV5" ,CCTV5+体育赛事
+http://mg.cttv.vip/641886773
+#EXTINF:-1 tvg-id="CCTV6电影" tvg-name="CCTV6电影" ,CCTV6电影
+http://mg.cttv.vip/624878396
+#EXTINF:-1 tvg-id="CCTV7国防军事" tvg-name="CCTV7国防军事" ,CCTV7国防军事
+http://mg.cttv.vip/673168121
+#EXTINF:-1 tvg-id="CCTV8电视剧" tvg-name="CCTV8电视剧" ,CCTV8电视剧
+http://mg.cttv.vip/624878356
+#EXTINF:-1 tvg-id="CCTV9纪录" tvg-name="CCTV9纪录" ,CCTV9纪录
+http://mg.cttv.vip/673168140
+#EXTINF:-1 tvg-id="CCTV10科教" tvg-name="CCTV10科教" ,CCTV10科教
+http://mg.cttv.vip/624878405
+#EXTINF:-1 tvg-id="CCTV11戏曲" tvg-name="CCTV11戏曲" ,CCTV11戏曲
+http://mg.cttv.vip/667987558
+#EXTINF:-1 tvg-id="CCTV12社会与法" tvg-name="CCTV12社会与法" ,CCTV12社会与法
+http://mg.cttv.vip/673168185
+#EXTINF:-1 tvg-id="CCTV13新闻" tvg-name="CCTV13新闻" ,CCTV13新闻
+http://mg.cttv.vip/608807423
+#EXTINF:-1 tvg-id="CCTV14少儿" tvg-name="CCTV14少儿" ,CCTV14少儿
+http://mg.cttv.vip/624878440
+#EXTINF:-1 tvg-id="CCTV15音乐" tvg-name="CCTV15音乐" ,CCTV15音乐
+http://mg.cttv.vip/673168223
+#EXTINF:-1 tvg-id="CCTV17农业农村" tvg-name="CCTV17农业农村" ,CCTV17农业农村
+http://mg.cttv.vip/673168256
+#EXTINF:-1 tvg-id="CCTV4欧洲" tvg-name="CCTV4欧洲" ,CCTV4欧洲
+http://mg.cttv.vip/608807419
+#EXTINF:-1 tvg-id="CCTV4美洲" tvg-name="CCTV4美洲" ,CCTV4美洲
+http://mg.cttv.vip/608807416
+#EXTINF:-1,发现之旅
+http://mg.cttv.vip/624878970
+#EXTINF:-1,中学生
+http://mg.cttv.vip/708869532
+#EXTINF:-1 tvg-id="东方卫视" tvg-name="东方卫视" ,东方卫视
+http://mg.cttv.vip/651632648
+#EXTINF:-1 tvg-id="江苏卫视" tvg-name="江苏卫视" ,江苏卫视
+http://mg.cttv.vip/623899368
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视
+http://mg.cttv.vip/630287636
+#EXTINF:-1 tvg-id="辽宁卫视" tvg-name="辽宁卫视" ,辽宁卫视
+http://mg.cttv.vip/630291707
+#EXTINF:-1 tvg-id="湖北卫视" tvg-name="湖北卫视" ,湖北卫视
+http://mg.cttv.vip/947472496
+#EXTINF:-1,中国农林卫视
+http://mg.cttv.vip/956904896
+#EXTINF:-1 tvg-id="兵团卫视" tvg-name="兵团卫视" ,兵团卫视
+http://mg.cttv.vip/956923145
+#EXTINF:-1,上海新闻综合
+http://mg.cttv.vip/651632657
+#EXTINF:-1,盐城新闻综合
+http://mg.cttv.vip/639731825
+#EXTINF:-1,江阴新闻综合
+http://mg.cttv.vip/955227979
+#EXTINF:-1,南通新闻综合
+http://mg.cttv.vip/955227985
+#EXTINF:-1,宜兴新闻综合
+http://mg.cttv.vip/955227996
+#EXTINF:-1,溧水新闻综合
+http://mg.cttv.vip/639737327
+#EXTINF:-1,陕西银龄频道
+http://mg.cttv.vip/956909362
+#EXTINF:-1,陕西都市青春频道
+http://mg.cttv.vip/956909358
+#EXTINF:-1,陕西秦腔频道
+http://mg.cttv.vip/956909303
+#EXTINF:-1,陕西新闻资讯频道
+http://mg.cttv.vip/956909289
+#EXTINF:-1,财富天下
+http://mg.cttv.vip/956923159
+#EXTINF:-1,海南广播电视总台新闻频道
+http://mg.cttv.vip/962067517
+#EXTINF:-1,海南广播电视总台自贸频道
+http://mg.cttv.vip/962045226
+#EXTINF:-1,海南广播电视总台社会与法频道
+http://mg.cttv.vip/962045223
+#EXTINF:-1,海南广播电视总台文旅频道
+http://mg.cttv.vip/962067526
+#EXTINF:-1,海南广播电视总台少儿频道
+http://mg.cttv.vip/962067523
+#EXTINF:-1,赛事最经典
+http://mg.cttv.vip/646596895
+#EXTINF:-1,体坛名栏汇
+http://mg.cttv.vip/629943305
+#EXTINF:-1,四海钓鱼
+http://mg.cttv.vip/637444975
+#EXTINF:-1,陕西体育休闲频道
+http://mg.cttv.vip/956909356
+#EXTINF:-1,24小时城市联赛轮播台
+http://mg.cttv.vip/915512915
+#EXTINF:-1,武术世界
+http://mg.cttv.vip/958475359
+#EXTINF:-1,快乐垂钓
+http://mg.cttv.vip/961930263
+#EXTINF:-1,经典香港电影
+http://mg.cttv.vip/625703337
+#EXTINF:-1,抗战经典影片
+http://mg.cttv.vip/617432318
+#EXTINF:-1,新片放映厅
+http://mg.cttv.vip/619495952
+#EXTINF:-1,CHC影迷电影
+http://mg.cttv.vip/952383261
+#EXTINF:-1,和美乡途轮播台
+http://mg.cttv.vip/713591450
+#EXTINF:-1,中国航天“逆袭”之路
+http://mg.cttv.vip/713600957
+#EXTINF:-1,中国天气
+http://mg.cttv.vip/959986621
+#EXTINF:-1,CETV1
+http://mg.cttv.vip/923287154
+#EXTINF:-1,CETV2
+http://mg.cttv.vip/923287211
+#EXTINF:-1,CETV4
+http://mg.cttv.vip/923287339
+#EXTINF:-1,山东教育
+http://mg.cttv.vip/609154353
+#EXTINF:-1,熊猫频道01高清
+http://mg.cttv.vip/609158151
+#EXTINF:-1,最强综艺趴
+http://mg.cttv.vip/629942228
+#EXTINF:-1,经典动画大集合
+http://mg.cttv.vip/629942219
+#EXTINF:-1 tvg-id="新动漫" tvg-name="新动漫" ,新动漫
+http://mg.cttv.vip/961930269
+#EXTINF:-1,新动力量创一流
+http://mg.cttv.vip/713589837
+#EXTINF:-1,中华特产
+http://mg.cttv.vip/959986618
+#EXTINF:-1,环球旅游
+http://mg.cttv.vip/958475356
+#EXTINF:-1,梨园频道
+http://mg.cttv.vip/961930369
+#EXTINF:-1,发现之旅
+http://wfenf.x3322.net:7788/624878970
+#EXTINF:-1,中学生
+http://wfenf.x3322.net:7788/708869532
+#EXTINF:-1 tvg-id="东方卫视" tvg-name="东方卫视" ,东方卫视
+http://wfenf.x3322.net:7788/651632648
+#EXTINF:-1 tvg-id="广东卫视" tvg-name="广东卫视" ,广东卫视
+http://wfenf.x3322.net:7788/608831231
+#EXTINF:-1 tvg-id="北京卫视" tvg-name="北京卫视" ,北京卫视
+http://wfenf.x3322.net:7788/630287636
+#EXTINF:-1 tvg-id="辽宁卫视" tvg-name="辽宁卫视" ,辽宁卫视
+http://wfenf.x3322.net:7788/630291707
+#EXTINF:-1 tvg-id="河北卫视" tvg-name="河北卫视" ,河北卫视
+http://wfenf.x3322.net:7788/962042070
+#EXTINF:-1 tvg-id="江西卫视" tvg-name="江西卫视" ,江西卫视
+http://wfenf.x3322.net:7788/783847495
+#EXTINF:-1 tvg-id="陕西卫视" tvg-name="陕西卫视" ,陕西卫视
+http://wfenf.x3322.net:7788/738910838
+#EXTINF:-1 tvg-id="湖北卫视" tvg-name="湖北卫视" ,湖北卫视
+http://wfenf.x3322.net:7788/947472496
+#EXTINF:-1,中国农林卫视
+http://wfenf.x3322.net:7788/956904896
+#EXTINF:-1 tvg-id="兵团卫视" tvg-name="兵团卫视" ,兵团卫视
+http://wfenf.x3322.net:7788/956923145
+#EXTINF:-1,上海新闻综合
+http://wfenf.x3322.net:7788/651632657
+#EXTINF:-1,盐城新闻综合
+http://wfenf.x3322.net:7788/639731825
+#EXTINF:-1,江阴新闻综合
+http://wfenf.x3322.net:7788/955227979
+#EXTINF:-1,南通新闻综合
+http://wfenf.x3322.net:7788/955227985
+#EXTINF:-1,宜兴新闻综合
+http://wfenf.x3322.net:7788/955227996
+#EXTINF:-1,陕西银龄频道
+http://wfenf.x3322.net:7788/956909362
+#EXTINF:-1,陕西都市青春频道
+http://wfenf.x3322.net:7788/956909358
+#EXTINF:-1,陕西秦腔频道
+http://wfenf.x3322.net:7788/956909303
+#EXTINF:-1,陕西新闻资讯频道
+http://wfenf.x3322.net:7788/956909289
+#EXTINF:-1,财富天下
+http://wfenf.x3322.net:7788/956923159
+#EXTINF:-1,海南广播电视总台新闻频道
+http://wfenf.x3322.net:7788/962067517
+#EXTINF:-1,海南广播电视总台自贸频道
+http://wfenf.x3322.net:7788/962045226
+#EXTINF:-1,海南广播电视总台文旅频道
+http://wfenf.x3322.net:7788/962067526
+#EXTINF:-1,海南广播电视总台少儿频道
+http://wfenf.x3322.net:7788/962067523
+#EXTINF:-1,四海钓鱼
+http://wfenf.x3322.net:7788/637444975
+#EXTINF:-1,24小时城市联赛轮播台
+http://wfenf.x3322.net:7788/915512915
+#EXTINF:-1,快乐垂钓
+http://wfenf.x3322.net:7788/961930263
+#EXTINF:-1,建党105周年巡礼
+http://wfenf.x3322.net:7788/713600957
+#EXTINF:-1,经典香港电影
+http://wfenf.x3322.net:7788/625703337
+#EXTINF:-1,CHC影迷电影
+http://wfenf.x3322.net:7788/952383261
+#EXTINF:-1,中国天气
+http://wfenf.x3322.net:7788/959986621
+#EXTINF:-1,CETV1
+http://wfenf.x3322.net:7788/923287154
+#EXTINF:-1,CETV2
+http://wfenf.x3322.net:7788/923287211
+#EXTINF:-1,CETV4
+http://wfenf.x3322.net:7788/923287339
+#EXTINF:-1,山东教育
+http://wfenf.x3322.net:7788/609154353
+#EXTINF:-1,熊猫频道01高清
+http://wfenf.x3322.net:7788/609158151
+#EXTINF:-1 tvg-id="新动漫" tvg-name="新动漫" ,新动漫
+http://wfenf.x3322.net:7788/961930269
+#EXTINF:-1,中华特产
+http://wfenf.x3322.net:7788/959986618
+#EXTINF:-1,环球旅游
+http://wfenf.x3322.net:7788/958475356
+#EXTINF:-1,梨园频道
+http://wfenf.x3322.net:7788/961930369
